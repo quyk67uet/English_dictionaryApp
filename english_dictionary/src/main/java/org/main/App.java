@@ -1,6 +1,6 @@
 package org.main;
 
-import java.io.IOException;
+import java.io.*;
 
 import org.features.*;
 
@@ -13,8 +13,16 @@ public class App {
         System.out.println("Nhap so luong tu muon nhap: (sau do nhap them cac tu muon nhap)");
         
         dcl.insertFromFile("english_dictionary/src/main/resources/dictionaries.txt");
-        System.out.println(dcl.getList_word().size());
+        System.out.println("Test");
+        // dcl.dictionaryLookup();
+        // dcl.addUserWordToList();
+        // dcl.insertFromCommandline();
+        // dcl.editWordFromUser();
+        dcl.dictionarySearcher();
+        dcl.deleteWordFromUser();
+        
+        // System.out.println(dcl.getList_word().size());
         dcl.showAllWords();
-        // sc.close();
+
     }
 }

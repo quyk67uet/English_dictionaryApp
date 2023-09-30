@@ -1,33 +1,23 @@
 package org.features;
 
-import java.io.BufferedReader;
-// import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
-public class DictionaryManagement extends Dictionary {
-    private Scanner scanner;
-    private Map<StringBuilder, StringBuilder> word_tuple; 
+public class DictionaryManagement extends Dictionary {   
 
     public DictionaryManagement() {
-        scanner = new Scanner(System.in);
-        word_tuple = new HashMap<>();
-    }
-
-    public Scanner getScanner() {
-        return scanner;
-    }
-
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
+        
     }
 
     public void insertFromCommandline() {
-        int number_of_words = scanner.nextInt();
-        scanner.nextLine();
+        int number_of_words = getScanner().nextInt();
+        getScanner().nextLine();
         while (number_of_words-- > 0) {
-            addList_word(scanner.nextLine(), scanner.nextLine());
+            String englishWord = getScanner().next();
+            String vietnameseWord = getScanner().next();
+            addListWord(englishWord, vietnameseWord);
+            addMapWord(englishWord, vietnameseWord);
+            addFileWord(englishWord, vietnameseWord, "english_dictionary/src/main/resources/dictionaries.txt");
         }
     }
     
@@ -41,7 +31,12 @@ public class DictionaryManagement extends Dictionary {
                 if (word_from_pair.length < 1) {
                     System.out.println("File format error");
                 }
-                else addList_word(word_from_pair[0], word_from_pair[1]);
+                else 
+                {
+                    addListWord(word_from_pair[0], word_from_pair[1]);
+                    addMapWord(word_from_pair[0], word_from_pair[1]);
+                    addFileWord(word_from_pair[0], word_from_pair[1], "english_dictionary/src/main/resources/dictionaries.txt");
+                }
             }
         } catch (IOException e) {
             System.out.println("Having problem with reading from files");
@@ -50,47 +45,68 @@ public class DictionaryManagement extends Dictionary {
 
     public void dictionaryLookup() 
     {
-        if (word_tuple.size() > 0) {
-            word_tuple.clear();
-        }
-        for (int i = 0; i < getList_word().size(); i++) {
-            word_tuple.put(new StringBuilder(getList_word().get(i).getWord_target()), new StringBuilder(getList_word().get(i).getWord_explain()));
-        }
+        System.out.print("Vui long nhap tu ma ban muon tra: ");
+        String userWord = getScanner().nextLine();
 
-        System.out.println("Vui long nhap tu ma ban muon tra: ");
-        StringBuilder userWord = new StringBuilder(scanner.next());
-        for (StringBuilder x : word_tuple.keySet()) {
-            if (x.toString().substring(0, userWord.length()).equals(userWord.toString())) {
-                System.out.println(x);
+        if (!getMapWord().containsKey(userWord)) {
+            System.out.println("Khong tim thay tu duoc nhap vao.");
+        }
+        else
+        {
+            for (int i = 0; i < getMapWord().get(userWord).size(); i++) {
+                System.out.println("Nghia thu " + (i + 1) + " cua tu " + userWord + "la: " + getMapWord().get(userWord).get(i));
             }
         }
     }
 
     public void addUserWordToList() {
         // scanner.nextLine();
-        System.out.println("Nhap tu tieng Anh: ");
-        String englishWord = scanner.nextLine();
-        System.out.println("Nhap tu tieng Viet giai thich nghia cua tu vua roi: ");
-        String vietnameseWord = scanner.nextLine();
-        addList_word(englishWord, vietnameseWord);
+        System.out.print("Nhap tu tieng Anh: ");
+        String englishWord = getScanner().nextLine();
+        System.out.print("Nhap tu tieng Viet giai thich nghia cua tu vua roi: ");
+        String vietnameseWord = getScanner().nextLine();
+        addListWord(englishWord, vietnameseWord);
+        addMapWord(englishWord, vietnameseWord);
+        addFileWord(englishWord, vietnameseWord, "english_dictionary/src/main/resources/dictionaries.txt");
     }
 
     public void editWordFromUser() {
-        System.out.println("Nhap tu tieng Anh: ");
-        String englishWord = scanner.nextLine();
-        System.out.println("Nhap tu tieng Viet thay the nghia cua tu: ");
-        String vietnameseWord = scanner.nextLine();
-        editList_word(englishWord, vietnameseWord);
+        System.out.print("Nhap tu tieng Anh: ");
+        String englishWord = getScanner().nextLine();
+        System.out.print("Nhap tu tieng Viet thay the nghia cua tu: ");
+        String vietnameseWord = getScanner().nextLine();
+        editListWord(englishWord, vietnameseWord);
+        editMapWord(englishWord, vietnameseWord);
+        editFileWord(englishWord, vietnameseWord, "english_dictionary/src/main/resources/dictionaries.txt");
     }
 
     public void deleteWordFromUser() {
-        System.out.println("Nhap tu tieng Anh: ");
-        String englishWord = scanner.nextLine();
+        System.out.print("Nhap tu tieng Anh: ");
+        String englishWord = getScanner().nextLine();
         System.out.println("Ban co chac chan muon xoa tu nay ra khoi tu dien ?");
-        System.out.println("Bam Y de dong y, bam phim bat ki de huy bo");
-        if (scanner.next() == "Y") deleteList_word(englishWord);
+        System.out.print("Bam Y de dong y, bam phim bat ki de huy bo: ");
+        
+        if (getScanner().nextLine().equals("Y")) {
+            deleteListWord(englishWord);
+            deleteMapWord(englishWord);
+            deleteFileWord(englishWord, "english_dictionary/src/main/resources/dictionaries.txt");
+        }        
+    }
+
+    public void dictionarySearcher() {
+        System.out.print("Nhap tu muon tra (co the chi can nhap nhung chu cai dau tien cua tu): ");
+        String userWord = getScanner().nextLine();
+        int count = 0;
+        for (String x : getMapWord().keySet()) {
+            if (x.substring(Dictionary.FIRST_MEANING, userWord.length()).equals(userWord)) {
+                for (int i = 0; i < getMapWord().get(x).size(); i++) {
+                    System.out.println("Cap tu thu " + (count + 1) + " la: " + x + '\t' + getMapWord().get(x).get(i));
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
     }
 
     
-
 }
