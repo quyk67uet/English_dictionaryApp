@@ -1,5 +1,7 @@
 package org.features;
 
+import javafx.concurrent.Worker;
+
 public class Word {
     private String word_target;
     private String word_explain;
@@ -20,6 +22,18 @@ public class Word {
     }
     public void setWord_explain(String word_explain) {
         this.word_explain = word_explain;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj instanceof org.features.Word) {
+            if (((Word) obj).getWord_target() == this.getWord_target() && ((Word) obj).getWord_explain() == this.getWord_explain()) 
+            {   
+                return true;
+            }
+        }
+        return false;
     }
 
 }
