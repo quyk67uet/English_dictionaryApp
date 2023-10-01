@@ -1,9 +1,9 @@
 package org.features;
 
-import java.io.BufferedReader;
+import java.io.*;
 // import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.*;
 
 public class DictionaryManagement extends Dictionary {
@@ -31,22 +31,20 @@ public class DictionaryManagement extends Dictionary {
         }
     }
     
-    public void insertFromFile(String filePath) 
+    /*public void insertFromFile(String filePath)
     {
-        try (BufferedReader buffer_reader = new BufferedReader(new FileReader(filePath))) {
-            while (buffer_reader.ready())
-            {
-                String word_pair = buffer_reader.readLine();
-                String[] word_from_pair = word_pair.split("\t");
-                if (word_from_pair.length < 1) {
-                    System.out.println("File format error");
-                }
-                else addList_word(word_from_pair[0], word_from_pair[1]);
+        File file = new File(filePath) ;
+
+        try {
+            List<String> allText = Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
+            for (String line : allText) {
+                System.out.println(line);
             }
         } catch (IOException e) {
-            System.out.println("Having problem with reading from files");
+            throw new RuntimeException(e);
         }
-    }
+    }*/
+
 
     public void dictionaryLookup() 
     {
@@ -90,7 +88,4 @@ public class DictionaryManagement extends Dictionary {
         System.out.println("Bam Y de dong y, bam phim bat ki de huy bo");
         if (scanner.next() == "Y") deleteList_word(englishWord);
     }
-
-    
-
 }

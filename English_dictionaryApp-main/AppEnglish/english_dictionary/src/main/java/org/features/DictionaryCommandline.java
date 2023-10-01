@@ -1,5 +1,8 @@
 package org.features;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DictionaryCommandline extends DictionaryManagement {
     private static final int COLUMN_NO_WIDTH = 8;
     // private static final int COLUMN_ENGLISH_WIDTH = 16;
@@ -120,5 +123,72 @@ public class DictionaryCommandline extends DictionaryManagement {
     public void dictionaryBasic() {
         super.insertFromCommandline();
         showAllWords();
+    }
+
+    public void dictionarySearcher(String key) {
+
+        for (Word word : getList_word()) {
+            if (word.toString().startsWith(key)) {
+                System.out.println(word);
+            }
+        }
+    }
+
+    public void dictionaryAdvanced() {
+        int check = 0;
+        DictionaryCommandline com = new DictionaryCommandline();
+        do {
+            System.out.println("Welcome to My Application!");
+            System.out.println("[0] Exit\n"
+                                + "[1] Add\n"
+                                + "[2] Remove\n"
+            + "[3] Update\n"
+            + "[4] Display\n"
+            + "[5] Lookup\n"
+            + "[6] Search\n"
+            + "[7] Game\n"
+            + "[8] Import from file\n"
+            + "[9] Export to file\n");
+            System.out.println("Your action: ");
+
+            check = this.getScanner().nextInt();
+            this.getScanner().nextLine();
+
+            if(check == 0) {
+                System.exit(0);
+            } else if (check == 1) {
+                String word_target = this.getScanner().nextLine();
+                String word_explain = this.getScanner().nextLine();
+                
+                com.addList_word(word_target,word_explain);
+            } else if (check == 2) {
+                String word_target = this.getScanner().nextLine();
+                com.deleteList_word(word_target);
+            } else if (check == 3) {
+                String word_target = this.getScanner().nextLine();
+                String word_explain = this.getScanner().nextLine();
+                
+                com.editList_word(word_target,word_explain);
+            } else if (check == 4) {
+                com.showAllWords();
+            } else if (check == 5) {
+                com.dictionaryLookup();
+            } else if (check == 6) {
+                String key = this.getScanner().nextLine();
+                com.dictionarySearcher(key);
+            } else if (check == 7) {
+                System.out.println("Hello");
+            } else if (check == 8) {
+                Word word = new Word();
+                word.docDoiTuong("english_dictionary/src/main/resources/data.txt");
+            } else if (check == 9) {
+                Word word = new Word();
+                word.dictionaryExportToFile("english_dictionary/src/main/resources/data.txt");
+            }
+            else {
+                System.out.println("Action not supported");
+            }
+        }while(check !=0);
+
     }
 }
