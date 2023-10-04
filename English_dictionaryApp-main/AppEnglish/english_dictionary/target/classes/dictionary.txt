@@ -1,0 +1,4 @@
+football : bóng đá
+apple : táo
+pen : bút
+banana : chuối

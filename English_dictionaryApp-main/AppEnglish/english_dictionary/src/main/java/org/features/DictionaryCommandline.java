@@ -125,18 +125,10 @@ public class DictionaryCommandline extends DictionaryManagement {
         showAllWords();
     }
 
-    public void dictionarySearcher(String key) {
-
-        for (Word word : getList_word()) {
-            if (word.toString().startsWith(key)) {
-                System.out.println(word);
-            }
-        }
-    }
-
-    public void dictionaryAdvanced() {
-        int check = 0;
+    public void dictionaryAdvanced() throws Exception {
+        String check = "";
         DictionaryCommandline com = new DictionaryCommandline();
+        Dictionary dictionary = new Dictionary();
         do {
             System.out.println("Welcome to My Application!");
             System.out.println("[0] Exit\n"
@@ -151,44 +143,63 @@ public class DictionaryCommandline extends DictionaryManagement {
             + "[9] Export to file\n");
             System.out.println("Your action: ");
 
-            check = this.getScanner().nextInt();
-            this.getScanner().nextLine();
+            check = this.getScanner().nextLine();
 
-            if(check == 0) {
+
+            if(check.equals("0")) {
                 System.exit(0);
-            } else if (check == 1) {
+            } else if (check.equals("1")) {
+                System.out.println("Mời bạn nhập từ Tiếng Anh: ");
                 String word_target = this.getScanner().nextLine();
+                System.out.println("Mời bạn nhập nghĩa Tiếng Việt của từ này: ");
                 String word_explain = this.getScanner().nextLine();
-                
+
                 com.addList_word(word_target,word_explain);
-            } else if (check == 2) {
+                System.out.println("Bộ từ của bạn đã được thêm! ");
+            } else if (check.equals("2")) {
+                System.out.println("Mời bạn nhập từ Tiếng Anh cần xóa: ");
                 String word_target = this.getScanner().nextLine();
                 com.deleteList_word(word_target);
-            } else if (check == 3) {
+                System.out.println("Bộ từ của bạn đã được xóa");
+
+            } else if (check.equals("3")) {
+                System.out.println("Mời bạn nhập từ Tiếng Anh cần chỉnh sửa: ");
                 String word_target = this.getScanner().nextLine();
+                System.out.println("Mời bạn nhập từ Tiếng Việt cần chỉnh sửa: ");
                 String word_explain = this.getScanner().nextLine();
                 
                 com.editList_word(word_target,word_explain);
-            } else if (check == 4) {
+                System.out.println("Bộ từ của bạn đã được chỉnh sửa!");
+            } else if (check.equals("4")) {
                 com.showAllWords();
-            } else if (check == 5) {
+            } else if (check.equals("5")) {
                 com.dictionaryLookup();
-            } else if (check == 6) {
+            } else if (check.equals("6")) {
+                System.out.println("Mời bạn nhập từ khóa để thực hiện chức năng tìm kiếm: ");
                 String key = this.getScanner().nextLine();
-                com.dictionarySearcher(key);
-            } else if (check == 7) {
-                System.out.println("Hello");
-            } else if (check == 8) {
-                Word word = new Word();
-                word.docDoiTuong("english_dictionary/src/main/resources/data.txt");
-            } else if (check == 9) {
-                Word word = new Word();
-                word.dictionaryExportToFile("english_dictionary/src/main/resources/data.txt");
+                System.out.println("Đây là tất cả những từ có key mà bạn cần tìm: ");
+                com.dictionarySearcher();
+            } else if (check.equals("7")) {
+                while (true) {
+                    System.out.println("Welcome to the Fantastic Game!");
+                    com.VocabularyQuizGame();
+                    System.out.println("Do you want to play again? If you want please press any key to continue... Else press Y to stop the game! ");
+                    String action = getScanner().nextLine();
+                    if (action.equals("Y")) {
+                        break;
+                    }
+                }
+            } else if (check.equals("8")) {
+                com.dictionaryImportFromFile("english_dictionary/src/main/resources/dictionary.txt");
+            } else if (check.equals("9")) {
+
+               com.dictionaryExportToFile();
             }
             else {
                 System.out.println("Action not supported");
+                dictionaryAdvanced();
             }
-        }while(check !=0);
+        }while(check != null);
 
     }
 }

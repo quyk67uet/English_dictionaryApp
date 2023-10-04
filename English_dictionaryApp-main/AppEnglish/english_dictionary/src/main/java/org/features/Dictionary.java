@@ -20,7 +20,7 @@ public class Dictionary {
     public void setList_word(List<Word> list_word) {
         this.list_word = list_word;
     }
-    
+
     public void addList_word(String word_target, String word_explain) {
         list_word.add(new Word(word_target, word_explain));
     }
