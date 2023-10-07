@@ -1,5 +1,7 @@
 package org.features;
 
+import java.util.*;
+
 public class DictionaryCommandline extends DictionaryManagement {
     private static final int COLUMN_NO_WIDTH = 8;
     
@@ -74,5 +76,73 @@ public class DictionaryCommandline extends DictionaryManagement {
         showAllWords();
     }
 
-    
+    public void dictionaryAdvanced() throws Exception {
+        boolean userUse = true;
+        do {
+            try {
+                System.out.println();
+                System.out.println("-----------------------------------------");
+                System.out.println("Welcome to My Application!");
+                System.out.println("[0] Exit\n"
+                                    + "[1] Add\n"
+                                    + "[2] Remove\n"
+                + "[3] Update\n"
+                + "[4] Display\n"
+                + "[5] Lookup\n"
+                + "[6] Search\n"
+                + "[7] Game\n"
+                + "[8] Import from file\n"
+                + "[9] Export to file\n");
+                System.out.print("Your action: ");
+
+                int userAction = getScanner().nextInt();
+                if(userAction == 0) {
+                    userUse = false;
+                    // System.exit(0);
+                } else if (userAction == 1) {
+                    addUserWordToList();
+                } else if (userAction == 2) {
+                    deleteWordFromUser();
+                } else if (userAction == 3) {
+                    editWordFromUser();
+                } else if (userAction == 4) {
+                    showAllWords();
+                } else if (userAction == 5) {
+                    dictionaryLookup();
+                } else if (userAction == 6) {
+                    dictionarySearcher();
+                } else if (userAction == 7) {
+                    while (true) {
+                        System.out.println("Welcome to the Fantastic Game!");
+                        VocabularyQuizGame();
+                        System.out.println("Do you want to play again? If you want please press Y to continue... Otherwise press othes to stop the game! ");
+                        String action = getScanner().nextLine();
+                        if (!action.equals("Y")) {
+                            break;
+                        }
+                    }
+                } else if (userAction == 8) {
+                    insertFromUserFile();
+                } else if (userAction == 9) {
+                    dictionaryExportToFile();
+                }
+                else {
+                    System.out.println("Action not supported.");
+                    System.out.print("If you want to exit, press Y. Otherwise, press any other key: ");
+                    String userException = getScanner().next();
+                    if (userException.equals("Y")) {
+                        userUse = false;
+                    }
+                }
+            } catch (Exception e) {
+                // TODO: handle exception
+                System.out.println("Wrong input datatype.");
+                System.out.print("If you want to exit, press Y. Otherwise, press any other key: ");
+                String userException = getScanner().next();
+                if (userException.equals("Y")) {
+                    userUse = false;
+                }
+            }   
+        } while(userUse);
+    }
 }

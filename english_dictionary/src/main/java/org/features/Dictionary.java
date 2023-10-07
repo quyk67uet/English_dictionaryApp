@@ -8,6 +8,7 @@ public class Dictionary {
     private Scanner scanner;
     private List<Word> listWord;
     private Map<String, List<String>> mapWord; 
+    
 
     public Dictionary() {
         listWord = new ArrayList<Word>();
