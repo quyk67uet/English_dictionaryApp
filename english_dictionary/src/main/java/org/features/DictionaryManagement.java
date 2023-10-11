@@ -3,10 +3,10 @@ package org.features;
 import java.io.*;
 import java.util.*;
 
-public class DictionaryManagement extends Dictionary {   
+public class DictionaryManagement extends Dictionary {
 
     public DictionaryManagement() {
-        
+
     }
 
     public void insertFromCommandline() {
@@ -21,8 +21,8 @@ public class DictionaryManagement extends Dictionary {
             addFileWord(englishWord, vietnameseWord, "english_dictionary/src/main/resources/dictionaries.txt");
         }
     }
-    
-    public void insertFromDefaultFile(String filePath) 
+
+    public void insertFromDefaultFile(String filePath)
     {
         try (BufferedReader buffer_reader = new BufferedReader(new FileReader(filePath))) {
             while (buffer_reader.ready())
@@ -32,7 +32,7 @@ public class DictionaryManagement extends Dictionary {
                 if (word_from_pair.length < 1) {
                     System.out.println("File format error");
                 }
-                else 
+                else
                 {
                     addListWord(word_from_pair[0], word_from_pair[1]);
                     addMapWord(word_from_pair[0], word_from_pair[1]);
@@ -53,26 +53,26 @@ public class DictionaryManagement extends Dictionary {
         if (getScanner().nextLine().equals("Y")) {
             System.out.print("Please specify filePath: ");
             try (BufferedReader buffer_reader = new BufferedReader(new FileReader(getScanner().nextLine()))) {
-            while (buffer_reader.ready())
-            {
-                String word_pair = buffer_reader.readLine();
-                String[] word_from_pair = word_pair.split("\t");
-                if (word_from_pair.length < 1) {
-                    System.out.println("File format error");
-                }
-                else 
+                while (buffer_reader.ready())
                 {
-                    addListWord(word_from_pair[0], word_from_pair[1]);
-                    addMapWord(word_from_pair[0], word_from_pair[1]);
-                    // addFileWord(word_from_pair[0], word_from_pair[1], "english_dictionary/src/main/resources/dictionaries.txt");
+                    String word_pair = buffer_reader.readLine();
+                    String[] word_from_pair = word_pair.split("\t");
+                    if (word_from_pair.length < 1) {
+                        System.out.println("File format error");
+                    }
+                    else
+                    {
+                        addListWord(word_from_pair[0], word_from_pair[1]);
+                        addMapWord(word_from_pair[0], word_from_pair[1]);
+                        // addFileWord(word_from_pair[0], word_from_pair[1], "english_dictionary/src/main/resources/dictionaries.txt");
+                    }
                 }
-            }
             } catch (IOException e) {
                 System.out.println("Having problem with reading from files");
             }
         }
     }
-    public void dictionaryLookup() 
+    public void dictionaryLookup()
     {
         System.out.print("Vui long nhap tu ma ban muon tra: ");
         getScanner().nextLine();
@@ -120,13 +120,13 @@ public class DictionaryManagement extends Dictionary {
         String englishWord = getScanner().nextLine();
         System.out.println("Ban co chac chan muon xoa tu nay ra khoi tu dien ?");
         System.out.print("Bam Y de dong y, bam phim bat ki de huy bo: ");
-        
+
         if (getScanner().nextLine().equals("Y")) {
             deleteListWord(englishWord);
             deleteMapWord(englishWord);
             deleteFileWord(englishWord, "english_dictionary/src/main/resources/dictionaries.txt");
             System.out.println("Bo tu cua ban da duoc xoa.");
-        }        
+        }
     }
 
     public void dictionarySearcher() {

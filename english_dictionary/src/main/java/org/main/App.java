@@ -1,44 +1,32 @@
 package org.main;
 
-import java.io.*;
+import java.io.IOException;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.features.*;
 
-public class App {
-    public static void main(String[] args) throws IOException {
-        try {
-            DictionaryCommandline dcl = new DictionaryCommandline();
-       
-            //Scanner sc = new Scanner(System.in);
-            System.out.println("*** Test nhap string: ");
-            System.out.println("Nhap so luong tu muon nhap: (sau do nhap them cac tu muon nhap)");
-            
-            dcl.insertFromDefaultFile("english_dictionary/src/main/resources/dictionaries.txt");
-            // dcl.showAllWords();
-            System.out.println("----------------");;
-            System.out.println("Test");
-            // dcl.dictionaryLookup();
-            // dcl.addUserWordToList();
-            // dcl.insertFromCommandline();
-            // for (int i = 0; i < dcl.getListWord().size(); i++) {
-            //     System.out.print(dcl.getListWord().get(i).getWord_target() + " " + dcl.getListWord().get(i).getWord_explain());
-            //     System.out.println();
-            // }
-            // dcl.editWordFromUser();
-            // dcl.dictionarySearcher();
-            // dcl.dictionaryExportToFile();
-            // dcl.deleteWordFromUser();
-            // dcl.dictionaryLookup();
-            // dcl.editWordFromUser();                                  -- Không nhập được tiếng Việt
-            dcl.dictionaryAdvanced();
-            // System.out.println(dcl.getList_word().size());
-            // dcl.dictionaryBasic();
-            dcl.showAllWords();    
-        } catch (Exception e) {
-            // TODO: handle exception
-            System.out.println("Exiting...");
-        }
-        
+public class App extends Application {
+   /* public static void main(String[] args) throws Exception {
+        DictionaryCommandline commandline = new DictionaryCommandline();
+        commandline.dictionaryAdvanced();
 
+    }*/
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/DictionaryGUI.fxml"));
+        stage.setTitle("Dictionary Application");
+        stage.initStyle(StageStyle.TRANSPARENT);
+
+        Scene scene = new Scene(root);
+        scene.setFill(Color.TRANSPARENT);
+        stage.setScene(scene);
+        stage.show();
     }
 }
