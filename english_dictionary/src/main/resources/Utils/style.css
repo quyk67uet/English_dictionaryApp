@@ -2,7 +2,7 @@
     src: url("fonts/Poppins-Regular.ttf"),
 }
 .root{
-     -fx-background-color: linear-gradient(to top right,#87CEEB, #00BFFF);
+     -fx-background-color: linear-gradient(to top right,#4682B4, #4682B4);
      -fx-background-radius: 5;
      -fx-border-radius: 5;
 }

@@ -9,8 +9,65 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="829.0" styleClass="root" stylesheets="@../Utils/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DictionaryController">
    <children>
-      <AnchorPane fx:id="container" layoutX="77.0" layoutY="9.0" prefHeight="620.0" prefWidth="738.0" styleClass="container" stylesheets="@../Utils/style.css" />
-      <Button fx:id="search_button" alignment="BASELINE_LEFT" contentDisplay="GRAPHIC_ONLY" layoutX="13.0" layoutY="105.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="47.0" text="Search">
+      <AnchorPane fx:id="container" layoutX="14.0" layoutY="10.0" prefHeight="620.0" prefWidth="738.0" styleClass="container" stylesheets="@../Utils/style.css" />
+      <Button fx:id="exit_button" contentDisplay="GRAPHIC_ONLY" layoutX="770.0" layoutY="582.0" mnemonicParsing="false" styleClass="root" text="Exit">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/icons/exit_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip fx:id="tooltip3" text="Thoát" />
+         </tooltip>
+      </Button>
+      <Button fx:id="info_button" contentDisplay="GRAPHIC_ONLY" layoutX="768.0" layoutY="512.0" mnemonicParsing="false" styleClass="root" text="About me">
+         <graphic>
+            <ImageView fitHeight="58.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/icons/info_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="game_button" contentDisplay="GRAPHIC_ONLY" layoutX="768.0" layoutY="434.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="47.0" styleClass="root" text="Game">
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/icons/game_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Game" />
+         </tooltip>
+      </Button>
+      <Button fx:id="add_button" contentDisplay="GRAPHIC_ONLY" layoutX="768.0" layoutY="365.0" mnemonicParsing="false" styleClass="root" text="Add">
+         <graphic>
+            <ImageView fitHeight="59.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/icons/add_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip fx:id="tooltip2" text="Thêm từ vựng mới" />
+         </tooltip>
+      </Button>
+      <Button fx:id="translate_button" contentDisplay="GRAPHIC_ONLY" layoutX="766.0" layoutY="285.0" mnemonicParsing="false" styleClass="root" text="Translate">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/icons/translate_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip fx:id="tooltip4" text="Dịch" />
+         </tooltip>
+      </Button>
+      <Button fx:id="search_button" alignment="BASELINE_LEFT" contentDisplay="GRAPHIC_ONLY" layoutX="768.0" layoutY="212.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="47.0" styleClass="root" text="Search">
          <graphic>
             <ImageView fitHeight="27.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -25,74 +82,30 @@
             <Tooltip fx:id="tooltip1" text="Tra từ điển" />
          </tooltip>
       </Button>
-      <Button fx:id="add_button" contentDisplay="GRAPHIC_ONLY" layoutX="13.0" layoutY="166.0" mnemonicParsing="false" text="Add">
-         <graphic>
-            <ImageView fitHeight="59.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Utils/icons/add_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip fx:id="tooltip2" text="Thêm từ vựng mới" />
-         </tooltip>
-      </Button>
-      <Button fx:id="translate_button" contentDisplay="GRAPHIC_ONLY" layoutX="11.0" layoutY="236.0" mnemonicParsing="false" text="Translate">
-         <graphic>
-            <ImageView fitHeight="35.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Utils/icons/translate_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip fx:id="tooltip4" text="Dịch" />
-         </tooltip>
-      </Button>
-      <Button fx:id="game_button" contentDisplay="GRAPHIC_ONLY" layoutX="13.0" layoutY="307.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="47.0" text="Game">
-         <graphic>
-            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Utils/icons/game_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip text="Game" />
-         </tooltip>
-      </Button>
-      <Button fx:id="history_button" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="373.0" mnemonicParsing="false" text="History">
-         <graphic>
-            <ImageView fitHeight="29.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Utils/icons/history_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip text="Lịch sử tra cứu" />
-         </tooltip>
-      </Button>
-      <Button fx:id="exit_button" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="437.0" mnemonicParsing="false" text="Exit">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Utils/icons/exit_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip fx:id="tooltip3" text="Thoát" />
-         </tooltip>
-      </Button>
-      <Button contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="498.0" mnemonicParsing="false" text="About me">
-         <graphic>
-            <ImageView fx:id="info_button" fitHeight="58.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Utils/icons/info_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      <ImageView fitHeight="69.0" fitWidth="67.0" layoutX="759.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/UET_logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="85.0" fitWidth="67.0" layoutX="758.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/images/computer_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="97.0" fitWidth="106.0" layoutX="742.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Users/Admin/Downloads/IC2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="67.0" layoutX="759.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Users/Admin/Downloads/IC1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="67.0" layoutX="758.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Users/Admin/Downloads/IC1.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
