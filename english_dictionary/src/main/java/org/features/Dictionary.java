@@ -7,15 +7,15 @@ public class Dictionary {
     protected static final int FIRST_MEANING = 0;
     private Scanner scanner;
     private List<Word> listWord;
-    private Map<String, List<String>> mapWord;
-
+    private Map<String, List<String>> mapWord; 
+    
 
     public Dictionary() {
         listWord = new ArrayList<Word>();
         this.scanner = new Scanner(System.in);
         mapWord = new HashMap<>();
     }
-
+    
     public Dictionary(List<Word> listWord) {
         this.listWord = listWord;
     }
@@ -35,7 +35,7 @@ public class Dictionary {
     public void setScanner(Scanner scanner) {
         this.scanner = scanner;
     }
-
+    
     public Map<String, List<String>> getMapWord() {
         return mapWord;
     }
@@ -43,7 +43,7 @@ public class Dictionary {
     public void setMapWord(Map<String, List<String>> mapWord) {
         this.mapWord = mapWord;
     }
-
+    
     public void addListWord(String word_target, String word_explain) {
         listWord.add(new Word(word_target, word_explain));
     }
@@ -53,12 +53,12 @@ public class Dictionary {
             if (!mapWord.get(word_target).contains(word_explain)) {
                 mapWord.get(word_target).add(word_explain);
             }
-            else
+            else 
             {
                 System.out.println("Da co nghia nay, vui long khong nhap lai.");
             }
         }
-        else
+        else 
         {
             List<String> word_Explain = new ArrayList<>();
             word_Explain.add(word_explain);
@@ -73,7 +73,7 @@ public class Dictionary {
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println("Having problem in writing to files");
-        }
+        } 
     }
 
     public void editListWord(String word_target, String word_explain_new) {
@@ -86,7 +86,7 @@ public class Dictionary {
     }
 
     public void editMapWord(String word_target, String word_explain_new) {
-        mapWord.get(word_target).set(FIRST_MEANING, word_explain_new);
+        mapWord.get(word_target).set(FIRST_MEANING, word_explain_new);   
     }
 
     public void editFileWord(String word_target, String word_explain_new, String filePath) {

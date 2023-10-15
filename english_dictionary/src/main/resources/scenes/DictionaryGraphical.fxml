@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="829.0" styleClass="root" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.DictionaryController">
+   <children>
+      <AnchorPane fx:id="container" layoutX="77.0" layoutY="9.0" prefHeight="620.0" prefWidth="738.0" styleClass="container" stylesheets="@../assets/style.css" />
+      <Button fx:id="searchButton" alignment="BASELINE_LEFT" contentDisplay="GRAPHIC_ONLY" layoutX="13.0" layoutY="105.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="47.0" text="Search">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/search_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <tooltip>
+            <Tooltip fx:id="tooltip1" text="Tra từ điển" />
+         </tooltip>
+      </Button>
+      <Button fx:id="addButton" contentDisplay="GRAPHIC_ONLY" layoutX="13.0" layoutY="166.0" mnemonicParsing="false" text="Add">
+         <graphic>
+            <ImageView fitHeight="59.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/add_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip fx:id="tooltip2" text="Thêm từ vựng mới" />
+         </tooltip>
+      </Button>
+      <Button fx:id="translateButton" contentDisplay="GRAPHIC_ONLY" layoutX="11.0" layoutY="236.0" mnemonicParsing="false" text="Translate">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/translate_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip fx:id="tooltip4" text="Dịch" />
+         </tooltip>
+      </Button>
+      <Button fx:id="gameButton" contentDisplay="GRAPHIC_ONLY" layoutX="13.0" layoutY="307.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="47.0" text="Game">
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/game_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Game" />
+         </tooltip>
+      </Button>
+      <Button fx:id="historyButton" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="373.0" mnemonicParsing="false" text="History">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/history_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Lịch sử tra cứu" />
+         </tooltip>
+      </Button>
+      <Button fx:id="exitButton" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="437.0" mnemonicParsing="false" text="Exit">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/exit_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip fx:id="tooltip3" text="Thoát" />
+         </tooltip>
+      </Button>
+      <Button fx:id="aboutUs" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="498.0" mnemonicParsing="false" text="About me">
+         <graphic>
+            <ImageView fx:id="info_button" fitHeight="58.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/info_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

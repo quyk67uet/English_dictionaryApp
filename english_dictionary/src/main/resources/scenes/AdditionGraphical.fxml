@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="601.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="104.0" prefWidth="665.0">
+         <children>
+            <Pane layoutX="155.0" layoutY="11.0" prefHeight="82.0" prefWidth="372.0">
+               <children>
+                  <Label layoutX="27.0" layoutY="14.0" text="Success is a journey not a destination" textFill="#197cfd">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="-7.0" layoutY="45.0" prefHeight="20.0" prefWidth="435.0" text="(Thành công là một cuộc hành trình chứ không phải là điểm đến)" textFill="#8311c9">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fitHeight="97.0" fitWidth="98.0" layoutX="28.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/champion.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="104.0" fitWidth="93.0" layoutX="608.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/global.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="463.0" layoutY="84.0" text="- Nguyễn Chí Trung-" textFill="#1f3dac">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="-3.0" layoutY="104.0" prefHeight="442.0" prefWidth="672.0">
+         <children>
+            <Pane prefHeight="49.0" prefWidth="672.0">
+               <children>
+                  <Label layoutX="86.0" layoutY="22.0" prefHeight="17.0" prefWidth="191.0" text="Thêm từ vựng mới">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="49.0" fitWidth="79.0" layoutX="39.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/add.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="74.0" fitWidth="191.0" layoutX="284.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/best.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <TextField layoutX="47.0" layoutY="94.0" prefHeight="25.0" prefWidth="304.0" />
+            <TextArea layoutX="48.0" layoutY="160.0" prefHeight="214.0" prefWidth="304.0" />
+            <Label layoutX="48.0" layoutY="66.0" text="Từ Tiếng Anh" textFill="#1a2faa">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="124.0" text="Dịch nghĩa" textFill="#8013d9">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="72.0" layoutY="387.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="71.0" text="Button">
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/add_button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="345.0" fitWidth="267.0" layoutX="430.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/dictionary_factory.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="74.0" fitWidth="87.0" layoutX="259.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/success.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="178.0" layoutX="505.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/luck.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
