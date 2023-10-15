@@ -21,7 +21,7 @@ public class DictionaryController implements Initializable {
     private Tooltip tooltip1, tooltip2, tooltip3, tooltip4;
 
     @FXML
-    private Button add_button, translate_button, search_button, exit_button, game_button;
+    private Button add_button, translate_button, search_button, exit_button, game_button, info_button;
 
     @FXML
     private AnchorPane container;
@@ -68,6 +68,13 @@ public class DictionaryController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 showComponent("/Views/GameGUI.fxml");
+            }
+        });
+
+        info_button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                showComponent("/Views/AboutMeGUI.fxml");
             }
         });
 
