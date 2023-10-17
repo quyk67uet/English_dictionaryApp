@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
@@ -18,8 +19,10 @@ import java.util.ResourceBundle;
 
 public class DictionaryController implements Initializable {
     @FXML
-    private Tooltip tooltip1, tooltip2, tooltip3, tooltip4;
+    private Tooltip tooltip1, tooltip2, tooltip3, tooltip4, tooltip5, tooltip6;
 
+    @FXML
+    TextArea textArea;
     @FXML
     private Button add_button, translate_button, search_button, exit_button, game_button, info_button;
 
@@ -82,6 +85,10 @@ public class DictionaryController implements Initializable {
         tooltip2.setShowDelay(Duration.seconds(0.5));
         tooltip3.setShowDelay(Duration.seconds(0.5));
         tooltip4.setShowDelay(Duration.seconds(0.5));
+        tooltip5.setShowDelay(Duration.seconds(0.5));
+        tooltip6.setShowDelay(Duration.seconds(0.5));
+
+        textArea.setWrapText(true);
         showComponent("/Views/SearchGUI.fxml");
 
         exit_button.setOnMouseClicked(e -> {
