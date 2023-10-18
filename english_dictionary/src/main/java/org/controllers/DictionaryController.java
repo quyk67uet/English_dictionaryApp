@@ -19,10 +19,10 @@ import java.util.ResourceBundle;
 public class DictionaryController implements Initializable {
     
     @FXML
-    private Tooltip tooltip1, tooltip2, tooltip3, tooltip4;
+    private Tooltip addWordsTooltip, exitTooltip, gameTooltip, googleTranslateTooltip, aboutUsTooltip, searchTooltip;
 
     @FXML
-    private Button addButton, translateButton, searchButton, exitButton, gameButton;
+    private Button addWordsButton, exitButton, gameButton, googleTranslateButton, infoButton, searchButton;
 
     @FXML
     private AnchorPane container;
@@ -52,19 +52,21 @@ public class DictionaryController implements Initializable {
             }
         });
 
-        addButton.setOnAction(new EventHandler<ActionEvent>() {
+        googleTranslateButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                showComponent("/scenes/TranslationGraphical.fxml");
+            }
+        });
+        
+        addWordsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 showComponent("/scenes/AdditionGraphical.fxml");
             }
         });
 
-        translateButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                showComponent("/scenes/TranslationGraphical.fxml");
-            }
-        });
+        
 
         gameButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -73,10 +75,19 @@ public class DictionaryController implements Initializable {
             }
         });
 
-        tooltip1.setShowDelay(Duration.seconds(0.5));
-        tooltip2.setShowDelay(Duration.seconds(0.5));
-        tooltip3.setShowDelay(Duration.seconds(0.5));
-        tooltip4.setShowDelay(Duration.seconds(0.5));
+        infoButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                showComponent("/scenes/AboutUsGraphical.fxml");
+            }
+        });
+
+        addWordsTooltip.setShowDelay(Duration.seconds(0.5));
+        exitTooltip.setShowDelay(Duration.seconds(0.5));
+        gameTooltip.setShowDelay(Duration.seconds(0.5));
+        googleTranslateTooltip.setShowDelay(Duration.seconds(0.5));
+        aboutUsTooltip.setShowDelay(Duration.seconds(0.5));
+        searchTooltip.setShowDelay(Duration.seconds(0.5));
         showComponent("/scenes/SearchGraphical.fxml");
 
         // exitButton.setOnMouseClicked(e -> {
