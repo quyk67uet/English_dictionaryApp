@@ -1,4 +1,4 @@
-# ---------------------Dictionary Application------------------------
+# ---------------Dictionary Application----------------
 
 
 ## Developers
