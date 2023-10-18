@@ -37,4 +37,4 @@ Bài tập lớn lập trình hướng đối tượng lớp INT2204 UET - Ứng
 - Bước 5: Vào Modify options chọn Add VM options sau đó copy paste mã này vào và phải thay đổi nội dung phần path:
   --module-path "tại đây vào nơi bạn lưu trữ file javafx-sdk-20.0.2, vào mục lib và copy đường dẫn tại đó" --add-modules javafx.controls,javafx.fxml
 
-# -Thank you and wish you have a good experience with our project-
+# -Thank you and wish you have a good experience with OUR PROJECT-
