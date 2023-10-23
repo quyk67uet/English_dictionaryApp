@@ -1,0 +1,22 @@
+scale beam 	
+machinability test	
+ledger 	
+machinability test	
+scale beam 	
+machinability test	
+assumed load 	
+scale beam 	
+scaffolding joint with chain (lashing, whip, bond)	
+scale model test	
+sand-blasted concrete 	
+structural test	
+sand-blasted concrete 	
+scaffolding joint with chain (lashing, whip, bond)	
+scale beam 	
+deformation test	
+dead load 	
+deflection test	
+draw beam 	
+draw beam 	
+deformation test	
+scaffolding joint with chain (lashing, whip, bond)	
