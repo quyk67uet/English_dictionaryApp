@@ -20,7 +20,7 @@ public class TranslationController implements Initializable {
     private TextArea englishTextArea, vietnameseTextArea;
 
     // @FXML
-    // private void changeLanguageButtonEvent() {
+    // public void changeLanguageButtonEvent() {
     //     changeLanguageButton.setOnAction(new EventHandler<ActionEvent>() {
     //         @Override
     //         public void handle(ActionEvent arg0) {
@@ -30,54 +30,48 @@ public class TranslationController implements Initializable {
     //     });
     // }
 
-    @FXML
-    private void translateButtonEvent() {
-        translateButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent arg0) {
-                // TODO Auto-generated method stub
-            }
+    // @FXML
+    // public void translateButtonEvent() {
+    //     translateButton.setOnAction(new EventHandler<ActionEvent>() {
+    //         @Override
+    //         public void handle(ActionEvent arg0) {
+    //             // TODO Auto-generated method stub
+    //         }
             
-        });
-    }
+    //     });
+    // }
 
-    @FXML
-    public void englishTextAreaEvent() {
-        englishTextArea.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                // TODO Auto-generated method stub
+    // @FXML
+    // public void englishTextAreaEvent() {
+    //     englishTextArea.textProperty().addListener(new ChangeListener<String>() {
+    //         @Override
+    //         public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+    //             // TODO Auto-generated method stub
 
-            }
+    //         }
             
-        });
-    }
+    //     });
+    // }
 
-    @FXML
-    public void vietnameseTextAreaEvent() {
-        vietnameseTextArea.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                // TODO Auto-generated method stub
+    // @FXML
+    // public void vietnameseTextAreaEvent() {
+    //     vietnameseTextArea.textProperty().addListener(new ChangeListener<String>() {
+    //         @Override
+    //         public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+    //             // TODO Auto-generated method stub
 
-            }
+    //         }
             
-        });
-    }
+    //     });
+    // }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        changeLanguageButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent arg0) {
-                // TODO Auto-generated method stub
-            }
-            
+        
+        changeLanguageButton.setOnAction(event -> {
+            System.out.println("Hoi lam gi");
         });
-        // changeLanguageButtonEvent();
-        // translateButtonEvent();
-        // englishTextAreaEvent();
-        // vietnameseTextAreaEvent();
+        
     }
     
     

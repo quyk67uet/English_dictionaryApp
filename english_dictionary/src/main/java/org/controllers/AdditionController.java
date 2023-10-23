@@ -27,44 +27,52 @@ public class AdditionController implements Initializable {
     @FXML
     private TextArea vietnameseTextArea;
 
-    public void addWordsButtonEvent() {
-        addWordsButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent arg0) {
-                // TODO Auto-generated method stub
-            }
+    // public void addWordsButtonEvent() {
+    //     addWordsButton.setOnAction(new EventHandler<ActionEvent>() {
+    //         @Override
+    //         public void handle(ActionEvent arg0) {
+    //             // TODO Auto-generated method stub
+    //         }
             
-        });
-    }
+    //     });
+    // }
 
-    public void englishTextFieldEvent() {
-        englishTextField.textProperty().addListener(new ChangeListener<String>() {
+    // public void englishTextFieldEvent() {
+    //     englishTextField.textProperty().addListener(new ChangeListener<String>() {
 
-            @Override
-            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'changed'");
-            }
+    //         @Override
+    //         public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+    //             // TODO Auto-generated method stub
+    //             throw new UnsupportedOperationException("Unimplemented method 'changed'");
+    //         }
             
-        });
-    }
+    //     });
+    // }
 
-    public void vietnameseTextAreaEvent() {
-        vietnameseTextArea.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                // TODO Auto-generated method stub
+    // public void vietnameseTextAreaEvent() {
+    //     vietnameseTextArea.textProperty().addListener(new ChangeListener<String>() {
+    //         @Override
+    //         public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+    //             // TODO Auto-generated method stub
 
-            }
-        });
-    }
+    //         }
+    //     });
+    // }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         // Kiểm tra điều kiện gì đó thì mới cần thêm notification
-        addWordsButtonEvent();
-        englishTextFieldEvent();
-        vietnameseTextAreaEvent();
+        // addWordsButtonEvent();
+        // englishTextFieldEvent();
+        // vietnameseTextAreaEvent();
+        
+
+        successNotification.setVisible(false);
+
+        addWordsButton.setOnAction(event -> {
+            System.out.println("Add word test");
+            successNotification.setVisible(true);
+        });
     }
     
 }

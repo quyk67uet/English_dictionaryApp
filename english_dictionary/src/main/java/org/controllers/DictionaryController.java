@@ -27,59 +27,102 @@ public class DictionaryController implements Initializable {
     @FXML
     private AnchorPane container;
 
-    @FXML
-    private void setNode(Node node) {
-        container.getChildren().clear();
-        container.getChildren().add(node);
-    }
+    // @FXML
+    // public void setNode(Node node) {
+    //     container.getChildren().clear();
+    //     container.getChildren().add(node);
+    // }
 
+    // @FXML
+    // public void showComponent(String path) {
+    //     try {
+    //         URL location = getClass().getResource(path);
+    //         if (location == null) {
+    //             System.out.println("Null detected!");
+    //         }
+    //         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+    //         AnchorPane component = loader.load();
+    //         // loader.getController();
+    //         setNode(component);
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+    
     @FXML
-    private void showComponent(String path) {
+    public void searchFeatures() {
         try {
-            AnchorPane component = FXMLLoader.load(getClass().getResource(path));
-            setNode(component);
-        } catch (IOException e) {
+            container.getChildren().clear();
+            Node searchNode = new FXMLLoader(getClass().getResource("/scenes/SearchGraphical.fxml")).load();
+            container.getChildren().add(searchNode);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    @FXML
+    public void translateFeatures() {
+        try {
+            container.getChildren().clear();
+            Node translateNode = new FXMLLoader(getClass().getResource("/scenes/TranslationGraphical.fxml")).load();
+            container.getChildren().add(translateNode);
+            System.out.println("Success");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void addWordFeatures() {
+        try {
+            container.getChildren().clear();
+            Node addWordNode = new FXMLLoader(getClass().getResource("/scenes/AdditionGraphical.fxml")).load();
+            container.getChildren().add(addWordNode);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    // @FXML
+    // public void searchFeatures() {
+    //     try {
+    //         container.getChildren().clear();
+    //         Node searchNode = new FXMLLoader(getClass().getResource("/scenes/SearchGraphical.fxml")).load();
+    //         container.getChildren().add(searchNode);
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+    // @FXML
+    // public void searchFeatures() {
+    //     try {
+    //         container.getChildren().clear();
+    //         Node searchNode = new FXMLLoader(getClass().getResource("/scenes/SearchGraphical.fxml")).load();
+    //         container.getChildren().add(searchNode);
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+    // @FXML
+    // public void searchFeatures() {
+    //     try {
+    //         container.getChildren().clear();
+    //         Node searchNode = new FXMLLoader(getClass().getResource("/scenes/SearchGraphical.fxml")).load();
+    //         container.getChildren().add(searchNode);
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        searchButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                showComponent("/scenes/SearchGraphical.fxml");
-            }
+        searchButton.setOnAction(event -> {
+            searchFeatures();
         });
-
-        googleTranslateButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                showComponent("/scenes/TranslationGraphical.fxml");
-            }
+        googleTranslateButton.setOnAction(event -> {
+            translateFeatures();
         });
-        
-        addWordsButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                showComponent("/scenes/AdditionGraphical.fxml");
-            }
-        });
-
-        
-
-        gameButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                showComponent("/scenes/GameGraphical.fxml");
-            }
-        });
-
-        infoButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                showComponent("/scenes/AboutUsGraphical.fxml");
-            }
+        addWordsButton.setOnAction(event -> {
+            addWordFeatures();
         });
 
         addWordsTooltip.setShowDelay(Duration.seconds(0.5));
@@ -88,7 +131,6 @@ public class DictionaryController implements Initializable {
         googleTranslateTooltip.setShowDelay(Duration.seconds(0.5));
         aboutUsTooltip.setShowDelay(Duration.seconds(0.5));
         searchTooltip.setShowDelay(Duration.seconds(0.5));
-        showComponent("/scenes/SearchGraphical.fxml");
 
         // exitButton.setOnMouseClicked(e -> {
         //     System.exit(0);
