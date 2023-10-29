@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="APane" prefHeight="600.0" prefWidth="720.0" styleClass="root" stylesheets="@../StyleCSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="275.0" layoutY="333.0" onAction="#closeApp" prefHeight="61.0" prefWidth="94.0">
+         <graphic>
+            <ImageView fitHeight="73.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/stop_button.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
+      <JFXButton fx:id="start_button" contentDisplay="GRAPHIC_ONLY" layoutX="275.0" layoutY="221.0" onAction="#startAction" prefHeight="36.0" prefWidth="71.0" text="Easy" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="69.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/start_button.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="129.0" fitWidth="577.0" layoutX="91.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/dictionary_Q.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="339.0" layoutX="217.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/welcomeQ.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="147.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/bot0.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="188.0" fitWidth="200.0" layoutX="444.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/bot8.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="206.0" fitWidth="186.0" layoutX="36.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/bot9.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="121.0" layoutX="571.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/bot4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="544.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/quiz2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="27.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/quiz_icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
