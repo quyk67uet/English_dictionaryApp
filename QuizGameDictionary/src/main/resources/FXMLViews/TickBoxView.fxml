@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="611.0" prefWidth="840.0" styleClass="root" stylesheets="@../StyleCSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TickBoxController">
+   <children>
+      <AnchorPane fx:id="quizView" layoutX="39.0" layoutY="232.0" prefHeight="353.0" prefWidth="569.0" />
+      <AnchorPane fx:id="countDown" layoutX="87.0" layoutY="183.0" prefHeight="44.0" prefWidth="185.0" />
+      <Pane layoutX="626.0" layoutY="232.0" prefHeight="353.0" prefWidth="200.0" styleClass="border" stylesheets="@../StyleCSS/borderC.css">
+         <children>
+            <VBox layoutX="130.0" layoutY="46.0" prefHeight="295.0" prefWidth="75.0">
+               <children>
+                  <JFXButton fx:id="q6" onAction="#q6Action" prefHeight="44.0" prefWidth="49.0" style="-fx-border-color: #696969;" text="6">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="q7" onAction="#q7Action" prefHeight="44.0" prefWidth="50.0" style="-fx-border-color: #696969;" text="7">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="q8" onAction="#q8Action" prefHeight="44.0" prefWidth="50.0" style="-fx-border-color: #696969;" text="8">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="q9" onAction="#q9Action" prefHeight="44.0" prefWidth="51.0" style="-fx-border-color: #696969;" text="9">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="q10" onAction="#q10Action" prefHeight="44.0" prefWidth="51.0" style="-fx-border-color: #696969;" text="10">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <Label layoutX="32.0" layoutY="2.0" text="Quiz Progress" textFill="#043757">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <VBox layoutX="7.0" layoutY="46.0" prefHeight="295.0" prefWidth="75.0">
+               <children>
+                  <JFXButton fx:id="q1" onAction="#q1Action" prefHeight="44.0" prefWidth="48.0" style="-fx-border-color: #696969;" text="1">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="q2" onAction="#q2Action" prefHeight="44.0" prefWidth="49.0" style="-fx-border-color: #696969;" text="2">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="q3" onAction="#q3Action" prefHeight="44.0" prefWidth="49.0" style="-fx-border-color: #696969;" text="3">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="q4" onAction="#q4Action" prefHeight="44.0" prefWidth="51.0" style="-fx-border-color: #696969;" text="4">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="q5" onAction="#q5Action" prefHeight="44.0" prefWidth="52.0" style="-fx-border-color: #696969;" text="5">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <ImageView fitHeight="64.0" fitWidth="73.0" layoutX="28.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/clock.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="211.0" fitWidth="475.0" layoutX="228.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/QuizTest.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="171.0" fitWidth="136.0" layoutX="658.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/bot10.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="163.0" fitWidth="169.0" layoutX="46.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/bot14.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="83.0" layoutX="585.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/bot1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="117.0" layoutX="719.0" layoutY="551.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/bot3.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="homeQ_button" contentDisplay="GRAPHIC_ONLY" layoutX="750.0" onAction="#goToHomeQ" text="HomeQ">
+         <graphic>
+            <ImageView fitHeight="75.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/home_button.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip fx:id="tooltipE" text="Go to Home" />
+         </tooltip>
+      </JFXButton>
+   </children>
+</AnchorPane>

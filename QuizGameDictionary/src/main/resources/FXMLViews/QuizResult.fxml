@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="720.0" styleClass="root" stylesheets="@../StyleCSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QuizResultController">
+   <children>
+      <ScrollPane layoutX="136.0" layoutY="222.0" prefHeight="489.0" prefWidth="690.0" stylesheets="@../StyleCSS/ScrollPane.css" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <content>
+            <VBox fx:id="questionContainer" prefHeight="488.0" prefWidth="668.0" />
+         </content>
+      </ScrollPane>
+      <Label layoutX="246.0" layoutY="14.0" prefHeight="66.0" prefWidth="268.0" text="Your Answer" textFill="#c8ede2">
+         <font>
+            <Font name="System Bold" size="43.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="98.0" fitWidth="104.0" layoutX="175.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/q6.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="98.0" fitWidth="97.0" layoutX="495.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/q.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="113.0" layoutX="492.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/q3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="104.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/q2.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="homeR_button" contentDisplay="GRAPHIC_ONLY" layoutX="632.0" layoutY="8.0" onAction="#backToHome" text="Home">
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/home_button.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip fx:id="tooltipA" text="Go to Home" />
+         </tooltip>
+      </JFXButton>
+   </children>
+</AnchorPane>
