@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="620.0" prefWidth="760.0" styleClass="root" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.SearchController">
+   <children>
+      <Pane layoutX="-1.0" prefHeight="109.0" prefWidth="741.0">
+         <children>
+            <ImageView fitHeight="141.0" fitWidth="134.0" layoutX="-12.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/uet_dic.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="458.0" layoutX="170.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../English_dictionaryApp-main/english_dictionary/src/main/resources/Utils/images/UET%20DICTIONARY.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="184.0" fitWidth="134.0" layoutX="651.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/robot18.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="109.0" fitWidth="93.0" layoutX="153.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/t5.png" />
+               </image>
+               <effect>
+                  <Bloom />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="96.0" fitWidth="99.0" layoutX="551.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/t9.png" />
+               </image>
+               <effect>
+                  <Bloom />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="59.0" fitWidth="59.0" layoutX="416.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/t2.png" />
+               </image>
+               <effect>
+                  <Bloom />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="96.0" fitWidth="193.0" layoutX="81.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/t3.png" />
+               </image>
+               <effect>
+                  <Bloom />
+               </effect>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="235.0" layoutY="109.0" prefHeight="32.0" prefWidth="336.0" styleClass="search_box">
+         <children>
+            <TextField fx:id="inputTextField" layoutX="35.0" layoutY="2.0" prefHeight="30.0" prefWidth="268.0" styleClass="search_field" />
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="296.0" layoutY="-8.0" text="Close">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/closeN.png" />
+                     </image>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <ImageView fitHeight="42.0" fitWidth="39.0" layoutX="-5.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/searchN.png" />
+               </image>
+               <effect>
+                  <Bloom />
+               </effect>
+            </ImageView>
+         </children>
+      </Pane>
+      <AnchorPane layoutY="172.0" prefHeight="535.0" prefWidth="785.0">
+         <children>
+            <AnchorPane layoutY="28.0" prefHeight="521.0" prefWidth="193.0">
+               <children>
+                  <Pane layoutY="-21.0" prefHeight="42.0" prefWidth="189.0" styleClass="title_son1">
+                     <children>
+                        <Label layoutX="68.0" layoutY="-9.0" prefHeight="47.0" prefWidth="81.0" text="Result" textFill="#1e2d94">
+                           <font>
+                              <Font name="System Bold Italic" size="25.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="59.0" fitWidth="59.0" layoutX="10.0" layoutY="-29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/robot15.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <ScrollPane layoutX="1.0" layoutY="9.0" prefHeight="518.0" prefWidth="200.0" stylesheets="@../assets/scrollP.css">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="517.0" prefWidth="186.0">
+                           <children>
+                              <ListView layoutY="-2.0" prefHeight="520.0" prefWidth="187.0" styleClass="listV" stylesheets="@../assets/field.css" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="201.0" layoutY="26.0" prefHeight="541.0" prefWidth="581.0" AnchorPane.bottomAnchor="0.0">
+               <children>
+                  <Pane layoutX="-1.0" layoutY="-5.0" prefHeight="30.0" prefWidth="581.0" styleClass="title_son">
+                     <children>
+                        <Label layoutX="371.0" layoutY="-5.0" prefHeight="39.0" prefWidth="134.0" text="Translate" textFill="#106eb5">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="22.0" prefHeight="42.0" prefWidth="581.0" styleClass="title" stylesheets="@../assets/style.css">
+                     <children>
+                        <ImageView fitHeight="81.0" fitWidth="88.0" layoutX="22.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/robot16.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="92.0" layoutY="-1.0" prefHeight="45.0" prefWidth="93.0" text="Words" textFill="#1ce5ff">
+                           <font>
+                              <Font name="System Bold Italic" size="30.0" />
+                           </font>
+                        </Label>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="455.0" layoutY="-1.0" text="Delete">
+                           <graphic>
+                              <ImageView fitHeight="43.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons/deleteN.png" />
+                                 </image>
+                                 <effect>
+                                    <Bloom />
+                                 </effect>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="313.0" layoutY="-6.0" text="Edit">
+                           <graphic>
+                              <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons/editN.png" />
+                                 </image>
+                                 <effect>
+                                    <Bloom />
+                                 </effect>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="384.0" layoutY="-5.0" text="BookMarks">
+                           <graphic>
+                              <ImageView fitHeight="55.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons/bookMT.png" />
+                                 </image>
+                                 <effect>
+                                    <Bloom />
+                                 </effect>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="157.0" layoutY="-1.0" text="Volume" />
+                        <ImageView fitHeight="89.0" fitWidth="69.0" layoutX="521.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/robot14.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="85.0" layoutY="93.0" prefHeight="52.0" prefWidth="56.0" text="Volume" />
+                  <ScrollPane layoutX="-2.0" layoutY="75.0" prefHeight="477.0" prefWidth="581.0" stylesheets="@../assets/scrollP.css" AnchorPane.bottomAnchor="0.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="477.0" prefWidth="567.0">
+                           <children>
+                              <TextArea layoutY="-3.0" prefHeight="479.0" prefWidth="573.0" style="-fx-background-color: gray;" />
+                              <ImageView fitHeight="39.0" fitWidth="57.0" layoutX="58.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons/volumeN.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="87.0" fitWidth="126.0" layoutX="147.0" layoutY="-36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/computer.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="notFoundLable" layoutX="261.0" layoutY="149.0" prefHeight="29.0" prefWidth="295.0" text="Sorry, the dictionary does not provide this word" textFill="#d92929">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/warning1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="68.0" fitWidth="81.0" layoutX="58.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/t1.png" />
+         </image>
+         <effect>
+            <Bloom />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="96.0" fitWidth="179.0" layoutX="547.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/t4.png" />
+         </image>
+         <effect>
+            <Bloom />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>
