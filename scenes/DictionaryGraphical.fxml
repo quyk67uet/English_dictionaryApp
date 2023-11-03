@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="850.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.DictionaryController">
+   <children>
+      <AnchorPane fx:id="container" layoutX="76.0" layoutY="14.0" prefHeight="620.0" prefWidth="760.0" styleClass="container" stylesheets="@../assets/style.css" />
+      <ImageView fitHeight="69.0" fitWidth="67.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/UET_logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="85.0" fitWidth="67.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/computer_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="136.0" fitWidth="77.0" layoutX="2.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/IC1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="84.0" fitWidth="63.0" layoutX="16.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/IC2.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="searchButton" contentDisplay="GRAPHIC_ONLY" layoutX="9.0" layoutY="192.0" text="Search">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/searchN.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="addWordsButton" contentDisplay="GRAPHIC_ONLY" layoutX="15.0" layoutY="264.0" text="Add">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/m2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="googleTranslateButton" contentDisplay="GRAPHIC_ONLY" layoutX="15.0" layoutY="328.0" text="Translate">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/m1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="gameButton" contentDisplay="GRAPHIC_ONLY" layoutX="16.0" layoutY="403.0" text="Game">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/m4.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="infoButton" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="472.0" text="Info">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/m3.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="exitButton" contentDisplay="GRAPHIC_ONLY" layoutX="11.0" layoutY="537.0" text="Log out">
+         <graphic>
+            <ImageView fitHeight="51.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/m5.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
