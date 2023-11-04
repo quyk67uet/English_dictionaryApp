@@ -4,41 +4,42 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="620.0" prefWidth="760.0" styleClass="root" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.TranslationController">
+<AnchorPane prefHeight="620.0" prefWidth="760.0" styleClass="root" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.AdditionController">
    <children>
       <Pane prefHeight="104.0" prefWidth="769.0">
          <children>
             <Pane layoutX="155.0" layoutY="11.0" prefHeight="95.0" prefWidth="471.0">
                <children>
-                  <ImageView fitHeight="160.0" fitWidth="485.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="185.0" fitWidth="496.0" layoutX="14.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/images/frame2.png" />
+                        <Image url="@../assets/images/addtion.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="32.0" layoutY="14.0" prefHeight="36.0" prefWidth="406.0" text="Success is a journey not a destination" textFill="#197cfd">
-                     <font>
-                        <Font name="System Bold" size="21.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="62.0" prefHeight="11.0" prefWidth="429.0" text="(Thành công là một cuộc hành trình chứ không phải là điểm đến)" textFill="#8311c9">
-                     <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                     </font>
-                  </Label>
+                  <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="361.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/robot23.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="72.0" fitWidth="76.0" layoutX="20.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/robot21.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
-            <ImageView fitHeight="171.0" fitWidth="169.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="122.0" fitWidth="104.0" layoutX="-7.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/images/robot7.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="189.0" fitWidth="176.0" layoutX="610.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="116.0" fitWidth="112.0" layoutX="658.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/images/robot12.png" />
                </image>
@@ -47,37 +48,13 @@
       </Pane>
       <AnchorPane layoutX="-3.0" layoutY="108.0" prefHeight="457.0" prefWidth="769.0">
          <children>
-            <Pane prefHeight="49.0" prefWidth="672.0">
-               <children>
-                  <Pane layoutY="48.0" prefHeight="36.0" prefWidth="766.0" styleClass="title">
-                     <children>
-                        <Label layoutX="68.0" layoutY="8.0" prefHeight="17.0" prefWidth="191.0" text="Add new words" textFill="#38e4ff">
-                           <font>
-                              <Font name="System Bold Italic" size="19.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="81.0" fitWidth="62.0" layoutX="7.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/robot28.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="95.0" fitWidth="76.0" layoutX="619.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/robot26.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Label layoutX="453.0" layoutY="1.0" text="- Nguyễn Chí Trung-" textFill="#1f3dac">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <TextField fx:id="englishTextField" layoutX="229.0" layoutY="139.0" prefHeight="32.0" prefWidth="327.0" />
-            <TextArea fx:id="vietnameseTextArea" layoutX="228.0" layoutY="227.0" prefHeight="240.0" prefWidth="327.0" />
-            <Pane layoutX="229.0" layoutY="198.0" prefHeight="31.0" prefWidth="327.0" styleClass="title_son1">
+            <Pane prefHeight="49.0" prefWidth="672.0" />
+            <TextField fx:id="englishTextField" layoutX="25.0" layoutY="162.0" prefHeight="182.0" prefWidth="321.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <TextArea fx:id="vietnameseTextArea" layoutX="455.0" layoutY="162.0" prefHeight="182.0" prefWidth="307.0" />
+            <Pane layoutX="455.0" layoutY="131.0" prefHeight="31.0" prefWidth="307.0" styleClass="title_son1">
                <children>
                   <Label layoutX="40.0" layoutY="-1.0" text="ietnamese Meaning" textFill="#8013d9">
                      <font>
@@ -91,7 +68,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane layoutX="229.0" layoutY="111.0" prefHeight="27.0" prefWidth="327.0" styleClass="title_son">
+            <Pane layoutX="25.0" layoutY="133.0" prefHeight="27.0" prefWidth="321.0" styleClass="title_son">
                <children>
                   <Label layoutX="38.0" layoutY="-2.0" text="nglish Words" textFill="#1a2faa">
                      <font>
@@ -100,38 +77,18 @@
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="addWordsButton" contentDisplay="GRAPHIC_ONLY" layoutX="228.0" layoutY="467.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="50.0" styleClass="menu_button" text="Button">
+            <Button fx:id="addWordsButton" contentDisplay="GRAPHIC_ONLY" layoutX="348.0" layoutY="344.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="50.0" styleClass="menu_button" text="Button">
                <graphic>
-                  <ImageView fitHeight="47.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="96.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/icons/add2.png" />
+                        <Image url="@../assets/icons/addB.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="49.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/images/robot22.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="49.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/images/robot23.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="581.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/images/robot24.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="587.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/images/robot25.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="successNotification" layoutX="364.0" layoutY="481.0" prefHeight="27.0" prefWidth="191.0" text="Add words success" textFill="#11f4dd">
+            <Label fx:id="successNotification" layoutX="294.0" layoutY="450.0" prefHeight="27.0" prefWidth="211.0" text="Add words success" textFill="#11f4dd">
                <font>
-                  <Font name="System Bold Italic" size="18.0" />
+                  <Font name="System Bold Italic" size="20.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="51.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
@@ -141,9 +98,56 @@
                   </ImageView>
                </graphic>
             </Label>
-            <ImageView fitHeight="73.0" fitWidth="55.0" layoutX="228.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+            <Pane layoutY="31.0" prefHeight="36.0" prefWidth="777.0" styleClass="title">
+               <children>
+                  <Label layoutX="68.0" layoutY="8.0" prefHeight="17.0" prefWidth="191.0" text="Add new words" textFill="#38e4ff">
+                     <font>
+                        <Font name="System Bold Italic" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="81.0" fitWidth="62.0" layoutX="7.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/robot28.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="95.0" fitWidth="76.0" layoutX="645.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/robot26.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ImageView fitHeight="73.0" fitWidth="55.0" layoutX="25.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/images/E.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="74.0" fitWidth="110.0" layoutX="345.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/r4.png" />
+               </image>
+               <effect>
+                  <Bloom />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="151.0" layoutX="634.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../assets/images/d2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/r2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="95.0" fitWidth="183.0" layoutX="149.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/t3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="116.0" fitWidth="177.0" layoutX="475.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/t4.png" />
                </image>
             </ImageView>
          </children>
