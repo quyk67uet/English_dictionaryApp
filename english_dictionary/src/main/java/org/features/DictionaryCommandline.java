@@ -1,12 +1,10 @@
 package org.features;
 
-import java.util.*;
-
 public class DictionaryCommandline extends DictionaryManagement {
     private static final int COLUMN_NO_WIDTH = 8;
-
+    
     public DictionaryCommandline() {
-        insertFromDefaultFile("english_dictionary/src/main/resources/dictionaries.txt");
+        insertFromDefaultFile("english_dictionary/src/main/resources/assets/dictionaries.txt");
     }
 
     public int columnNumberNoWidth() {
@@ -54,19 +52,19 @@ public class DictionaryCommandline extends DictionaryManagement {
             for (int j = 0; j < columnNumberNoWidth() - Integer.toString(i + 1).length(); j++) {
                 System.out.print(" ");
             }
-
+        
             System.out.print("| ");
             System.out.print(getListWord().get(i).getWord_target());
             for (int j = 0; j < columnEnglishWidth() - getListWord().get(i).getWord_target().length(); j++) {
                 System.out.print(" ");
             }
-
+            
             System.out.print("| ");
             System.out.print(getListWord().get(i).getWord_explain());
             for (int j = 0; j < columnVietnameseWidth() - getListWord().get(i).getWord_explain().length(); j++) {
                 System.out.print(" ");
             }
-
+            
             System.out.println();
         }
     }
@@ -84,15 +82,15 @@ public class DictionaryCommandline extends DictionaryManagement {
                 System.out.println("-----------------------------------------");
                 System.out.println("Welcome to My Application!");
                 System.out.println("[0] Exit\n"
-                        + "[1] Add\n"
-                        + "[2] Remove\n"
-                        + "[3] Update\n"
-                        + "[4] Display\n"
-                        + "[5] Lookup\n"
-                        + "[6] Search\n"
-                        + "[7] Game\n"
-                        + "[8] Import from file\n"
-                        + "[9] Export to file\n");
+                                    + "[1] Add\n"
+                                    + "[2] Remove\n"
+                + "[3] Update\n"
+                + "[4] Display\n"
+                + "[5] Lookup\n"
+                + "[6] Search\n"
+                + "[7] Game\n"
+                + "[8] Import from file\n"
+                + "[9] Export to file\n");
                 System.out.print("Your action: ");
 
                 int userAction = getScanner().nextInt();
@@ -142,7 +140,12 @@ public class DictionaryCommandline extends DictionaryManagement {
                 if (userException.equals("Y")) {
                     userUse = false;
                 }
-            }
+            }   
         } while(userUse);
+    }
+
+    public static void main(String[] args) {
+        DictionaryCommandline test = new DictionaryCommandline();
+        test.showAllWords();
     }
 }

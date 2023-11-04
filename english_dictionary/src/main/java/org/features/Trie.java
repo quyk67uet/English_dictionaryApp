@@ -1,7 +1,7 @@
 package org.features;
 
 public class Trie {
-    private static TrieNode root;
+    private TrieNode root;
 
     public Trie() {
         root = new TrieNode();
@@ -15,41 +15,42 @@ public class Trie {
         return root;
     }
 
-    public static void insert(String word) {
+    public void insert(String word) {
         TrieNode current = root;
         for (Character x : word.toCharArray()) {
             current = current.getChildren().computeIfAbsent(x, curr -> new TrieNode());
         }
         current.setEndOfWord(true);
         // current.setWordMeaning(word);
-        System.out.println("Insert succees");
+        // System.out.println("Insert succees");
     }
 
-    private static void printWordWithPrefixCore (TrieNode charNode, String word) {
+    private String printWordWithPrefixCore (TrieNode charNode, String word) {
+        StringBuilder result = new StringBuilder();
         if (charNode.isEndOfWord()) {
-            System.out.println(word);
-            return;
+            result.append(word).append("\n");
         }
         for (Character x : charNode.getChildren().keySet()) {
             if (charNode.getChildren().get(x) != null) {
-                printWordWithPrefixCore(charNode.getChildren().get(x), word + x);
+                String subResult = printWordWithPrefixCore(charNode.getChildren().get(x), word + x);
+                result.append(subResult);
             }
         }
+        return result.toString();
     }
 
-    public static void printWordWithPrefix (String word) {
+    public String printWordWithPrefix (String word) {
         TrieNode current = root;
         for (Character x : word.toCharArray()) {
             if (!current.getChildren().containsKey(x)) {
-                System.out.println("No words with this prefix");
-                return;
+                return "No words with this prefix";
             }
             current = current.getChildren().get(x);
         }
-        printWordWithPrefixCore(current, word);
+        return printWordWithPrefixCore(current, word);
     }
 
-    public static boolean searchPrefix(String word) {
+    public boolean searchPrefix(String word) {
         TrieNode current = root;
         for (Character x : word.toCharArray()) {
             TrieNode charNode = current.getChildren().get(x);
@@ -65,7 +66,7 @@ public class Trie {
         return true;
     } 
 
-    public static boolean searchWord(String word) {
+    public boolean searchWord(String word) {
         TrieNode current = root;
         for (Character x : word.toCharArray()) {
             TrieNode charNode = current.getChildren().get(x);
@@ -78,7 +79,7 @@ public class Trie {
         return current.isEndOfWord();
     }
 
-    public static boolean deleteWord (String word) {
+    public boolean deleteWord (String word) {
         if (!searchWord(word)) {
             // System.out.println("Not found this word to delete");
             return false;
@@ -87,7 +88,7 @@ public class Trie {
         return core;
     }
 
-    private static boolean deleteWordCore (TrieNode current, String word, int lengthCount) {
+    private boolean deleteWordCore (TrieNode current, String word, int lengthCount) {
         if (lengthCount == word.length()) {
             if (!current.isEndOfWord()) {
                 // System.out.println("at end of word");
@@ -113,7 +114,7 @@ public class Trie {
         return true;
     }
 
-    public static boolean editWord(String oldWord, String newWord) {
+    public boolean editWord(String oldWord, String newWord) {
         if (!searchWord(oldWord)) {
             System.out.println("cant find that word want to edit");
             return false;
@@ -124,22 +125,22 @@ public class Trie {
     }
 
     public static void main(String[] args) {
-        Trie trie = new Trie();
+        // Trie trie = new Trie();
 
-        Trie.insert("Programming");
-        Trie.insert("is");
-        Trie.insert("a");
-        Trie.insert("way");
-        Trie.insert("of");
-        Trie.insert("life");
-        Trie.insert("Perfexrt");
+        // Trie.insert("Programming");
+        // Trie.insert("is");
+        // Trie.insert("a");
+        // Trie.insert("way");
+        // Trie.insert("of");
+        // Trie.insert("life");
+        // Trie.insert("Perfexrt");
 
-        searchPrefix("P");
-        System.out.println(deleteWord("Programming"));
-        searchPrefix("P");
-        editWord("Perfexrt", "UwU");
-        searchPrefix("P");
-        searchPrefix("U");  
+        // searchPrefix("P");
+        // System.out.println(deleteWord("Programming"));
+        // searchPrefix("P");
+        // editWord("Perfexrt", "UwU");
+        // searchPrefix("P");
+        // searchPrefix("U");  
     }
 }
 
