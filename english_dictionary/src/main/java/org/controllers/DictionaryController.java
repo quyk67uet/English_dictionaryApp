@@ -1,6 +1,5 @@
 package org.controllers;
 
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,16 +9,20 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
+import org.features.*;
+
 public class DictionaryController implements Initializable {
-    
-    @FXML
-    private Tooltip addWordsTooltip, exitTooltip, gameTooltip, googleTranslateTooltip, aboutUsTooltip, searchTooltip;
+    // @FXML
+    // private Tooltip addWordsTooltip, exitTooltip, gameTooltip, googleTranslateTooltip, aboutUsTooltip, searchTooltip;
 
     @FXML
     private Button addWordsButton, exitButton, gameButton, googleTranslateButton, infoButton, searchButton;
@@ -27,29 +30,22 @@ public class DictionaryController implements Initializable {
     @FXML
     private AnchorPane container;
 
-    // @FXML
-    // public void setNode(Node node) {
-    //     container.getChildren().clear();
-    //     container.getChildren().add(node);
-    // }
+    private static Trie trie = new Trie();
+    private static SQLite sqLite = new SQLite();
+    private static MediaPlayer mediaPlayer;
 
-    // @FXML
-    // public void showComponent(String path) {
-    //     try {
-    //         URL location = getClass().getResource(path);
-    //         if (location == null) {
-    //             System.out.println("Null detected!");
-    //         }
-    //         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
-    //         AnchorPane component = loader.load();
-    //         // loader.getController();
-    //         setNode(component);
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //     }
-    // }
-    
-    @FXML
+    public static SQLite getSqLite() {
+        return sqLite;
+    }
+
+    public static Trie getTrie() {
+        return trie;
+    }
+
+    public static MediaPlayer getMediaPlayer(String path) {
+        mediaPlayer = new MediaPlayer(new Media(Paths.get(path).toUri().toString()));
+        return mediaPlayer;
+    }
     public void searchFeatures() {
         try {
             container.getChildren().clear();
@@ -60,7 +56,6 @@ public class DictionaryController implements Initializable {
         }
     }
 
-    @FXML
     public void translateFeatures() {
         try {
             container.getChildren().clear();
@@ -72,7 +67,6 @@ public class DictionaryController implements Initializable {
         }
     }
 
-    @FXML
     public void addWordFeatures() {
         try {
             container.getChildren().clear();
@@ -82,35 +76,14 @@ public class DictionaryController implements Initializable {
             e.printStackTrace();
         }
     }
-    // @FXML
-    // public void searchFeatures() {
-    //     try {
-    //         container.getChildren().clear();
-    //         Node searchNode = new FXMLLoader(getClass().getResource("/scenes/SearchGraphical.fxml")).load();
-    //         container.getChildren().add(searchNode);
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //     }
-    // }
-    // @FXML
-    // public void searchFeatures() {
-    //     try {
-    //         container.getChildren().clear();
-    //         Node searchNode = new FXMLLoader(getClass().getResource("/scenes/SearchGraphical.fxml")).load();
-    //         container.getChildren().add(searchNode);
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //     }
-    // }
-    // @FXML
-    // public void searchFeatures() {
-    //     try {
-    //         container.getChildren().clear();
-    //         Node searchNode = new FXMLLoader(getClass().getResource("/scenes/SearchGraphical.fxml")).load();
-    //         container.getChildren().add(searchNode);
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //     }
+
+    // public void showTooltip() {
+    //     addWordsTooltip.setShowDelay(Duration.seconds(0.5));
+    //     exitTooltip.setShowDelay(Duration.seconds(0.5));
+    //     gameTooltip.setShowDelay(Duration.seconds(0.5));
+    //     googleTranslateTooltip.setShowDelay(Duration.seconds(0.5));
+    //     aboutUsTooltip.setShowDelay(Duration.seconds(0.5));
+    //     searchTooltip.setShowDelay(Duration.seconds(0.5));
     // }
 
     @Override
@@ -125,13 +98,7 @@ public class DictionaryController implements Initializable {
             addWordFeatures();
         });
 
-        addWordsTooltip.setShowDelay(Duration.seconds(0.5));
-        exitTooltip.setShowDelay(Duration.seconds(0.5));
-        gameTooltip.setShowDelay(Duration.seconds(0.5));
-        googleTranslateTooltip.setShowDelay(Duration.seconds(0.5));
-        aboutUsTooltip.setShowDelay(Duration.seconds(0.5));
-        searchTooltip.setShowDelay(Duration.seconds(0.5));
-
+        // showTooltip();
         // exitButton.setOnMouseClicked(e -> {
         //     System.exit(0);
         // });
