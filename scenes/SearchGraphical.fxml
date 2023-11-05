@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
 <AnchorPane prefHeight="620.0" prefWidth="760.0" styleClass="root" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.SearchController">
    <children>
@@ -110,13 +111,13 @@
                      </children>
                   </Pane>
                   <ScrollPane layoutX="1.0" layoutY="9.0" prefHeight="518.0" prefWidth="200.0" stylesheets="@../assets/scrollP.css">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="517.0" prefWidth="186.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="517.0" prefWidth="186.0">
                            <children>
                               <ListView fx:id="outputListView" layoutY="-2.0" prefHeight="520.0" prefWidth="187.0" styleClass="listV" stylesheets="@../assets/field.css" />
                            </children>
                         </AnchorPane>
-                    </content>
+                     </content>
                   </ScrollPane>
                </children>
             </AnchorPane>
@@ -143,7 +144,7 @@
                               <Font name="System Bold Italic" size="30.0" />
                            </font>
                         </Label>
-                        <JFXButton fx:id="deleteWordFromDatabaseButton" contentDisplay="GRAPHIC_ONLY" layoutX="455.0" layoutY="-1.0" text="Delete">
+                        <JFXButton fx:id="deleteWordButton" contentDisplay="GRAPHIC_ONLY" layoutX="455.0" layoutY="-1.0" text="Delete">
                            <graphic>
                               <ImageView fitHeight="43.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -155,7 +156,7 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="editButton" contentDisplay="GRAPHIC_ONLY" layoutX="313.0" layoutY="-6.0" text="Edit">
+                        <JFXButton fx:id="editWordButton" contentDisplay="GRAPHIC_ONLY" layoutX="313.0" layoutY="-6.0" text="Edit">
                            <graphic>
                               <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -167,7 +168,7 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="bookM_button" contentDisplay="GRAPHIC_ONLY" layoutX="384.0" layoutY="-5.0" text="BookMarks">
+                        <JFXButton fx:id="addBookmarkButton" contentDisplay="GRAPHIC_ONLY" layoutX="384.0" layoutY="-5.0" text="Bookmarks">
                            <graphic>
                               <ImageView fitHeight="55.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -187,11 +188,15 @@
                      </children>
                   </Pane>
                   <ScrollPane layoutX="-2.0" layoutY="75.0" prefHeight="477.0" prefWidth="581.0" stylesheets="@../assets/scrollP.css" AnchorPane.bottomAnchor="0.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="477.0" prefWidth="567.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="477.0" prefWidth="567.0">
                            <children>
-                              <TextArea fx:id="outputTextArea" layoutY="-3.0" prefHeight="479.0" prefWidth="573.0" style="-fx-background-color: gray;" />
-                              <JFXButton fx:id="soundButton" contentDisplay="GRAPHIC_ONLY" layoutX="43.0" layoutY="25.0" text="Volume">
+                              <TextArea fx:id="outputTextArea" layoutY="-3.0" prefHeight="479.0" prefWidth="573.0" style="-fx-background-color: gray;">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></TextArea>
+                              <WebView prefHeight="477.0" prefWidth="570.0" />
+                              <JFXButton fx:id="soundButton" contentDisplay="GRAPHIC_ONLY" layoutX="61.0" layoutY="62.0" text="Volume">
                                  <graphic>
                                     <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -202,7 +207,7 @@
                               </JFXButton>
                            </children>
                         </AnchorPane>
-                    </content>
+                     </content>
                   </ScrollPane>
                </children>
             </AnchorPane>
