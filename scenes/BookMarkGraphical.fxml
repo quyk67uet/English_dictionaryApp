@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="620.0" prefWidth="760.0" styleClass="root" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.BookMarksController">
@@ -19,26 +19,7 @@
             <Image url="@../assets/images/f3.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="262.0" layoutY="221.0" prefHeight="345.0" prefWidth="453.0">
-         <children>
-            <ScrollPane layoutX="-102.0" prefHeight="345.0" prefWidth="518.0" stylesheets="@../assets/scrollP.css">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="343.0" prefWidth="501.0">
-                     <children>
-                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="345.0" prefWidth="503.0">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </ScrollPane>
-         </children>
-      </AnchorPane>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="257.0" text="Check" />
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="21.0" layoutY="384.0" text="Delete" />
-      <Pane layoutX="-3.0" layoutY="150.0" prefHeight="42.0" prefWidth="767.0" styleClass="title">
+      <Pane layoutY="149.0" prefHeight="42.0" prefWidth="771.0" styleClass="title">
          <children>
             <Label layoutX="80.0" layoutY="2.0" text="Bookmarks" textFill="#25efe9">
                <font>
@@ -82,21 +63,53 @@
             <Image url="@../assets/images/d2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="90.0" fitWidth="83.0" layoutX="36.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/icons/deleteN.png" />
-         </image>
-         <effect>
-            <Bloom />
-         </effect>
-      </ImageView>
-      <ImageView fitHeight="97.0" fitWidth="117.0" layoutX="29.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/icons/bookMF.png" />
-         </image>
-         <effect>
-            <Bloom />
-         </effect>
-      </ImageView>
+      <AnchorPane layoutX="43.0" layoutY="222.0" prefHeight="379.0" prefWidth="657.0">
+         <children>
+            <Pane layoutX="164.0" layoutY="-2.0" prefHeight="32.0" prefWidth="336.0" styleClass="search_boxBM">
+               <children>
+                  <TextField fx:id="inputTextField" layoutX="35.0" layoutY="2.0" prefHeight="30.0" prefWidth="268.0" styleClass="search_fieldBM" />
+                  <JFXButton fx:id="deleteTextFieldButton" contentDisplay="GRAPHIC_ONLY" layoutX="296.0" layoutY="-8.0" text="Close">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/closeN.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <ImageView fitHeight="38.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/bookMF.png" />
+                     </image>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="661.0" layoutY="170.0" text="Delete">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/deleteN.png" />
+                     </image>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <TableView layoutX="24.0" layoutY="42.0" prefHeight="344.0" prefWidth="640.0" stylesheets="@../assets/tableView.css">
+               <columns>
+                  <TableColumn prefWidth="162.00001275539398" styleClass="column-header" text="Word" />
+                  <TableColumn prefWidth="94.00001525878906" styleClass="column-header" text="Pronunciation" />
+                  <TableColumn prefWidth="381.3333435058594" styleClass="column-header" text="Description" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
