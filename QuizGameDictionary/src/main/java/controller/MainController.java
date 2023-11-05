@@ -6,17 +6,22 @@ import java.util.ResourceBundle;
 
 import application.Main;
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.*;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
@@ -50,6 +55,34 @@ public class MainController implements Initializable {
         return instance;
     }
 
+
+    public void startFeatures() {
+        try {
+            QuizController.qQid = 0;
+            FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), APane);
+            fadeOut.setFromValue(1.0);
+            fadeOut.setToValue(0.0);
+            fadeOut.setOnFinished(event -> {
+                try {
+                    APane.getChildren().clear();
+                    Node startNode = new FXMLLoader(getClass().getResource("/FXMLViews/TickBoxView.fxml")).load();
+                    APane.getChildren().add(startNode);
+
+
+                    FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), APane);
+                    fadeIn.setFromValue(0.0);
+                    fadeIn.setToValue(1.0);
+                    fadeIn.play();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+            fadeOut.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         //Draggeable Screen
@@ -69,6 +102,10 @@ public class MainController implements Initializable {
             APane.setCursor(Cursor.DEFAULT);
         });
 
+        start_button.setOnAction(event -> {
+            startFeatures();
+        });
+
         media = new Media(getClass().getResource("/Sound/music.mp3").toExternalForm());
 
         mediaPlayer = new MediaPlayer(media);
@@ -78,18 +115,8 @@ public class MainController implements Initializable {
         tooltipR.setShowDelay(Duration.seconds(0.5));
     }
 
-
-    @FXML
-    public void startAction(ActionEvent event) throws IOException {
-        start_button.getScene().getWindow().hide();
-        Stage quizStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/FXMLViews/TickBoxView.fxml"));
-        Scene scene = new Scene(root);
-        quizStage.initStyle(StageStyle.UNDECORATED);
-        quizStage.setScene(scene);
-        quizStage.show();
-        quizStage.setResizable(false);
-
+    public AnchorPane getAPane() {
+        return APane;
     }
 
     @FXML

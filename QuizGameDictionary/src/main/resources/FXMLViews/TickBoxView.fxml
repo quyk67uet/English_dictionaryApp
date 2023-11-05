@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="611.0" prefWidth="840.0" styleClass="root" stylesheets="@../StyleCSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TickBoxController">
+<AnchorPane fx:id="containerQ" prefHeight="611.0" prefWidth="840.0" styleClass="root" stylesheets="@../StyleCSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TickBoxController">
    <children>
       <AnchorPane fx:id="quizView" layoutX="39.0" layoutY="232.0" prefHeight="353.0" prefWidth="569.0" />
       <AnchorPane fx:id="countDown" layoutX="87.0" layoutY="183.0" prefHeight="44.0" prefWidth="185.0" />
@@ -142,7 +142,7 @@
             <Image url="@../image/bot3.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="homeQ_button" contentDisplay="GRAPHIC_ONLY" layoutX="750.0" onAction="#goToHomeQ" text="HomeQ">
+      <JFXButton fx:id="homeQ_button" contentDisplay="GRAPHIC_ONLY" layoutX="750.0" text="HomeQ">
          <graphic>
             <ImageView fitHeight="75.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                <image>

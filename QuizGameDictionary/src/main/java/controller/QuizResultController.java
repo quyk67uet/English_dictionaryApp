@@ -1,6 +1,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Tooltip;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -19,7 +21,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class QuizResultController implements Initializable {
-
+    @FXML
+    private AnchorPane containerO;
     @FXML
     private Tooltip tooltipA;
     @FXML
@@ -51,23 +54,38 @@ public class QuizResultController implements Initializable {
         }
     }
 
-    @FXML
-    void backToHome(ActionEvent event) throws IOException {
-
-        homeR_button.getScene().getWindow().hide();
-
-        Stage Result = new Stage();
-        Result.initStyle(StageStyle.UNDECORATED);
-        Parent root = FXMLLoader.load(getClass().getResource("/FXMLViews/MenuView.fxml"));
-        Scene scene = new Scene(root);
-        Result.setScene(scene);
-        Result.show();
-        Result.setResizable(false);
-
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        homeR_button.setOnAction(event -> {
+            backRFeatures();
+        });
         tooltipA.setShowDelay(Duration.seconds(0.5));
+    }
+
+    public void backRFeatures() {
+        try {
+            ScaleTransition scaleOut = new ScaleTransition(Duration.seconds(0.2), containerO);
+            scaleOut.setToX(0);
+            scaleOut.setToY(0);
+            scaleOut.setOnFinished(event -> {
+                try {
+                    containerO.getChildren().clear();
+                    Node startNode = new FXMLLoader(getClass().getResource("/FXMLViews/MenuView.fxml")).load();
+                    containerO.getChildren().add(startNode);
+
+                    ScaleTransition scaleIn = new ScaleTransition(Duration.seconds(0.2), containerO);
+                    scaleIn.setFromX(0);
+                    scaleIn.setFromY(0);
+                    scaleIn.setToX(1);
+                    scaleIn.setToY(1);
+                    scaleIn.play();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+            scaleOut.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

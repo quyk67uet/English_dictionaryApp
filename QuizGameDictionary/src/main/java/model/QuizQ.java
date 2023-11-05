@@ -16,7 +16,7 @@ public class QuizQ {
         qQ[1][3] = "has been looking";
         qQ[1][4] = "looked";
 
-        qQ[2][0] = "Q3 | Jack ... the door.?";
+        qQ[2][0] = "Q3 | Jack ... the door.";
         qQ[2][1] = "has just painted";
         qQ[2][2] = "paint";
         qQ[2][3] = "will have painted";

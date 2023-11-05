@@ -45,7 +45,7 @@ public class CountDown {
         two2.setStyle("-fx-font-size: 25px; -fx-text-fill: #606060;");
 
 
-        duration = Duration.minutes(15);
+        duration = Duration.minutes(10);
 
         lastTimerCall = System.nanoTime();
         timer = new AnimationTimer() {
@@ -91,7 +91,7 @@ public class CountDown {
 
     public void setStop() throws IOException {
 
-        QuizController.getInstance().finish_button();
+        QuizController.getInstance().finishFeatures();
     }
 
 

@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
+import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -28,7 +29,8 @@ import model.CountDown;
 
 
 public class TickBoxController implements Initializable {
-
+    @FXML
+    private AnchorPane containerQ;
     @FXML
     private Tooltip tooltipE;
     @FXML
@@ -97,6 +99,10 @@ public class TickBoxController implements Initializable {
         countDown.getChildren().add(count.setCountdown());
 
         tooltipE.setShowDelay(Duration.seconds(0.5));
+
+        homeQ_button.setOnAction(event -> {
+            backQFeatures();
+        });
     }
 
 
@@ -220,8 +226,6 @@ public class TickBoxController implements Initializable {
 
     @FXML
     void q10Action(ActionEvent event) {
-
-
         QuizController.getInstance().renderQuestion(9);
         QuizController.getInstance().setQid(9);
 
@@ -327,19 +331,31 @@ public class TickBoxController implements Initializable {
 
     }
 
-    @FXML
-    void goToHomeQ(ActionEvent event) throws IOException {
+    public void backQFeatures() {
+        try {
+            ScaleTransition scaleOut = new ScaleTransition(Duration.seconds(0.2), containerQ);
+            scaleOut.setToX(0);
+            scaleOut.setToY(0);
+            scaleOut.setOnFinished(event -> {
+                try {
+                    containerQ.getChildren().clear();
+                    Node startNode = new FXMLLoader(getClass().getResource("/FXMLViews/MenuView.fxml")).load();
+                    containerQ.getChildren().add(startNode);
 
-        homeQ_button.getScene().getWindow().hide();
-
-        Stage Result = new Stage();
-        Result.initStyle(StageStyle.UNDECORATED);
-        Parent root = FXMLLoader.load(getClass().getResource("/FXMLViews/MenuView.fxml"));
-        Scene scene = new Scene(root);
-        Result.setScene(scene);
-        Result.show();
-        Result.setResizable(false);
-
+                    ScaleTransition scaleIn = new ScaleTransition(Duration.seconds(0.2), containerQ);
+                    scaleIn.setFromX(0);
+                    scaleIn.setFromY(0);
+                    scaleIn.setToX(1);
+                    scaleIn.setToY(1);
+                    scaleIn.play();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+            scaleOut.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

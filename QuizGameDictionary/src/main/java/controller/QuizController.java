@@ -9,11 +9,13 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -24,6 +26,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 import model.AnswerQ;
 import model.QuizQ;
 
@@ -91,13 +94,17 @@ public class QuizController implements Initializable {
     }
 
     public void renderQuestion(int i){
-
-        questions.setText(qQ[i][0]);
-        RB1.setText("A)  "+qQ[i][1]);
-        RB2.setText("B)  "+qQ[i][2]);
-        RB3.setText("C)  "+qQ[i][3]);
-        RB4.setText("D)  "+qQ[i][4]);
-
+        try {
+            if (i >= 0 && i < qQ.length) {
+                questions.setText(qQ[i][0]);
+                RB1.setText("A)  " + qQ[i][1]);
+                RB2.setText("B)  " + qQ[i][2]);
+                RB3.setText("C)  " + qQ[i][3]);
+                RB4.setText("D)  " + qQ[i][4]);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         String checkB = selectedToggle(i,RB1,RB2,RB3,RB4);
 
@@ -155,12 +162,12 @@ public class QuizController implements Initializable {
         }
         else if(Objects.equals(temp, rb3.getText().substring(4)))
         {
-            selected = "RB4";
+            selected = "RB3";
 
         }
         else if(Objects.equals(temp, rb4.getText().substring(4)))
         {
-            selected = "RB5";
+            selected = "RB4";
 
         }
 
@@ -185,7 +192,6 @@ public class QuizController implements Initializable {
         else if(RB2.isSelected())
         {
             listAnswer = RB2.getText().substring(4);
-
         }
         else if(RB3.isSelected())
         {
@@ -273,7 +279,7 @@ public class QuizController implements Initializable {
         Optional<ButtonType> action = alert.showAndWait();
 
         if (action.isPresent() && action.get() == ButtonType.OK) {
-            this.finish_button();
+            finishFeatures();
             System.gc();
         } else {
             qQid--;
@@ -295,27 +301,33 @@ public class QuizController implements Initializable {
 
     @FXML
     public void finishQuiz(ActionEvent event) throws IOException {
-
         this.setDialogBox();
     }
 
+    public void finishFeatures() {
+        try {
+            qQid = 0;
+            TranslateTransition slideOut = new TranslateTransition(Duration.seconds(0.2), MainController.getInstance().getAPane());
+            slideOut.setToX(-MainController.getInstance().getAPane().getWidth());
+            slideOut.setOnFinished(event -> {
+                try {
+                    MainController.getInstance().getAPane().getChildren().clear();
+                    Node startNode = new FXMLLoader(getClass().getResource("/FXMLViews/PointView.fxml")).load();
+                    MainController.getInstance().getAPane().getChildren().add(startNode);
 
-
-    public void finish_button() throws IOException
-    {
-        qQid=0;
-        finish_button.getScene().getWindow().hide();
-
-        Stage Result = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/FXMLViews/PointView.fxml"));
-        Scene scene = new Scene(root);
-        Result.initStyle(StageStyle.UNDECORATED);
-        Result.setScene(scene);
-        Result.show();
-        Result.setResizable(false);
-
+                    TranslateTransition slideIn = new TranslateTransition(Duration.seconds(0.2), MainController.getInstance().getAPane());
+                    slideIn.setFromX(MainController.getInstance().getAPane().getWidth());
+                    slideIn.setToX(0);
+                    slideIn.play();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+            slideOut.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
 }
 
 
