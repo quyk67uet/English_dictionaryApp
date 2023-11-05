@@ -1,0 +1,19 @@
+.listV {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+    -fx-background-color:	#F5F5DC;
+}
+
+.textF {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+    -fx-background-color: 	#ADD8E6;
+}
+
+
+.listV:hover {
+    -fx-background-color: transparent;
+}
+
+
+.textF:hover {
+    -fx-background-color: #e0e0e0;
+}
