@@ -32,7 +32,7 @@
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/icons/9035054_search_circle_icon.png" />
+                  <Image url="@../assets/icons/searchGP.png" />
                </image>
             </ImageView>
          </graphic>
@@ -50,7 +50,7 @@
          <graphic>
             <ImageView fitHeight="48.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/icons/692155_translate_alteration_language_line-icon_logos_icon%20(2).png" />
+                  <Image url="@../assets/icons/translateGP.png" />
                </image>
             </ImageView>
          </graphic>
