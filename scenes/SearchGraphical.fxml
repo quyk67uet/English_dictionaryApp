@@ -205,6 +205,16 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
+                              <JFXButton layoutX="440.0" layoutY="414.0" prefHeight="42.0" prefWidth="111.0" styleClass="custom-button" stylesheets="@../assets/style.css" text="Submit">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <Label layoutX="302.0" layoutY="25.0" text="Your action is successfully ✔" textFill="#1aaeae">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </content>
