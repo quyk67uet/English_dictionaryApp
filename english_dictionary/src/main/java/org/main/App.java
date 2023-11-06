@@ -20,7 +20,7 @@ public class App extends Application {
             
             primaryStage.setTitle("Dictionary Apps");
             primaryStage.setScene(scene);
-            primaryStage.setResizable(false);
+            // primaryStage.setResizable(false);
             primaryStage.show();
 
             // DictionaryCommandline dcl = new DictionaryCommandline();
