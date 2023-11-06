@@ -1,5 +1,5 @@
 @font-face {
-    src: url("fonts/Poppins-Regular.ttf"),
+    src: url("fonts/MontserratAlternates-SemiBold.otf"),
 }
 
 .container{
@@ -14,13 +14,19 @@
      -fx-border-radius: 5;
 }
 
+.rootMenu{
+    -fx-background-color: linear-gradient(to top right,#ADD8E6, #708090);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
 .exit_button{
      -fx-background-color: transparent;
      -fx-background-radius:30;
      -fx-background-insets: 0;
      -fx-text-fill: #fff;
      -fx-font-weight: bold;
-     -fx-font-family: "Poppins";
+     -fx-font-family: "MontserratAlternates";
 }
 .exit_button:hover{
      -fx-background-color: #1E90FF;
@@ -32,7 +38,7 @@
          -fx-background-insets: 0;
          -fx-text-fill: #fff;
          -fx-font-weight: bold;
-         -fx-font-family: "Poppins";
+         -fx-font-family: "MontserratAlternates";
 }
 .menu_button:hover{
     -fx-background-color: #87CEFA;
@@ -65,7 +71,7 @@
 .search_field{
   -fx-background-color: transparent;
   -fx-text-fill: #d1d8e0;
-  -fx-font-family: "Poppins";
+  -fx-font-family: "MontserratAlternates";
   -fx-font-weight: bold;
   -fx-font-size: 13;
   -fx-border: none ;
@@ -86,4 +92,21 @@
 .textV{
     -fx-background-radius: 0 0 7 0;
     -fx-border-radius: 0 0 7 0;
+}
+
+.custom-button {
+    -fx-background-color: #ADD8E6;
+    -fx-text-fill: 	#4682B4;
+    -fx-font-size: 17px;
+    -fx-padding: 10px 15px;
+    -fx-border-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-font-family: "MontserratAlternates";
+}
+
+.custom-button:hover {
+    -fx-background-color: #87CEEB;
+    -fx-effect: dropshadow(three-pass-box,#ADD8E6, 15, 0, 0, 2) ;
 }

@@ -1,0 +1,46 @@
+@font-face {
+    src: url("fonts/MontserratAlternates-SemiBold.otf"),
+}
+
+.web-view {
+    -fx-background-color: #f0f0f0;
+}
+
+.web-view .content {
+    -fx-font-family:"MontserratAlternates";
+    -fx-font-size: 16px;
+    -fx-text-fill: #708090;
+}
+
+.tool-bar {
+    -fx-background-color: #ADD8E6;
+    -fx-padding: 5px;
+}
+
+.tool-bar .button:hover {
+    -fx-background-color: 	#A9A9A9;
+}
+
+.tool-bar .button:pressed {
+    -fx-background-color: #808080;
+}
+
+
+.web-view {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #1E90FF;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+.web-view {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 5px;
+}
+
+
+.web-view .content {
+    -fx-border-color:	#1E90FF;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
