@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
@@ -12,6 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
 <AnchorPane prefHeight="620.0" prefWidth="760.0" styleClass="root" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.SearchController">
    <children>
@@ -109,18 +111,18 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <ScrollPane layoutX="1.0" layoutY="9.0" prefHeight="518.0" prefWidth="200.0" stylesheets="@../assets/scrollP.css">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="517.0" prefWidth="186.0">
+                  <ScrollPane layoutX="1.0" layoutY="18.0" prefHeight="462.0" prefWidth="200.0" stylesheets="@../assets/scrollP.css">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="186.0">
                            <children>
-                              <ListView fx:id="outputListView" layoutY="-2.0" prefHeight="520.0" prefWidth="187.0" styleClass="listV" stylesheets="@../assets/field.css" />
+                              <ListView fx:id="outputListView" layoutY="1.0" prefHeight="456.0" prefWidth="187.0" styleClass="listV" stylesheets="@../assets/field.css" />
                            </children>
                         </AnchorPane>
-                    </content>
+                     </content>
                   </ScrollPane>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="201.0" layoutY="26.0" prefHeight="541.0" prefWidth="581.0" AnchorPane.bottomAnchor="0.0">
+            <AnchorPane layoutX="201.0" layoutY="26.0" prefHeight="542.0" prefWidth="581.0" AnchorPane.bottomAnchor="-1.0">
                <children>
                   <Pane layoutX="-1.0" layoutY="-5.0" prefHeight="30.0" prefWidth="581.0" styleClass="title_son">
                      <children>
@@ -154,8 +156,11 @@
                                  </effect>
                               </ImageView>
                            </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="editWordButton" contentDisplay="GRAPHIC_ONLY" layoutX="313.0" layoutY="-6.0" text="Edit">
+                        <JFXButton fx:id="editWordButton" contentDisplay="GRAPHIC_ONLY" layoutX="316.0" layoutY="-2.0" prefHeight="32.0" prefWidth="59.0" text="Edit">
                            <graphic>
                               <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -166,6 +171,9 @@
                                  </effect>
                               </ImageView>
                            </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </JFXButton>
                         <JFXButton fx:id="addBookmarkButton" contentDisplay="GRAPHIC_ONLY" layoutX="384.0" layoutY="-5.0" text="Bookmarks">
                            <graphic>
@@ -178,6 +186,9 @@
                                  </effect>
                               </ImageView>
                            </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </JFXButton>
                         <ImageView fitHeight="89.0" fitWidth="69.0" layoutX="521.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -186,23 +197,46 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <ScrollPane layoutX="-2.0" layoutY="75.0" prefHeight="477.0" prefWidth="581.0" stylesheets="@../assets/scrollP.css" AnchorPane.bottomAnchor="0.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="477.0" prefWidth="567.0">
+                  <ScrollPane layoutX="-2.0" layoutY="75.0" prefHeight="435.0" prefWidth="581.0" stylesheets="@../assets/scrollP.css" AnchorPane.bottomAnchor="42.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="567.0">
                            <children>
-                              <TextArea fx:id="outputTextArea" layoutY="-3.0" prefHeight="479.0" prefWidth="573.0" style="-fx-background-color: gray;" />
-                              <JFXButton fx:id="soundButton" contentDisplay="GRAPHIC_ONLY" layoutX="43.0" layoutY="25.0" text="Volume">
+                              <TextArea fx:id="outputTextArea" layoutY="-3.0" prefHeight="437.0" prefWidth="573.0" style="-fx-background-color: gray;">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></TextArea>
+                              <WebView fx:id="outputWebView" layoutX="3.0" layoutY="-2.0" prefHeight="435.0" prefWidth="581.0" />
+                              <JFXButton fx:id="soundButton" contentDisplay="GRAPHIC_ONLY" layoutX="524.0" layoutY="3.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="39.0" text="Volume">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                                  <graphic>
                                     <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../assets/icons/volumeN.png" />
                                        </image>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
+                              <JFXButton fx:id="submitButton" layoutX="452.0" layoutY="376.0" prefHeight="42.0" prefWidth="111.0" styleClass="custom-button" stylesheets="@../assets/style.css" text="Submit">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <Label fx:id="editNotification" layoutX="335.0" layoutY="3.0" prefHeight="39.0" prefWidth="189.0" text="Edited successfully ✔" textFill="#1aaeae">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
-                    </content>
+                     </content>
                   </ScrollPane>
                </children>
             </AnchorPane>
@@ -213,7 +247,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label fx:id="notFoundLable" layoutX="261.0" layoutY="149.0" prefHeight="29.0" prefWidth="295.0" text="Sorry, the dictionary does not provide this word" textFill="#d92929">
+      <Label fx:id="notFoundLable" layoutX="256.0" layoutY="141.0" prefHeight="29.0" prefWidth="295.0" text="Sorry, the dictionary does not provide this word" textFill="#d92929">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>

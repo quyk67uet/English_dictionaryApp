@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Tooltip?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="850.0" styleClass="root" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.DictionaryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="850.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.DictionaryController">
    <children>
       <AnchorPane fx:id="container" layoutX="76.0" layoutY="14.0" prefHeight="620.0" prefWidth="760.0" styleClass="container" stylesheets="@../assets/style.css" />
       <ImageView fitHeight="69.0" fitWidth="67.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
@@ -20,81 +18,6 @@
             <Image url="@../assets/images/computer_icon.png" />
          </image>
       </ImageView>
-      <Button fx:id="exitButton" contentDisplay="GRAPHIC_ONLY" layoutX="17.0" layoutY="550.0" mnemonicParsing="false" styleClass="exit_button" stylesheets="@../assets/style.css" text="Exit">
-         <tooltip>
-            <Tooltip fx:id="exitTooltip" text="Exit" />
-         </tooltip>
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" styleClass="exit_button">
-               <image>
-                  <Image url="@../assets/icons/exit_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="infoButton" contentDisplay="GRAPHIC_ONLY" layoutX="9.0" layoutY="460.0" mnemonicParsing="false" styleClass="menu_button" text="AboutUs">
-         <graphic>
-            <ImageView fitHeight="54.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/icons/info.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip fx:id="aboutUsTooltip" text="About Us" />
-         </tooltip>
-      </Button>
-      <Button fx:id="gameButton" contentDisplay="GRAPHIC_ONLY" layoutX="13.0" layoutY="403.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="47.0" styleClass="menu_button" text="Game">
-         <graphic>
-            <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/icons/game_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip fx:id="gameTooltip" text="Game" />
-         </tooltip>
-      </Button>
-      <Button fx:id="addWordsButton" contentDisplay="GRAPHIC_ONLY" layoutX="16.0" layoutY="340.0" mnemonicParsing="false" styleClass="menu_button" text="Add">
-         <graphic>
-            <ImageView fitHeight="59.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/icons/add_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip fx:id="addWordsTooltip" text="Add words" />
-         </tooltip>
-      </Button>
-      <Button fx:id="googleTranslateButton" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="264.0" mnemonicParsing="false" styleClass="menu_button" text="Translate">
-         <graphic>
-            <ImageView fitHeight="35.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/icons/translate_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip fx:id="googleTranslateTooltip" text="Translate using Google Translate" />
-         </tooltip>
-      </Button>
-      <Button fx:id="searchButton" alignment="BASELINE_LEFT" contentDisplay="GRAPHIC_ONLY" layoutX="16.0" layoutY="201.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="47.0" styleClass="menu_button" text="Search">
-         <graphic>
-            <ImageView fitHeight="27.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/icons/search_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <tooltip>
-            <Tooltip fx:id="searchTooltip" text="Lookup words" />
-         </tooltip>
-      </Button>
       <ImageView fitHeight="136.0" fitWidth="77.0" layoutX="2.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/images/IC1.png" />
@@ -105,5 +28,59 @@
             <Image url="@../assets/images/IC2.png" />
          </image>
       </ImageView>
+      <JFXButton fx:id="searchButton" contentDisplay="GRAPHIC_ONLY" layoutX="9.0" layoutY="192.0" text="Search">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/searchGP.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="addWordsButton" contentDisplay="GRAPHIC_ONLY" layoutX="15.0" layoutY="264.0" text="Add">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/m2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="googleTranslateButton" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="335.0" text="Translate">
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/translateGP.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="gameButton" contentDisplay="GRAPHIC_ONLY" layoutX="16.0" layoutY="414.0" text="Game">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/m4.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="bookmarkButton" contentDisplay="GRAPHIC_ONLY" layoutX="9.0" layoutY="487.0" text="Bookmark">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/m3.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="exitButton" contentDisplay="GRAPHIC_ONLY" layoutX="9.0" layoutY="566.0" text="Log out">
+         <graphic>
+            <ImageView fitHeight="51.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/m5.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>
