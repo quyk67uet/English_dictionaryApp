@@ -19,6 +19,7 @@ import java.util.*;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -37,7 +38,7 @@ import javafx.scene.web.WebView;
 
 public class SearchController implements Initializable {
     @FXML
-    private JFXButton deleteTextFieldButton, editWordButton, soundButton, addBookmarkButton, deleteWordButton;
+    private JFXButton deleteTextFieldButton, editWordButton, soundButton, addBookmarkButton, deleteWordButton, submitButton;
 
     @FXML
     private TextField inputTextField;
@@ -49,8 +50,10 @@ public class SearchController implements Initializable {
     private ListView<String> outputListView;
 
     @FXML
-    private Label notFoundLable;
+    private Label notFoundLable, editNotification;
 
+    @FXML
+    private WebView outputWebView;
     // private WebEngine webEngine = new WebView().getEngine();
 
     private DictionaryCommandline dictionaryCmd;
@@ -137,16 +140,33 @@ public class SearchController implements Initializable {
 
     public void outputListViewEvent() {
         outputTextArea.clear();
+        editNotification.setVisible(false);
+        outputWebView.getEngine().executeScript("document.body.contentEditable = false;");
         // webEngine.loadContent(outputTextArea.textProperty().get());
         String userSelected = outputListView.getSelectionModel().getSelectedItem();
-        if (userSelected != null) {
+        if (userSelected != null && !userSelected.equals("")) {
             DictionaryController.getSqLite().deleteRowDatabase("history", userSelected);
             DictionaryController.getSqLite().insertTableDatabase("history", userSelected);
         }
         // webEngine.loadContent(DictionaryController.getSqLite().wordHTML(userSelected));
-        outputTextArea.textProperty().set(DictionaryController.getSqLite().wordProperty("html", userSelected));
+        outputWebView.getEngine().loadContent(DictionaryController.getSqLite().wordProperty("html", userSelected));
+        outputWebView.getEngine().getLoadWorker().stateProperty().addListener((observable, oldState, newState) -> {
+            if (newState == Worker.State.SUCCEEDED) {
+                String formattedHtmlContent = (String) outputWebView.getEngine().executeScript("document.documentElement.outerHTML");
+                outputTextArea.setText(formattedHtmlContent);
+            }
+        });
     }
 
+    public void outputTextAreaEvent() {
+        // outputTextArea.scrollTopProperty().addListener((observable, oldValue, newValue) -> {
+        //     if (newValue.doubleValue() > 0) {
+        //         soundButton.setTranslateY(-newValue.doubleValue());
+        //     } else {
+        //         soundButton.setTranslateY(0);
+        //     }
+        // });
+    }
     public void soundButtonEvent() {
         try {
             String userSelected = outputListView.getSelectionModel().getSelectedItem();
@@ -167,9 +187,24 @@ public class SearchController implements Initializable {
     }
 
     public void editWordButtonEvent() {
-        outputTextArea.setEditable(true);
         // TODO: Add button save and alert to confirm user request
-
+        // editNotification.setVisible(false);
+        String userSelected = outputListView.getSelectionModel().getSelectedItem();
+        final StringBuilder editedText = new StringBuilder(); 
+        outputWebView.getEngine().executeScript("document.body.contentEditable = true;");
+        outputWebView.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                String text = (String) outputWebView.getEngine().executeScript("document.body.innerHTML").toString();
+                editedText.setLength(0);
+                editedText.append(text);
+            }
+        });
+        submitButton.setOnAction(event -> {
+            DictionaryController.getSqLite().updateWordDatabase("engvie", "html", userSelected, editedText.toString());
+            DictionaryController.getSqLite().updateWordDatabase("bookmark", "html", userSelected, editedText.toString());
+            DictionaryController.getSqLite().updateWordDatabase("history", "html", userSelected, editedText.toString());
+            editNotification.setVisible(true);
+        });
     }
 
     public void deleteWordButtonEvent() {
@@ -195,8 +230,11 @@ public class SearchController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         outputTextArea.setEditable(false);
         notFoundLable.setVisible(false);
+        editNotification.setVisible(false);
+        
         loadWordtoTrie();
         DictionaryController.getSqLite().createTableDatabase("history");
         DictionaryController.getSqLite().createTableDatabase("bookmark");

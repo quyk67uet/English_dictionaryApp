@@ -25,7 +25,7 @@ public class DictionaryController implements Initializable {
     // private Tooltip addWordsTooltip, exitTooltip, gameTooltip, googleTranslateTooltip, aboutUsTooltip, searchTooltip;
 
     @FXML
-    private Button addWordsButton, exitButton, gameButton, googleTranslateButton, infoButton, searchButton;
+    private Button addWordsButton, exitButton, gameButton, googleTranslateButton, bookmarkButton, searchButton;
 
     @FXML
     private AnchorPane container;
@@ -46,6 +46,7 @@ public class DictionaryController implements Initializable {
         mediaPlayer = new MediaPlayer(new Media(Paths.get(path).toUri().toString()));
         return mediaPlayer;
     }
+
     public void searchFeatures() {
         try {
             container.getChildren().clear();
@@ -77,6 +78,16 @@ public class DictionaryController implements Initializable {
         }
     }
 
+    public void bookmarkFeatures() {
+        try {
+            container.getChildren().clear();
+            Node addWordNode = new FXMLLoader(getClass().getResource("/scenes/BookmarkGraphical.fxml")).load();
+            container.getChildren().add(addWordNode);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     // public void showTooltip() {
     //     addWordsTooltip.setShowDelay(Duration.seconds(0.5));
     //     exitTooltip.setShowDelay(Duration.seconds(0.5));
@@ -96,6 +107,9 @@ public class DictionaryController implements Initializable {
         });
         addWordsButton.setOnAction(event -> {
             addWordFeatures();
+        });
+        bookmarkButton.setOnAction(event -> {
+            bookmarkFeatures();
         });
 
         // showTooltip();
