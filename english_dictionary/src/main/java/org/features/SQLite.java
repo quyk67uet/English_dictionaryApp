@@ -43,14 +43,14 @@ public class SQLite {
     }
 
     public ResultSet getAllWordDatabase() throws SQLException {
-        String query = "SELECT word FROM engvie";
+        String query = "SELECT * FROM engvie";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         ResultSet resultSet = preparedStatement.executeQuery();
         return resultSet;
     }
 
     public ResultSet getTableDatabase(String databaseTable) throws SQLException {
-        String query = "SELECT word FROM " + databaseTable +  " ORDER BY id DESC";
+        String query = "SELECT * FROM " + databaseTable +  " ORDER BY id DESC";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         ResultSet resultSet = preparedStatement.executeQuery();
         return resultSet;
@@ -83,11 +83,13 @@ public class SQLite {
 
     }
 
-    public boolean insertWordDatabase(String word, String html) {
-        String query = "INSERT INTO engvie(word, html) VALUES (\"" + word + "\"" + ", \"" + html + "\")";
+    public boolean insertWordDatabase(String word, String html, String description) {
+        // deleteRowDatabase("engvie", word);
+        String query = "INSERT INTO engvie(word, html, description) VALUES (\'" + word + "\'" + ",\'" + html + "\'" + ",\'" + description + "\')";
         try {
+            System.out.println(query);
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.executeUpdate();
+            preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -110,8 +112,8 @@ public class SQLite {
         return true;
     }
     
-    public boolean updateWordDatabase(String word, String html) {
-        String query = "UPDATE engvie SET html = \"" + html + "\"" + " WHERE word = \"" + word + "\"";
+    public boolean updateWordDatabase(String databaseTable, String column, String word, String content) {
+        String query = "UPDATE " + databaseTable + " SET " + column + " = \"" + content + "\"" + " WHERE word = \"" + word + "\";";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.executeUpdate();
