@@ -1,11 +1,14 @@
 package org.controllers;
 
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
@@ -25,7 +28,7 @@ public class DictionaryController implements Initializable {
     // private Tooltip addWordsTooltip, exitTooltip, gameTooltip, googleTranslateTooltip, aboutUsTooltip, searchTooltip;
 
     @FXML
-    private Button addWordsButton, exitButton, gameButton, googleTranslateButton, infoButton, searchButton;
+    private Button addWordsButton, exitButton, gameButton, googleTranslateButton, bookmarkButton, searchButton;
 
     @FXML
     private AnchorPane container;
@@ -33,6 +36,9 @@ public class DictionaryController implements Initializable {
     private static Trie trie = new Trie();
     private static SQLite sqLite = new SQLite();
     private static MediaPlayer mediaPlayer;
+    
+    public static final String langException = "java.lang.Exception";
+    public static final String unknownHostException = "java.net.UnknownHostException";
 
     public static SQLite getSqLite() {
         return sqLite;
@@ -46,11 +52,12 @@ public class DictionaryController implements Initializable {
         mediaPlayer = new MediaPlayer(new Media(Paths.get(path).toUri().toString()));
         return mediaPlayer;
     }
+
     public void searchFeatures() {
         try {
             container.getChildren().clear();
-            Node searchNode = new FXMLLoader(getClass().getResource("/scenes/SearchGraphical.fxml")).load();
-            container.getChildren().add(searchNode);
+            Node addWordNode = new FXMLLoader(getClass().getResource("/scenes/SearchGraphical.fxml")).load();
+            container.getChildren().add(addWordNode);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -59,9 +66,8 @@ public class DictionaryController implements Initializable {
     public void translateFeatures() {
         try {
             container.getChildren().clear();
-            Node translateNode = new FXMLLoader(getClass().getResource("/scenes/TranslationGraphical.fxml")).load();
-            container.getChildren().add(translateNode);
-            System.out.println("Success");
+            Node addWordNode = new FXMLLoader(getClass().getResource("/scenes/TranslationGraphical.fxml")).load();
+            container.getChildren().add(addWordNode);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -71,6 +77,16 @@ public class DictionaryController implements Initializable {
         try {
             container.getChildren().clear();
             Node addWordNode = new FXMLLoader(getClass().getResource("/scenes/AdditionGraphical.fxml")).load();
+            container.getChildren().add(addWordNode);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void bookmarkFeatures() {
+        try {
+            container.getChildren().clear();
+            Node addWordNode = new FXMLLoader(getClass().getResource("/scenes/BookmarkGraphical.fxml")).load();
             container.getChildren().add(addWordNode);
         } catch (Exception e) {
             e.printStackTrace();
@@ -94,8 +110,12 @@ public class DictionaryController implements Initializable {
         googleTranslateButton.setOnAction(event -> {
             translateFeatures();
         });
+        
         addWordsButton.setOnAction(event -> {
             addWordFeatures();
+        });
+        bookmarkButton.setOnAction(event -> {
+            bookmarkFeatures();
         });
 
         // showTooltip();
