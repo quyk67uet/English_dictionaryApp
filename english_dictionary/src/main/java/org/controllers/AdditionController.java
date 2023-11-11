@@ -60,20 +60,30 @@ public class AdditionController implements Initializable {
         return result;
     }
 
+    private String getPlainText(String htmlText) {
+        WebView webView = new WebView();
+        webView.getEngine().loadContent(htmlText);
+        return (String) webView.getEngine().executeScript("document.body.innerText");
+    }
+
     public void addWordsButtonEvent() {
         // TODO: Alert when one or two editor have no texts
-        // if (englishEditor.getHtmlText() != null && !englishEditor.getHtmlText().equals("")) {
-        //     if (vietnameseEditor.getHtmlText() != null && !vietnameseEditor.getHtmlText().equals(""))  {
+        successNotification.setVisible(false);
+        if (getPlainText(englishEditor) != null && !getPlainText(englishEditor).equals("") && !getPlainText(englishEditor).trim().isEmpty()) {
+            if (getPlainText(vietnameseEditor) != null && !getPlainText(vietnameseEditor).equals("") && !getPlainText(vietnameseEditor).trim().isEmpty())  {
                 DictionaryController.getSqLite().insertWordDatabase(getPlainText(englishEditor), vietnameseEditor.getHtmlText(), getPlainText(vietnameseEditor));
                 if (!DictionaryController.getTrie().searchWord(getPlainText(englishEditor))) {
                     DictionaryController.getTrie().insert(getPlainText(englishEditor));
                 }
-
-            
-        
-        System.out.println(getPlainText(englishEditor));
-        System.out.println(vietnameseEditor.getHtmlText());
-        System.out.println(getPlainText(vietnameseEditor));
+                System.out.println("Word: " + getPlainText(englishEditor.getHtmlText()));
+                System.out.println(vietnameseEditor.getHtmlText());
+                System.out.println("Vie: " + getPlainText(vietnameseEditor.getHtmlText()));
+                successNotification.setVisible(true);
+            }
+        }
+        System.out.println(englishEditor.getHtmlText());
+        System.out.println("Test:" + getPlainText(englishEditor) + ".");
+        System.out.println(getPlainText(vietnameseEditor.getHtmlText()));
     }
 
     @Override
@@ -88,9 +98,8 @@ public class AdditionController implements Initializable {
 
         addWordsButton.setOnAction(event -> {
             
-            System.out.println("Add word test");
             addWordsButtonEvent();
-            successNotification.setVisible(true);
+            
         });
     }
     

@@ -10,6 +10,7 @@ import org.features.VoiceRSS;
 import com.jfoenix.controls.JFXButton;
 import com.voicerss.tts.Languages;
 
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -82,24 +83,52 @@ public class TranslationController implements Initializable {
     }
 
     public void soundFirstLanguageButtonEvent() {
-        if (firstLanguageTextArea.getText() != null || !firstLanguageTextArea.getText().equals("")) {
-            try {
-                VoiceRSS.voiceSpeak(firstLanguageTextArea.getText(), firstLanguageVoiceRSS);
-                DictionaryController.getMediaPlayer(VoiceRSS.audioPath).play();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        // TODO: Add lable about notification
+    
+        try {
+            Task<Void> soundFirstLanguage = new Task<Void>() {
+                @Override
+                protected Void call() throws Exception {
+                    VoiceRSS.voiceSpeak(firstLanguageTextArea.getText(), firstLanguageVoiceRSS);
+                    DictionaryController.getMediaPlayer(VoiceRSS.audioPath).play();
+                    return null;
+                }
+            };
+            soundFirstLanguage.setOnFailed(event -> {
+                String taskException = soundFirstLanguage.getException().toString();
+                if (taskException.substring(0, DictionaryController.langException.length()).equals(DictionaryController.langException)) {
+                    System.out.println("no words selected");    
+                } else if (taskException.substring(0, DictionaryController.unknownHostException.length()).equals(DictionaryController.unknownHostException)) {
+                    System.out.println("No internet connection");
+                }
+            });
+            new Thread(soundFirstLanguage).start();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public void soundSecondLanguageButtonEvent() {
-        if (secondLanguageTextArea.getText() != null || !secondLanguageTextArea.getText().equals("")) {
-            try {
-                VoiceRSS.voiceSpeak(secondLanguageTextArea.getText(), secondLanguageVoiceRSS);
-                DictionaryController.getMediaPlayer(VoiceRSS.audioPath).play();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            Task<Void> soundSecondLanguage = new Task<Void>() {
+                @Override
+                protected Void call() throws Exception {
+                    VoiceRSS.voiceSpeak(secondLanguageTextArea.getText(), secondLanguageVoiceRSS);
+                    DictionaryController.getMediaPlayer(VoiceRSS.audioPath).play();
+                    return null;
+                }
+            };
+            soundSecondLanguage.setOnFailed(event -> {
+                String taskException = soundSecondLanguage.getException().toString();
+                if (taskException.substring(0, DictionaryController.langException.length()).equals(DictionaryController.langException)) {
+                    System.out.println("no words selected");    
+                } else if (taskException.substring(0, DictionaryController.unknownHostException.length()).equals(DictionaryController.unknownHostException)) {
+                    System.out.println("No internet connection");
+                }
+            });
+            new Thread(soundSecondLanguage).start();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -121,6 +150,4 @@ public class TranslationController implements Initializable {
             soundSecondLanguageButtonEvent();
         });
     }
-
-
 }
