@@ -10,6 +10,8 @@ import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.controllers.DictionaryController;
+
 public class SQLite {
     private static final String databaseLocation = "jdbc:sqlite:english_dictionary/src/main/resources/assets/databases/en-vi.db";
     private static Connection connection = getConnection();
@@ -57,7 +59,7 @@ public class SQLite {
     }
 
     public boolean deleteRowDatabase(String databaseTable, String word) {
-        String query = "DELETE FROM " + databaseTable +  " WHERE word = \"" + word + "\"";
+        String query = "DELETE FROM " + databaseTable +  " WHERE word = \'" + word + "\'";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.executeUpdate();
@@ -71,6 +73,7 @@ public class SQLite {
     public boolean createTableDatabase(String databaseTable) {
         String query = "CREATE TABLE IF NOT EXISTS " + databaseTable + " (\n" + "id INTEGER PRIMARY KEY,\n" 
                         + "word TEXT,\n" + "html TEXT,\n" + "description TEXT,\n" + "pronunciation TEXT\n);";
+        // String query = "DROP TABLE history";
         // String query = "ALTER TABLE history AUTO_INCREMENT = 1, modify column id int AUTO_INCREMENT;";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -98,8 +101,8 @@ public class SQLite {
     }
 
     public boolean insertTableDatabase(String databaseTable, String word) {
-        String query = "INSERT INTO  " + databaseTable + " (word, html, description, pronunciation)\n"
-                        + "SELECT word, html, description, pronunciation\n"
+        String query = "INSERT INTO " + databaseTable + " (word, html, description, pronunciation)\n"
+                        + "SELECT DISTINCT word, html, description, pronunciation\n"
                         + "FROM engvie\n"
                         + "WHERE word = \"" + word + "\";";
         try {
@@ -113,7 +116,8 @@ public class SQLite {
     }
     
     public boolean updateWordDatabase(String databaseTable, String column, String word, String content) {
-        String query = "UPDATE " + databaseTable + " SET " + column + " = \"" + content + "\"" + " WHERE word = \"" + word + "\";";
+        String query = "UPDATE " + databaseTable + " SET " + column + " = '" + content.replace("'", "''") + "'" + " WHERE word = \"" + word + "\";";
+        System.out.println(query);
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.executeUpdate();
@@ -125,12 +129,14 @@ public class SQLite {
     }
 
     public String wordProperty(String column, String word) {
-        String query = "SELECT " + column + " FROM engvie WHERE word = \"" + word + "\"";
+        String query = "SELECT " + column + " FROM engvie WHERE word = \'" + word + "\'";
         String property = "";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
-            property = resultSet.getString(column);
+            while (resultSet.next()) {
+                property += resultSet.getString(column);
+            }
         } catch (SQLException e) {
             System.out.println("SQL exceptions found in wordHTML");
             e.printStackTrace();
@@ -142,8 +148,6 @@ public class SQLite {
     }
 
     public static void main(String[] args) {
-        // checkSQLite();
-
-        // System.out.println(wordDescription("dog's ear"));
+        
     }
 }
