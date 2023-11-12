@@ -1,0 +1,151 @@
+@font-face {
+    src: url("fonts/MontserratAlternates-SemiBold.otf"),
+}
+
+.container{
+    -fx-background-color:  #fff;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.rootS{
+     -fx-background-color: linear-gradient(to top right,#ADD8E6, #87CEFA);
+     -fx-background-radius: 5;
+     -fx-border-radius: 5;
+}
+
+
+.root{
+     -fx-background-color: linear-gradient(to top right,#4682B4, #87CEEB);
+     -fx-background-radius: 5;
+     -fx-border-radius: 5;
+}
+
+.rootMenu{
+    -fx-background-color: linear-gradient(to top right,#ADD8E6, #708090);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.rootNew{
+      -fx-background-color: linear-gradient(to top right,#ADD8E6, 	#87CEEB);
+      -fx-background-radius: 5;
+      -fx-border-radius: 5;
+}
+
+.exit_button{
+     -fx-background-color: transparent;
+     -fx-background-radius:30;
+     -fx-background-insets: 0;
+     -fx-text-fill: #fff;
+     -fx-font-weight: bold;
+     -fx-font-family: "MontserratAlternates";
+}
+.exit_button:hover{
+     -fx-background-color: #1E90FF;
+     -fx-effect: dropshadow(gaussian, #333, 10, 0, 0, 0);
+}
+.menu_button{
+    -fx-background-color: transparent;
+         -fx-background-radius:30;
+         -fx-background-insets: 0;
+         -fx-text-fill: #fff;
+         -fx-font-weight: bold;
+         -fx-font-family: "MontserratAlternates";
+}
+.menu_button:hover{
+    -fx-background-color: #87CEFA;
+    -fx-effect: dropshadow(gaussian, #333, 10, 0, 0, 0);
+}
+.title{
+     -fx-background-color: #5F9EA0;
+     -fx-effect: dropshadow(three-pass-box, #1E90FF, 10, 0, 0, 0);
+     -fx-background-radius: 5;
+     -fx-border-radius: 5;
+}
+.title_son{
+     -fx-background-color: #B0E0E6;
+     -fx-effect: dropshadow(three-pass-box, #1E90FF, 10, 0, 0, 0);
+     -fx-background-radius: 5;
+     -fx-border-radius: 5;
+}
+.title_son1{
+     -fx-background-color: #87CEFA;
+     -fx-effect: dropshadow(three-pass-box, #1E90FF, 10, 0, 0, 0);
+     -fx-background-radius: 5;
+     -fx-border-radius: 5;
+}
+.search_box{
+    -fx-background-color:  #6495ED;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-effect: dropshadow(three-pass-box, #1E90FF, 15, 0, 0, 2) ;
+}
+.search_field{
+  -fx-background-color: transparent;
+  -fx-text-fill: #d1d8e0;
+  -fx-font-family: "MontserratAlternates";
+  -fx-font-weight: bold;
+  -fx-font-size: 13;
+  -fx-border: none ;
+}
+.search-field:pressed > .search-box{
+   -fx-background-color: white;
+}
+.textE,.textV{
+    -fx-text-fill: #008B8B;
+    -fx-border-color:#87CEEB;
+    -fx-font-size: 18px;
+    -fx-border-width: 2;
+}
+.textE{
+    -fx-background-radius: 0 0 0 7;
+    -fx-border-radius: 0 0 0 7;
+}
+.textV{
+    -fx-background-radius: 0 0 7 0;
+    -fx-border-radius: 0 0 7 0;
+}
+
+.custom-button {
+    -fx-background-color:  #AFEEEE;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+
+}
+
+.custom-button:hover {
+    -fx-background-color: #87CEEB;
+    -fx-effect: dropshadow(three-pass-box,#ADD8E6, 15, 0, 0, 2) ;
+}
+.search_boxBM{
+    -fx-background-color:  #4682B4;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-effect: dropshadow(three-pass-box, #87CEEB, 15, 0, 0, 2) ;
+}
+.search_fieldBM{
+  -fx-background-color: transparent;
+  -fx-text-fill: #d1d8e0;
+  -fx-font-family: "MontserratAlternates";
+  -fx-font-weight: bold;
+  -fx-font-size: 13;
+  -fx-border: none ;
+}
+.search-fieldBM:pressed > .search-boxBM{
+   -fx-background-color: white;
+}
+
+.text-area {
+    -fx-border-color: #87CEEB;
+    -fx-border-width: 3px;
+    -fx-border-radius: 2px;
+    -fx-effect: dropshadow(three-pass-box, #1E90FF, 15, 0, 0, 2) ;
+}
+
+.web-view {
+    -fx-border-color: #87CEEB;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3px;
+}
+

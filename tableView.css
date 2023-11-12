@@ -1,0 +1,87 @@
+
+@font-face {
+    src: url("fonts/MontserratAlternates-SemiBold.otf");
+}
+.table-view {
+    -fx-effect: dropshadow (three-pass-box, #1E90FF, 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #ADD8E6;
+}
+
+.table-row-cell:even {
+    -fx-background-color:#87CEEB;
+}
+
+.table-view .column-header {
+    -fx-background-color: #5F9EA0;
+}
+
+.table-cell {
+    -fx-font-family:"MontserratAlternates";
+    -fx-font-size: 17px;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: 	#87CEFA;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #B0E0E6;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:hover:selected {
+    -fx-background-color: #ADD8E6;
+    -fx-text-fill: white;
+}
+
+.table-column .label:hover {
+    -fx-text-fill: #00BFFF;
+}
+
+.table-column .column-header:hover {
+    -fx-background-color:	#20B2AA;
+    -fx-text-fill: white;
+}
+
+.table-column .column-header:hover:selected {
+    -fx-background-color: #B0E0E6;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: 	#40E0D0;
+    -fx-font-weight: bold;
+}
+
+.table-view .column-header {
+
+    -fx-border-color: #008080;
+    -fx-border-width: 0.5;
+}
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  -hlight-gradient;
+}
+
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to right, #40E0D0, 	#48D1CC);
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
