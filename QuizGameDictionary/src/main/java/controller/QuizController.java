@@ -2,10 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
@@ -106,33 +103,27 @@ public class QuizController implements Initializable {
             e.printStackTrace();
         }
 
-        String checkB = selectedToggle(i,RB1,RB2,RB3,RB4);
+        String checkB = selectedToggle(i);
 
-        if(Objects.equals(checkB, "b1"))
-        {
-            RB1.setSelected(true);
+        if (checkB != null) {
+           if(RB1.getText().substring(4).equals(checkB)) {
+               RB1.setSelected(true);
+            } else if (RB2.getText().substring(4).equals(checkB)) {
+               RB2.setSelected(true);
+           } else if (RB3.getText().substring(4).equals(checkB)) {
+               RB3.setSelected(true);
+           } else if (RB4.getText().substring(4).equals(checkB)) {
+               RB4.setSelected(true);
+           }
         }
-        else if(Objects.equals(checkB, "b2"))
-        {
-            RB2.setSelected(true);
-        }
-        else if(Objects.equals(checkB, "b3"))
-        {
-            RB3.setSelected(true);
-        }
-        else if(Objects.equals(checkB, "b4"))
-        {
-            RB4.setSelected(true);
-        }
-        else
-        {
+        else {
             RB1.setSelected(false);
             RB2.setSelected(false);
             RB3.setSelected(false);
             RB4.setSelected(false);
         }
-
     }
+
 
     public void setQid(int i)
     {
@@ -145,35 +136,10 @@ public class QuizController implements Initializable {
         return qQid;
     }
 
-    public String selectedToggle(int questionQ, JFXRadioButton rb1, JFXRadioButton rb2, JFXRadioButton rb3, JFXRadioButton rb4)
-    {
-        String temp = map.get(questionQ);
-
-        String selected = null;
-
-        if(Objects.equals(temp, rb1.getText().substring(4)))
-        {
-            selected = "RB1";
-        }
-        else if(Objects.equals(temp, rb2.getText().substring(4)))
-        {
-            selected = "RB2";
-
-        }
-        else if(Objects.equals(temp, rb3.getText().substring(4)))
-        {
-            selected = "RB3";
-
-        }
-        else if(Objects.equals(temp, rb4.getText().substring(4)))
-        {
-            selected = "RB4";
-
-        }
-
-        return selected;
-
+    public String selectedToggle(int questionQ) {
+        return map.get(questionQ);
     }
+
 
 
     public String getSelection()
@@ -202,7 +168,6 @@ public class QuizController implements Initializable {
             listAnswer= RB4.getText().substring(4);
         }
 
-
     }
 
     @FXML
@@ -210,7 +175,6 @@ public class QuizController implements Initializable {
     {
         if(qQid<10)
         {
-
             map.put(qQid,getSelection());
             if(Objects.equals(getSelection(), null))
             {
@@ -246,19 +210,15 @@ public class QuizController implements Initializable {
     @FXML
     public void previousAction(ActionEvent e) throws IOException {
         if (qQid > 0) {
-            qQid--;
+            map.put(qQid, getSelection()); // Save the selection for the current question
 
-            map.put(qQid, getSelection());
+            qQid--; // Decrement after saving the selection
 
-            if (Objects.equals(getSelection(), null)) {
-                TickBoxController.getInstance().setColorRed(qQid, true);
-            } else {
-                TickBoxController.getInstance().setColorGreen(qQid, true);
-            }
 
-            renderQuestion(qQid);
+            renderQuestion(qQid); // Render the previous question
         }
     }
+
 
 
     public void setDialogBox() throws IOException {
@@ -311,9 +271,10 @@ public class QuizController implements Initializable {
             slideOut.setToX(-MainController.getInstance().getAPane().getWidth());
             slideOut.setOnFinished(event -> {
                 try {
-                    MainController.getInstance().getAPane().getChildren().clear();
-                    Node startNode = new FXMLLoader(getClass().getResource("/FXMLViews/PointView.fxml")).load();
-                    MainController.getInstance().getAPane().getChildren().add(startNode);
+                    Stage stage = (Stage) finish_button.getScene().getWindow();
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/PointView.fxml")));
+                    stage.getScene().setRoot(root);
+                    stage.show();
 
                     TranslateTransition slideIn = new TranslateTransition(Duration.seconds(0.2), MainController.getInstance().getAPane());
                     slideIn.setFromX(MainController.getInstance().getAPane().getWidth());

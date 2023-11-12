@@ -21,7 +21,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
@@ -30,13 +32,13 @@ import model.CountDown;
 
 public class TickBoxController implements Initializable {
     @FXML
-    private AnchorPane containerQ;
+    private BorderPane containerQ;
     @FXML
     private Tooltip tooltipE;
     @FXML
     private JFXButton homeQ_button;
     @FXML
-    private AnchorPane quizView;
+    private VBox quizView;
 
     @FXML
     private JFXButton q1;
@@ -68,10 +70,10 @@ public class TickBoxController implements Initializable {
     @FXML
     private JFXButton q10;
     @FXML
-    private AnchorPane countDown;
+    private HBox countDown;
 
     private Timeline timeline;
-    AnchorPane homeV;
+    BorderPane homeV;
     private static final Integer STARTTIME = 600;
     private IntegerProperty timeSeconds = new SimpleIntegerProperty(STARTTIME);
 
@@ -135,7 +137,7 @@ public class TickBoxController implements Initializable {
     }
 
 
-    public void createPage(AnchorPane questionArea,String QPath) {
+    public void createPage(BorderPane questionArea,String QPath) {
 
         try {
             questionArea = FXMLLoader.load(getClass().getResource(QPath));
@@ -338,9 +340,10 @@ public class TickBoxController implements Initializable {
             scaleOut.setToY(0);
             scaleOut.setOnFinished(event -> {
                 try {
-                    containerQ.getChildren().clear();
-                    Node startNode = new FXMLLoader(getClass().getResource("/FXMLViews/MenuView.fxml")).load();
-                    containerQ.getChildren().add(startNode);
+                    Stage stage = (Stage) homeQ_button.getScene().getWindow();
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/MenuView.fxml")));
+                    stage.getScene().setRoot(root);
+                    stage.show();
 
                     ScaleTransition scaleIn = new ScaleTransition(Duration.seconds(0.2), containerQ);
                     scaleIn.setFromX(0);

@@ -1,121 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="APane" prefHeight="611.0" prefWidth="840.0" styleClass="root" stylesheets="@../StyleCSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
-   <children>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="334.0" layoutY="331.0" onAction="#closeApp" prefHeight="61.0" prefWidth="94.0" text="Stop">
-         <graphic>
-            <ImageView fitHeight="87.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
+<BorderPane fx:id="APane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="840.0" styleClass="root" stylesheets="@../StyleCSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="121.0" prefWidth="840.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="165.0" prefWidth="840.0">
+               <children>
+                  <ImageView fitHeight="114.0" fitWidth="406.0" layoutX="233.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/welcomeQ.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="131.0" fitWidth="640.0" layoutX="116.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/dictionary_Q.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/quiz_icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="117.0" fitWidth="158.0" layoutX="681.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/quiz2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="start_button" contentDisplay="GRAPHIC_ONLY" prefHeight="36.0" prefWidth="71.0" text="Start" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="82.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/start_button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#closeApp" prefHeight="61.0" prefWidth="94.0" text="Stop">
+               <graphic>
+                  <ImageView fitHeight="87.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/stop_button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <ImageView fitHeight="109.0" fitWidth="219.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/stop_button.png" />
+                  <Image url="@../image/q10.png" />
                </image>
             </ImageView>
-         </graphic></JFXButton>
-      <JFXButton fx:id="start_button" contentDisplay="GRAPHIC_ONLY" layoutX="333.0" layoutY="221.0" prefHeight="36.0" prefWidth="71.0" text="Start" textFill="WHITE">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="82.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#playMusic" prefHeight="63.0" prefWidth="67.0" text="Play">
+                     <graphic>
+                        <ImageView fitHeight="59.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/play_button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip fx:id="tooltipP" text="Play music" />
+                     </tooltip>
+                     <HBox.margin>
+                        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#resetMusic" text="Reset">
+                     <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/reset_button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip fx:id="tooltipR" text="Reset Music" />
+                     </tooltip>
+                     <HBox.margin>
+                        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#pauseMusic" text="Pause">
+                     <graphic>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/pause_button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip fx:id="tooltipS" text="Pause Music" />
+                     </tooltip>
+                     <HBox.margin>
+                        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox alignment="CENTER" prefHeight="420.0" prefWidth="185.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/start_button.png" />
+                  <Image url="@../image/bot0.png" />
                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <ImageView fitHeight="131.0" fitWidth="640.0" layoutX="118.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/dictionary_Q.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="114.0" fitWidth="406.0" layoutX="235.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/welcomeQ.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="147.0" layoutX="1.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/bot0.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="188.0" fitWidth="200.0" layoutX="629.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/bot8.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="206.0" fitWidth="186.0" layoutX="-7.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/bot9.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="141.0" fitWidth="121.0" layoutX="686.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/bot4.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="648.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/quiz2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/quiz_icon.png" />
-         </image>
-      </ImageView>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="299.0" layoutY="528.0" onAction="#playMusic" prefHeight="63.0" prefWidth="67.0" text="Play">
-         <graphic>
-            <ImageView fitHeight="59.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="161.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/play_button.png" />
+                  <Image url="@../image/bot9.png" />
                </image>
             </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip fx:id="tooltipP" text="Play music" />
-         </tooltip></JFXButton>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="470.0" layoutY="529.0" onAction="#pauseMusic" text="Pause">
-         <graphic>
-            <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="127.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/pause_button.png" />
+                  <Image url="@../image/q7.png" />
                </image>
             </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip fx:id="tooltipS" text="Pause Music" />
-         </tooltip></JFXButton>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="380.0" layoutY="585.0" onAction="#resetMusic" text="Reset">
-         <graphic>
-            <ImageView fitHeight="58.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="420.0" prefWidth="171.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="141.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/reset_button.png" />
+                  <Image url="@../image/bot4.png" />
                </image>
             </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip fx:id="tooltipR" text="Reset Music" />
-         </tooltip></JFXButton>
-      <ImageView fitHeight="127.0" fitWidth="257.0" layoutX="307.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/q10.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="127.0" fitWidth="224.0" layoutX="47.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/q7.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="141.0" fitWidth="241.0" layoutX="563.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/q77.png" />
-         </image>
-      </ImageView>
-   </children>
-</AnchorPane>
+            <ImageView fitHeight="139.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/bot8.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="141.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/q77.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

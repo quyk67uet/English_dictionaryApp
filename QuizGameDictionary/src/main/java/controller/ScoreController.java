@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -17,13 +18,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 public class ScoreController implements Initializable{
     @FXML
-    private AnchorPane containerP;
+    private BorderPane containerP;
     @FXML
     private Label Marks;
     @FXML
@@ -50,9 +52,10 @@ public class ScoreController implements Initializable{
             scaleOut.setToY(0);
             scaleOut.setOnFinished(event -> {
                 try {
-                    containerP.getChildren().clear();
-                    Node startNode = new FXMLLoader(getClass().getResource("/FXMLViews/MenuView.fxml")).load();
-                    containerP.getChildren().add(startNode);
+                    Stage stage = (Stage) back_button.getScene().getWindow();
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/MenuView.fxml")));
+                    stage.getScene().setRoot(root);
+                    stage.show();
 
                     ScaleTransition scaleIn = new ScaleTransition(Duration.seconds(0.2), containerP);
                     scaleIn.setFromX(0);
@@ -76,9 +79,10 @@ public class ScoreController implements Initializable{
             slideOut.setToX(-containerP.getWidth());
             slideOut.setOnFinished(event -> {
                 try {
-                    containerP.getChildren().clear();
-                    Node startNode = new FXMLLoader(getClass().getResource("/FXMLViews/QuizResult.fxml")).load();
-                    containerP.getChildren().add(startNode);
+                    Stage stage = (Stage) result_button.getScene().getWindow();
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/QuizResult.fxml")));
+                    stage.getScene().setRoot(root);
+                    stage.show();
 
                     QuizResultController.getInstance().renderQuestionsResult();
 

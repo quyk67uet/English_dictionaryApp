@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -18,11 +19,12 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class QuizResultController implements Initializable {
     @FXML
-    private AnchorPane containerO;
+    private BorderPane containerO;
     @FXML
     private Tooltip tooltipA;
     @FXML
@@ -69,9 +71,10 @@ public class QuizResultController implements Initializable {
             scaleOut.setToY(0);
             scaleOut.setOnFinished(event -> {
                 try {
-                    containerO.getChildren().clear();
-                    Node startNode = new FXMLLoader(getClass().getResource("/FXMLViews/MenuView.fxml")).load();
-                    containerO.getChildren().add(startNode);
+                    Stage stage = (Stage) homeR_button.getScene().getWindow();
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/MenuView.fxml")));
+                    stage.getScene().setRoot(root);
+                    stage.show();
 
                     ScaleTransition scaleIn = new ScaleTransition(Duration.seconds(0.2), containerO);
                     scaleIn.setFromX(0);

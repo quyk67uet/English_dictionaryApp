@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import application.Main;
@@ -17,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -31,7 +33,7 @@ public class MainController implements Initializable {
     @FXML
     private Tooltip tooltipP, tooltipS, tooltipR;
     @FXML
-    private AnchorPane APane;
+    private BorderPane APane;
 
     @FXML
     private JFXButton start_button;
@@ -55,7 +57,9 @@ public class MainController implements Initializable {
         return instance;
     }
 
+    public void loadStage() {
 
+    }
     public void startFeatures() {
         try {
             QuizController.qQid = 0;
@@ -64,10 +68,10 @@ public class MainController implements Initializable {
             fadeOut.setToValue(0.0);
             fadeOut.setOnFinished(event -> {
                 try {
-                    APane.getChildren().clear();
-                    Node startNode = new FXMLLoader(getClass().getResource("/FXMLViews/TickBoxView.fxml")).load();
-                    APane.getChildren().add(startNode);
-
+                    Stage stage = (Stage) start_button.getScene().getWindow();
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/TickBoxView.fxml")));
+                    stage.getScene().setRoot(root);
+                    stage.show();
 
                     FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), APane);
                     fadeIn.setFromValue(0.0);
@@ -115,7 +119,7 @@ public class MainController implements Initializable {
         tooltipR.setShowDelay(Duration.seconds(0.5));
     }
 
-    public AnchorPane getAPane() {
+    public BorderPane getAPane() {
         return APane;
     }
 

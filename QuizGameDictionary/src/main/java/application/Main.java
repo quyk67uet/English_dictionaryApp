@@ -5,8 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
 
 
 public class Main extends Application {
@@ -19,9 +21,15 @@ public class Main extends Application {
             primaryStage = stage;
             Parent root = FXMLLoader.load(getClass().getResource("/FXMLViews/MenuView.fxml"));
             Scene scene = new Scene(root);
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setResizable(true);
+            Image image = new Image("/image/computer2.png");
+
+            stage.getIcons().add(image);
+            stage.setTitle("Dictionary Quiz");
+
+            //stage.initStyle(StageStyle.UNDECORATED);
+
             stage.setScene(scene);
+            stage.setResizable(true);
             stage.show();
         } catch(Exception e) {
             e.printStackTrace();
@@ -35,5 +43,6 @@ public class Main extends Application {
     public static Stage getPrimaryStage() {
         return primaryStage;
     }
+
 
 }

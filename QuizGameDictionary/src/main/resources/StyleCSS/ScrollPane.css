@@ -59,32 +59,6 @@
         -fx-background-radius: 2em;
 }
 
-.scroll-pane .scroll-bar:horizontal {
-    -fx-background-color: transparent;
-    -fx-background-radius: 0;
-}
-
-.scroll-pane .scroll-bar:horizontal .track {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
-    -fx-background-radius: 0em;
-    -fx-border-radius: 2em;
-}
-
-.scroll-pane .scroll-bar:horizontal .decrement-button {
-    -fx-background-color: transparent;
-    -fx-background-radius: 0em;
-    -fx-padding: 0 0 10 0;
-}
-
-.scroll-pane .scroll-bar:horizontal .increment-button {
-    -fx-background-color: transparent;
-    -fx-background-radius: 0em;
-    -fx-padding: 0 10 0 0;
-}
-
-.scroll-pane .scroll-bar:horizontal .thumb {
-    -fx-background-color: derive(black, 90%);
-    -fx-background-insets: 2, 0, 0;
-    -fx-background-radius: 2em;
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #B0C4DE;
 }
