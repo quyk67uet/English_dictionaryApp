@@ -14,11 +14,13 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import org.features.*;
@@ -28,7 +30,7 @@ public class DictionaryController implements Initializable {
     // private Tooltip addWordsTooltip, exitTooltip, gameTooltip, googleTranslateTooltip, aboutUsTooltip, searchTooltip;
 
     @FXML
-    private Button addWordsButton, exitButton, gameButton, googleTranslateButton, bookmarkButton, searchButton;
+    private Button addWordsButton, homeButton, gameButton, googleTranslateButton, bookmarkButton, searchButton;
 
     @FXML
     private AnchorPane container;
@@ -55,9 +57,11 @@ public class DictionaryController implements Initializable {
 
     public void searchFeatures() {
         try {
-            container.getChildren().clear();
-            Node addWordNode = new FXMLLoader(getClass().getResource("/scenes/SearchGraphical.fxml")).load();
-            container.getChildren().add(addWordNode);
+            Stage stage = (Stage) searchButton.getScene().getWindow();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/SearchGraphical.fxml")));
+            stage.getScene().setRoot(root);
+            stage.show();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -65,9 +69,10 @@ public class DictionaryController implements Initializable {
 
     public void translateFeatures() {
         try {
-            container.getChildren().clear();
-            Node addWordNode = new FXMLLoader(getClass().getResource("/scenes/TranslationGraphical.fxml")).load();
-            container.getChildren().add(addWordNode);
+            Stage stage = (Stage) googleTranslateButton.getScene().getWindow();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/TranslationGraphical.fxml")));
+            stage.getScene().setRoot(root);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -75,9 +80,10 @@ public class DictionaryController implements Initializable {
 
     public void addWordFeatures() {
         try {
-            container.getChildren().clear();
-            Node addWordNode = new FXMLLoader(getClass().getResource("/scenes/AdditionGraphical.fxml")).load();
-            container.getChildren().add(addWordNode);
+            Stage stage = (Stage) addWordsButton.getScene().getWindow();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/AdditionGraphical.fxml")));
+            stage.getScene().setRoot(root);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -85,9 +91,21 @@ public class DictionaryController implements Initializable {
 
     public void bookmarkFeatures() {
         try {
-            container.getChildren().clear();
-            Node addWordNode = new FXMLLoader(getClass().getResource("/scenes/BookmarkGraphical.fxml")).load();
-            container.getChildren().add(addWordNode);
+            Stage stage = (Stage) bookmarkButton.getScene().getWindow();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/BookmarkGraphical.fxml")));
+            stage.getScene().setRoot(root);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void homeFeatures() {
+        try {
+            Stage stage = (Stage) homeButton.getScene().getWindow();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/HomeGraphical.fxml")));
+            stage.getScene().setRoot(root);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -110,12 +128,17 @@ public class DictionaryController implements Initializable {
         googleTranslateButton.setOnAction(event -> {
             translateFeatures();
         });
-        
+
         addWordsButton.setOnAction(event -> {
             addWordFeatures();
         });
+
         bookmarkButton.setOnAction(event -> {
             bookmarkFeatures();
+        });
+
+        homeButton.setOnAction(event -> {
+            homeFeatures();
         });
 
         // showTooltip();

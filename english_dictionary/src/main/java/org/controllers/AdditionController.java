@@ -22,12 +22,12 @@ import javafx.scene.web.WebView;
 public class AdditionController implements Initializable {
     @FXML
     private HTMLEditor englishEditor, vietnameseEditor;
-    
+
     @FXML
     private Button addWordsButton;
 
     @FXML
-    private Label successNotification;
+    private Label successNotification; // failureNotification;
 
     public String getPlainText(HTMLEditor htmlEditor) {
         // WebView webView = new WebView();
@@ -45,7 +45,7 @@ public class AdditionController implements Initializable {
         // });
 
         // return stringBuilder.toString();
-        
+
         String result = "";
 
         Pattern pattern = Pattern.compile("<[^>]*>");
@@ -56,7 +56,7 @@ public class AdditionController implements Initializable {
             matcher.appendReplacement(text, " ");
         }
         matcher.appendTail(text);
-        result = text.toString().trim();  
+        result = text.toString().trim();
         return result;
     }
 
@@ -68,6 +68,7 @@ public class AdditionController implements Initializable {
 
     public void addWordsButtonEvent() {
         // TODO: Alert when one or two editor have no texts
+        // failureNotification.setVisible(false);
         successNotification.setVisible(false);
         if (getPlainText(englishEditor) != null && !getPlainText(englishEditor).equals("") && !getPlainText(englishEditor).trim().isEmpty()) {
             if (getPlainText(vietnameseEditor) != null && !getPlainText(vietnameseEditor).equals("") && !getPlainText(vietnameseEditor).trim().isEmpty())  {
@@ -81,6 +82,9 @@ public class AdditionController implements Initializable {
                 successNotification.setVisible(true);
             }
         }
+        else {
+            // failureNotification.setVisible(true);
+        }
         System.out.println(englishEditor.getHtmlText());
         System.out.println("Test:" + getPlainText(englishEditor) + ".");
         System.out.println(getPlainText(vietnameseEditor.getHtmlText()));
@@ -92,15 +96,15 @@ public class AdditionController implements Initializable {
         // addWordsButtonEvent();
         // englishTextFieldEvent();
         // vietnameseTextAreaEvent();
-        
+
 
         successNotification.setVisible(false);
 
         addWordsButton.setOnAction(event -> {
-            
+
             addWordsButtonEvent();
-            
+
         });
     }
-    
+
 }

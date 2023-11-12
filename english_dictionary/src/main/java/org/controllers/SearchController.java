@@ -53,7 +53,7 @@ public class SearchController implements Initializable {
     private ListView<String> outputListView;
 
     @FXML
-    private Label notFoundLable, editNotification;
+    private Label notFoundLable, noWordsLabel, noInternetLabel, deleteLabel, editLabel, bookmarkLabel;
 
     @FXML
     private WebView outputWebView;
@@ -162,7 +162,13 @@ public class SearchController implements Initializable {
 
     public void outputListViewEvent() {
         // outputTextArea.clear();
-        editNotification.setVisible(false);
+        noWordsLabel.setVisible(false);
+        noInternetLabel.setVisible(false);
+        editLabel.setVisible(false);
+        bookmarkLabel.setVisible(false);
+        deleteLabel.setVisible(false);
+        String cssStyling = "body { font-family: 'Nunito', sans-serif; }";
+        outputWebView.getEngine().setUserStyleSheetLocation("data:text/css," + cssStyling);
         outputWebView.getEngine().loadContent("");
         outputWebView.getEngine().executeScript("document.body.contentEditable = false;");
         
@@ -199,7 +205,13 @@ public class SearchController implements Initializable {
         //     }
         // });
     }
+
     public void soundButtonEvent() {
+        noWordsLabel.setVisible(false);
+        noInternetLabel.setVisible(false);
+        deleteLabel.setVisible(false);
+        editLabel.setVisible(false);
+        bookmarkLabel.setVisible(false);
         String userSelected = outputListView.getSelectionModel().getSelectedItem();
         try {
             Task<Void> soundTask = new Task<>() {
@@ -215,8 +227,10 @@ public class SearchController implements Initializable {
             soundTask.setOnFailed(event -> {
                 String soundException = soundTask.getException().toString();
                 if (soundException.substring(0, DictionaryController.langException.length()).equals(DictionaryController.langException)) {
+                    noWordsLabel.setVisible(true);
                     System.out.println("no words selected");    
                 } else if (soundException.substring(0, DictionaryController.unknownHostException.length()).equals(DictionaryController.unknownHostException)) {
+                    noInternetLabel.setVisible(true);
                     System.out.println("No internet connection");
                 }
             });
@@ -229,6 +243,11 @@ public class SearchController implements Initializable {
 
     public void addBookmarkButtonEvent() {
         // Alert confirm user request
+        noWordsLabel.setVisible(false);
+        noInternetLabel.setVisible(false);
+        deleteLabel.setVisible(false);
+        editLabel.setVisible(false);
+        bookmarkLabel.setVisible(false);
         String userSelected = outputListView.getSelectionModel().getSelectedItem();
         
         if (userSelected != null && !userSelected.equals("")) {
@@ -241,6 +260,9 @@ public class SearchController implements Initializable {
                     return null;
                 }
             };
+            addBookmarkTask.setOnSucceeded(event -> {
+                bookmarkLabel.setVisible(true);
+            });
             new Thread(addBookmarkTask).start();
         }
         // TODO: Add notification (label)
@@ -248,7 +270,11 @@ public class SearchController implements Initializable {
 
     public void editWordButtonEvent() {
         // TODO: Add button save and alert to confirm user request
-        editNotification.setVisible(false);
+        noWordsLabel.setVisible(false);
+        noInternetLabel.setVisible(false);
+        deleteLabel.setVisible(false);
+        editLabel.setVisible(false);
+        bookmarkLabel.setVisible(false);
         String userSelected = outputListView.getSelectionModel().getSelectedItem();
         final StringBuilder editedText = new StringBuilder(); 
         outputWebView.getEngine().executeScript("document.body.contentEditable = true;");
@@ -266,18 +292,27 @@ public class SearchController implements Initializable {
                     DictionaryController.getSqLite().updateWordDatabase("engvie", "html", userSelected, editedText.toString());
                     DictionaryController.getSqLite().updateWordDatabase("bookmark", "html", userSelected, editedText.toString());
                     DictionaryController.getSqLite().updateWordDatabase("history", "html", userSelected, editedText.toString());
-                    editNotification.setVisible(true);
-                    outputWebView.getEngine().executeScript("document.body.contentEditable = false;");
                     return null;
                 }
             };
+            submitTask.setOnFailed(eventt -> {
+                System.out.println(submitTask.getException().getMessage());
+            });
+            submitTask.setOnSucceeded(eventt -> {
+                editLabel.setVisible(true);
+                outputWebView.getEngine().executeScript("document.body.contentEditable = false;");
+            });
             new Thread(submitTask).start();
         });
     }
 
     public void deleteWordButtonEvent() {
         // TODO: Alert user
-
+        noWordsLabel.setVisible(false);
+        noInternetLabel.setVisible(false);
+        deleteLabel.setVisible(false);
+        editLabel.setVisible(false);
+        bookmarkLabel.setVisible(false);
         String userSelected = outputListView.getSelectionModel().getSelectedItem();
         
         if (userSelected != null && !userSelected.equals("")) {
@@ -285,15 +320,23 @@ public class SearchController implements Initializable {
             Task<Void> deleteWordTask = new Task<Void>() {
                 @Override
                 protected Void call() throws Exception {
-                    // DictionaryController.getSqLite().deleteRowDatabase("engvie", userSelected);
+                    DictionaryController.getTrie().deleteWord(userSelected);
+                    DictionaryController.getSqLite().deleteRowDatabase("engvie", userSelected);
                     DictionaryController.getSqLite().deleteRowDatabase("history", userSelected);
                     DictionaryController.getSqLite().deleteRowDatabase("bookmark", userSelected);
                     return null;
                 }
             };
+            deleteWordTask.setOnFailed(event -> {
+                System.out.println(deleteWordTask.getException().getMessage());
+            });
+            deleteWordTask.setOnSucceeded(event -> {
+                outputListView.getItems().remove(userSelected);
+                outputWebView.getEngine().loadContent("");
+                deleteLabel.setVisible(true);
+            });
             new Thread(deleteWordTask).start();
         }
-        
         System.out.println("delete success");
     }
 
@@ -315,7 +358,11 @@ public class SearchController implements Initializable {
         // outputTextArea.setEditable(false);
         outputWebView.getEngine().loadContent("");
         notFoundLable.setVisible(false);
-        editNotification.setVisible(false);
+        noWordsLabel.setVisible(false);
+        noInternetLabel.setVisible(false);
+        deleteLabel.setVisible(false);
+        editLabel.setVisible(false);
+        bookmarkLabel.setVisible(false);
         loadWordtoTrie();
         DictionaryController.getSqLite().createTableDatabase("history");
         DictionaryController.getSqLite().createTableDatabase("bookmark");

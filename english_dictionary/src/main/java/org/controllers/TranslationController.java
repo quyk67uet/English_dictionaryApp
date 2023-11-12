@@ -3,6 +3,7 @@ package org.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutionException;
 
 import org.features.TranslateAPI;
 import org.features.VoiceRSS;
@@ -67,19 +68,24 @@ public class TranslationController implements Initializable {
 
     public void translateButtonEvent() {
         if (firstLanguageTextArea.getText() != null || !firstLanguageTextArea.getText().equals("")) {
-            try {
-                secondLanguageTextArea.setText(TranslateAPI.translate(firstLanguageGoogleAPI, secondLanguageGoogleAPI, firstLanguageTextArea.getText()));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            Task<String> translateTask = new Task<String>() {
+                @Override
+                protected String call() throws Exception {
+                    return TranslateAPI.translate(firstLanguageGoogleAPI, secondLanguageGoogleAPI, firstLanguageTextArea.getText());
+                }
+            };
+            translateTask.setOnFailed(event -> {
+                System.out.println(translateTask.getException().getMessage());
+            });
+            translateTask.setOnSucceeded(event -> {
+                try {
+                    secondLanguageTextArea.setText(translateTask.get());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+            new Thread(translateTask).start();
         }
-        // if (secondLanguageTextArea.getText() != null || !secondLanguageTextArea.getText().equals("")) {
-        //     try {
-        //         firstLanguageTextArea.setText(TranslateAPI.translate(secondLanguageAbbreviation, firstLanguageAbbreviation, secondLanguageTextArea.getText()));
-        //     } catch (Exception e) {
-        //         e.printStackTrace();
-        //     }
-        // }
     }
 
     public void soundFirstLanguageButtonEvent() {
@@ -134,6 +140,14 @@ public class TranslationController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        firstLanguageTextArea.setStyle("-fx-font-size: 18px;");
+        secondLanguageTextArea.setStyle("-fx-font-size: 18px;");
+        secondLanguageTextArea.setEditable(false);
+
+        // firstLanguageTextArea.textProperty().addListener(event -> {
+        //     secondLanguageTextArea.clear();
+        // });
+
         switchLanguageButton.setOnAction(event -> {
             switchLanguageButtonEvent();
         });
