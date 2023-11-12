@@ -64,7 +64,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="bookmarkButton" contentDisplay="GRAPHIC_ONLY" layoutX="9.0" layoutY="487.0" text="Bookmark">
+      <JFXButton fx:id="infoButton" contentDisplay="GRAPHIC_ONLY" layoutX="9.0" layoutY="487.0" text="Info">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                <image>

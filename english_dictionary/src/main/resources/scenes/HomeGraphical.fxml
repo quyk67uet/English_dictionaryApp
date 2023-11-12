@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1026.0" styleClass="root" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.HomeController">
+    <left>
+        <fx:include prefHeight="60.0" source="SildeMenu.fxml" />
+    </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="aboutButton" prefHeight="80.0" prefWidth="219.0" styleClass="custom-button" stylesheets="@../assets/style.css" text="About Us" textFill="#0871bc">
+                     <graphic>
+                        <ImageView fitHeight="72.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/info.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="exitButton" prefHeight="80.0" prefWidth="219.0" styleClass="custom-button" stylesheets="@../assets/style.css" text="Exit" textFill="#0871bc">
+                     <graphic>
+                        <ImageView fitHeight="68.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/exit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="275.0" prefWidth="843.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="275.0" prefWidth="850.0">
+                     <children>
+                        <ImageView fitHeight="169.0" fitWidth="811.0" layoutX="25.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/WELCOME TO DICTIONARY APPLICATION.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="96.0" fitWidth="107.0" layoutX="558.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/a1.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="105.0" fitWidth="169.0" layoutX="108.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/a2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="116.0" fitWidth="107.0" layoutX="237.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/a3.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="142.0" fitWidth="146.0" layoutX="690.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/a5.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="122.0" fitWidth="114.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/robot23.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <VBox alignment="CENTER" prefHeight="351.0" prefWidth="161.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="136.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/a4.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox alignment="CENTER" prefHeight="351.0" prefWidth="145.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="171.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/a6.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </right>
+      </BorderPane>
+   </center>
+</BorderPane>
