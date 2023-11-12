@@ -23,7 +23,7 @@
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
-            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <BorderPane prefHeight="200.0" prefWidth="801.0" BorderPane.alignment="CENTER">
                <top>
                   <HBox prefHeight="46.0" prefWidth="760.0" styleClass="title" BorderPane.alignment="CENTER">
                      <children>
@@ -43,7 +43,7 @@
                <center>
                   <VBox alignment="CENTER" prefWidth="100.0" BorderPane.alignment="CENTER">
                      <children>
-                        <BorderPane prefHeight="413.0" prefWidth="760.0">
+                        <BorderPane prefHeight="28.0" prefWidth="843.0">
                            <top>
                               <HBox alignment="CENTER" prefHeight="30.0" prefWidth="760.0" BorderPane.alignment="CENTER">
                                  <children>
@@ -80,19 +80,25 @@
                   </VBox>
                </center>
                <bottom>
-                  <VBox prefHeight="357.0" prefWidth="760.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <TableView fx:id="bookmarkTable" prefHeight="300.0" prefWidth="713.0" stylesheets="@../assets/tableView.css">
-                           <columns>
-                              <TableColumn fx:id="wordColumn" prefWidth="162.00001275539398" styleClass="column-header" text="Word" />
-                              <TableColumn fx:id="pronunciationColumn" prefWidth="94.00001525878906" styleClass="column-header" text="Pronunciation" />
-                              <TableColumn fx:id="descriptionColumn" maxWidth="1.7976931348623157E308" prefWidth="501.33331298828125" styleClass="column-header" text="Description" />
-                           </columns>
-                           <columnResizePolicy>
-                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                           </columnResizePolicy>
-                        </TableView>
-                        <StackPane prefHeight="57.0" prefWidth="760.0">
+                  <BorderPane prefHeight="405.0" prefWidth="843.0" BorderPane.alignment="CENTER">
+                     <center>
+                        <VBox prefHeight="395.0" prefWidth="801.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TableView fx:id="bookmarkTable" prefHeight="349.0" prefWidth="655.0" stylesheets="@../assets/tableView.css">
+                                 <columns>
+                                    <TableColumn fx:id="wordColumn" prefWidth="162.00001275539398" styleClass="column-header" text="Word" />
+                                    <TableColumn fx:id="pronunciationColumn" prefWidth="189.99993896484375" styleClass="column-header" text="Pronunciation" />
+                                    <TableColumn fx:id="descriptionColumn" maxWidth="1.7976931348623157E308" prefWidth="344.666748046875" styleClass="column-header" text="Description" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </center>
+                     <bottom>
+                        <StackPane prefHeight="57.0" prefWidth="794.0" BorderPane.alignment="CENTER">
                            <children>
                               <JFXButton contentDisplay="GRAPHIC_ONLY" text="Delete" StackPane.alignment="TOP_RIGHT">
                                  <graphic>
@@ -108,8 +114,14 @@
                               </JFXButton>
                            </children>
                         </StackPane>
-                     </children>
-                  </VBox>
+                     </bottom>
+                     <left>
+                        <VBox prefHeight="348.0" prefWidth="71.0" BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <VBox prefHeight="348.0" prefWidth="72.0" BorderPane.alignment="CENTER" />
+                     </right>
+                  </BorderPane>
                </bottom>
             </BorderPane>
          </center>
@@ -128,7 +140,7 @@
                               <Image url="@../assets/images/robot17.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="101.0" fitWidth="96.0" layoutX="686.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="101.0" fitWidth="96.0" layoutX="737.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/robot29.png" />
                            </image>

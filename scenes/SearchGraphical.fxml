@@ -47,7 +47,7 @@
                                     </JFXButton>
                                     <ImageView fitHeight="42.0" fitWidth="39.0" layoutX="-5.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/icons/searchN.png" />
+                                          <Image url="@../assets/icons/searchN%20(1).png" />
                                        </image>
                                        <effect>
                                           <Bloom />
@@ -114,26 +114,50 @@
                               </Label>
                            </children>
                         </HBox>
-                        <Label text="Add BM succesfully✔" textFill="#177ba6">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                           <graphic>
-                              <Label text="Edit succesfully✔" textFill="#29fff8">
-                                 <font>
-                                    <Font name="System Bold" size="17.0" />
-                                 </font>
-                                 <graphic>
-                                    <Label text="Delete succesfully✔" textFill="#1addff">
+                        <HBox alignment="CENTER" prefHeight="23.0" prefWidth="575.0" styleClass="title_son1" stylesheets="@../assets/style.css">
+                           <children>
+                              <AnchorPane prefHeight="23.0" prefWidth="586.0">
+                                 <children>
+                                    <Label layoutX="201.0" text="No words selected" textFill="#db1812">
                                        <font>
                                           <Font name="System Bold" size="17.0" />
                                        </font>
                                     </Label>
-                                 </graphic>
-                              </Label>
-                           </graphic>
-                        </Label>
-                        <WebView fx:id="outputWebView" prefHeight="377.0" prefWidth="575.0" />
+                                    <Label layoutX="201.0" text="No Internet access" textFill="#db1812">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="201.0" text="Edit succesfully✔" textFill="#06b16a">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="201.0" text="Delete succesfully✔" textFill="#06b16a">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="201.0" text="Add BM succesfully✔" textFill="#06b16a">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="25.0" fitWidth="75.0" layoutX="551.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/icons/status.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="501.0" text="Status" textFill="#317def">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <WebView fx:id="outputWebView" prefHeight="389.0" prefWidth="577.0" />
                      </children>
                   </VBox>
                </center>
