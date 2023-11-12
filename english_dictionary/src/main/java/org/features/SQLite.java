@@ -73,6 +73,13 @@ public class SQLite {
     public boolean createTableDatabase(String databaseTable) {
         String query = "CREATE TABLE IF NOT EXISTS " + databaseTable + " (\n" + "id INTEGER PRIMARY KEY,\n" 
                         + "word TEXT,\n" + "html TEXT,\n" + "description TEXT,\n" + "pronunciation TEXT\n);";
+        // String query = "DELETE FROM engvie\r\n" + //
+        //         "WHERE rowid NOT IN (\r\n" + //
+        //         "    SELECT MAX(rowid)\r\n" + //
+        //         "    FROM engvie\r\n" + //
+        //         "    GROUP BY word\r\n" + //
+        //         ");";
+        // String query = "DELETE c1 FROM contacts c1 INNER JOIN contacts c2 WHERE c1.id > c2.id AND c1.email = c2.email;";
         // String query = "DROP TABLE history";
         // String query = "ALTER TABLE history AUTO_INCREMENT = 1, modify column id int AUTO_INCREMENT;";
         try {
