@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="containerP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="840.0" styleClass="root" stylesheets="@../StyleCSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ScoreController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="274.0" prefWidth="840.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="274.0" prefWidth="853.0">
+               <children>
+                  <ImageView fitHeight="162.0" fitWidth="258.0" layoutX="203.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/borderT.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="182.0" fitWidth="246.0" layoutX="439.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/frame4.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="471.0" layoutY="68.0" prefHeight="32.0" prefWidth="151.0" text="Your Score is" textFill="#2cc3ff">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Marks" layoutX="575.0" layoutY="104.0" text="/10" textFill="#0df46d">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="109.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/computer2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="199.0" fitWidth="210.0" layoutX="165.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/bot2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="615.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/bot11.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="172.0" layoutX="668.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/gamemode.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="result_button" contentDisplay="GRAPHIC_ONLY" text="ViewResult">
+               <graphic>
+                  <ImageView fitHeight="85.0" fitWidth="264.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/review_button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="back_button" contentDisplay="GRAPHIC_ONLY" prefHeight="40.0" prefWidth="170.0" text="Go to Home">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="89.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/HOME.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox alignment="CENTER" prefHeight="315.0" prefWidth="233.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="131.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../English_dictionaryApp-main/english_dictionary/src/main/resources/Utils/images/AI1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/robot31.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="315.0" prefWidth="256.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="109.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/AI3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="194.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/bot12.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
