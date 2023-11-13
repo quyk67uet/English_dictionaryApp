@@ -1,6 +1,5 @@
 package controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -9,18 +8,13 @@ import com.jfoenix.controls.JFXButton;
 
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 public class ScoreController implements Initializable{
@@ -53,7 +47,7 @@ public class ScoreController implements Initializable{
             scaleOut.setOnFinished(event -> {
                 try {
                     Stage stage = (Stage) back_button.getScene().getWindow();
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/MenuView.fxml")));
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/GameGraphical.fxml")));
                     stage.getScene().setRoot(root);
                     stage.show();
 
@@ -111,7 +105,7 @@ public class ScoreController implements Initializable{
             resultFeatures();
         });
         //Get Final Score
-        int no = QuizController.getInstance().countCorrectAnswer();
+        int no = GrammarController.getInstance().countCorrectAnswer();
         //Set Final Score
         Marks.setText(no+"/10");
     }

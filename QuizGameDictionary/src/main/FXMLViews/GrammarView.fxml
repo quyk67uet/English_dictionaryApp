@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="569.0" styleClass="rootQ2" stylesheets="@../StyleCSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GrammarController">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="100.0" prefWidth="570.0">
+               <children>
+                  <ImageView fitHeight="92.0" fitWidth="353.0" layoutX="116.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/v6.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="99.0" fitWidth="77.0" layoutX="80.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/v8.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="77.0" fitWidth="89.0" layoutX="469.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/bot0.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="79.0" fitWidth="91.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/bot11.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="51.0" prefWidth="569.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="67.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/bot3.png" />
+               </image>
+            </ImageView>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#previousAction" text="Previous">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/b3.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#nextAction" prefHeight="33.0" prefWidth="97.0" text="Next">
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/b2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="finish_button" contentDisplay="GRAPHIC_ONLY" onAction="#finishQuiz" text="Finish">
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/b1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox prefHeight="23.0" prefWidth="569.0" styleClass="title_son2" stylesheets="@../StyleCSS/style.css" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="60.0" prefWidth="569.0">
+                     <children>
+                        <TextFlow prefHeight="82.0" prefWidth="569.0">
+                           <children>
+                              <ImageView fitHeight="32.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/v2.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="question" fill="#675d20" strokeType="OUTSIDE" strokeWidth="0.0" text="Write Question">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </TextFlow>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox prefHeight="175.0" prefWidth="569.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXRadioButton fx:id="optionA" text=" A )" textFill="#2f260c">
+                     <VBox.margin>
+                        <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="optionB" text=" B )" textFill="#2f260c">
+                     <VBox.margin>
+                        <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="optionC" text=" C)" textFill="#2f260c">
+                     <VBox.margin>
+                        <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="optionD" text=" D )" textFill="#2f260c">
+                     <VBox.margin>
+                        <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </center>
+</BorderPane>

@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
 
 
 public class Main extends Application {
@@ -19,7 +17,7 @@ public class Main extends Application {
     public void start(Stage stage) {
         try {
             primaryStage = stage;
-            Parent root = FXMLLoader.load(getClass().getResource("/FXMLViews/MenuView.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/FXMLViews/GameGraphical.fxml"));
             Scene scene = new Scene(root);
             Image image = new Image("/image/computer2.png");
 

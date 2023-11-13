@@ -2,7 +2,7 @@ package model;
 
 import java.io.IOException;
 
-import controller.QuizController;
+import controller.GrammarController;
 import eu.hansolo.tilesfx.Tile;
 import eu.hansolo.tilesfx.Tile.SkinType;
 import eu.hansolo.tilesfx.TileBuilder;
@@ -91,7 +91,7 @@ public class CountDown {
 
     public void setStop() throws IOException {
 
-        QuizController.getInstance().finishFeatures();
+        GrammarController.getInstance().finishFeatures();
     }
 
 

@@ -2,25 +2,22 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.ScaleTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Tooltip;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import static controller.GrammarController.questionsQ;
 
 public class QuizResultController implements Initializable {
     @FXML
@@ -43,7 +40,7 @@ public class QuizResultController implements Initializable {
     @FXML
     private VBox questionContainer;
     public void renderQuestionsResult() {
-        for (int i = 0; i < QuizController.getInstance().qQ.length; i++) {
+        for (int i = 0; i < questionsQ.size(); i++) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXMLViews/QuizResultSingleQ.fxml"));
             try {
                 Node node = fxmlLoader.load();
@@ -72,7 +69,7 @@ public class QuizResultController implements Initializable {
             scaleOut.setOnFinished(event -> {
                 try {
                     Stage stage = (Stage) homeR_button.getScene().getWindow();
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/MenuView.fxml")));
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/GameGraphical.fxml")));
                     stage.getScene().setRoot(root);
                     stage.show();
 

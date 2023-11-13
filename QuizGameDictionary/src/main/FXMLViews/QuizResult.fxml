@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="containerO" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1026.0" styleClass="root" stylesheets="@../StyleCSS/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QuizResultController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="127.0" prefWidth="840.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="127.0" prefWidth="841.0">
+               <children>
+                  <Label layoutX="264.0" layoutY="24.0" prefHeight="78.0" prefWidth="333.0" text="Your Answer" textFill="#c8ede2">
+                     <font>
+                        <Font name="System Bold" size="54.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="98.0" fitWidth="97.0" layoutX="597.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/q.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="98.0" fitWidth="104.0" layoutX="176.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/q6.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="97.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/q2.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="homeR_button" contentDisplay="GRAPHIC_ONLY" layoutX="724.0" layoutY="15.0" text="Home">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/home_button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip fx:id="tooltipA" text="Go to Home" />
+                     </tooltip>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <VBox prefHeight="21.0" prefWidth="840.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <left>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="133.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/I21.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="113.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/I20.png" />
+               </image>
+               <effect>
+                  <Bloom />
+               </effect>
+            </ImageView>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../StyleCSS/ScrollPane.css" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="questionContainer" prefHeight="461.0" prefWidth="626.0" />
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

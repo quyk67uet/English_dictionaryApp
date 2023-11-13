@@ -17,29 +17,28 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import model.CountDown;
 
 
 public class TickBoxController implements Initializable {
+
+    @FXML
+    private JFXButton buttonV, buttonG, homeQ_button;
     @FXML
     private BorderPane containerQ;
-    @FXML
-    private Tooltip tooltipE;
-    @FXML
-    private JFXButton homeQ_button;
+
+    BorderPane homeV;
+
     @FXML
     private VBox quizView;
-
+    @FXML
+    private Tooltip tooltipE;
     @FXML
     private JFXButton q1;
 
@@ -69,12 +68,14 @@ public class TickBoxController implements Initializable {
 
     @FXML
     private JFXButton q10;
+
     @FXML
     private HBox countDown;
 
     private Timeline timeline;
-    BorderPane homeV;
+
     private static final Integer STARTTIME = 600;
+
     private IntegerProperty timeSeconds = new SimpleIntegerProperty(STARTTIME);
 
     private static TickBoxController instance;
@@ -95,20 +96,40 @@ public class TickBoxController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
-        this.createPage(homeV, "/FXMLViews/QuestionViews.fxml");
-        CountDown count = new CountDown();
+        buttonV.setOnAction(event -> {
+            this.createPage(homeV, "/FXMLViews/VocabularyView.fxml");
+        });
 
+        buttonG.setOnAction(event -> {
+            this.createPage(homeV, "/FXMLViews/GrammarView.fxml");
+        });
+
+        CountDown count = new CountDown();
         countDown.getChildren().add(count.setCountdown());
 
         tooltipE.setShowDelay(Duration.seconds(0.5));
-
         homeQ_button.setOnAction(event -> {
             backQFeatures();
         });
     }
 
+    public void setNode(Node node)
+    {
+        quizView.getChildren().clear();
+        quizView.getChildren().add((Node) node);
 
-    //Timer
+    }
+
+    public void createPage(BorderPane questionArea,String QPath) {
+
+        try {
+            questionArea = FXMLLoader.load(getClass().getResource(QPath));
+            setNode(questionArea);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void setTimer()
     {
 
@@ -124,37 +145,17 @@ public class TickBoxController implements Initializable {
 
     }
 
-    public void setNode(Node node)
-    {
-        quizView.getChildren().clear();
-        quizView.getChildren().add((Node) node);
-
-    }
-
     public void setLabelTimer(String timer)
     {
         System.out.println(timer);
     }
 
-
-    public void createPage(BorderPane questionArea,String QPath) {
-
-        try {
-            questionArea = FXMLLoader.load(getClass().getResource(QPath));
-            setNode(questionArea);
-        } catch (IOException e) {
-
-            e.printStackTrace();
-        }
-    }
-
-
     @FXML
     public void q1Action(ActionEvent event) {
 
 
-        QuizController.getInstance().renderQuestion(0);
-        QuizController.getInstance().setQid(0);
+        GrammarController.getInstance().renderQuestion(0);
+        GrammarController.getInstance().setQid(0);
 
 
     }
@@ -162,8 +163,8 @@ public class TickBoxController implements Initializable {
     @FXML
     void q2Action(ActionEvent event) {
 
-        QuizController.getInstance().renderQuestion(1);
-        QuizController.getInstance().setQid(1);
+        GrammarController.getInstance().renderQuestion(1);
+        GrammarController.getInstance().setQid(1);
 
 
     }
@@ -172,48 +173,48 @@ public class TickBoxController implements Initializable {
     void q3Action(ActionEvent event) {
 
 
-        QuizController.getInstance().renderQuestion(2);
-        QuizController.getInstance().setQid(2);
+        GrammarController.getInstance().renderQuestion(2);
+        GrammarController.getInstance().setQid(2);
 
     }
 
     @FXML
     void q4Action(ActionEvent event) {
 
-        QuizController.getInstance().renderQuestion(3);
-        QuizController.getInstance().setQid(3);
+        GrammarController.getInstance().renderQuestion(3);
+        GrammarController.getInstance().setQid(3);
 
     }
 
     @FXML
     void q5Action(ActionEvent event) {
 
-        QuizController.getInstance().renderQuestion(4);
-        QuizController.getInstance().setQid(4);
+        GrammarController.getInstance().renderQuestion(4);
+        GrammarController.getInstance().setQid(4);
 
     }
 
     @FXML
     void q6Action(ActionEvent event) {
 
-        QuizController.getInstance().renderQuestion(5);
-        QuizController.getInstance().setQid(5);
+        GrammarController.getInstance().renderQuestion(5);
+        GrammarController.getInstance().setQid(5);
 
     }
 
     @FXML
     void q7Action(ActionEvent event) {
 
-        QuizController.getInstance().renderQuestion(6);
-        QuizController.getInstance().setQid(6);
+        GrammarController.getInstance().renderQuestion(6);
+        GrammarController.getInstance().setQid(6);
 
     }
 
     @FXML
     void q8Action(ActionEvent event) {
 
-        QuizController.getInstance().renderQuestion(7);
-        QuizController.getInstance().setQid(7);
+        GrammarController.getInstance().renderQuestion(7);
+        GrammarController.getInstance().setQid(7);
 
     }
 
@@ -221,15 +222,15 @@ public class TickBoxController implements Initializable {
     void q9Action(ActionEvent event) {
 
 
-        QuizController.getInstance().renderQuestion(8);
-        QuizController.getInstance().setQid(8);
+        GrammarController.getInstance().renderQuestion(8);
+        GrammarController.getInstance().setQid(8);
 
     }
 
     @FXML
     void q10Action(ActionEvent event) {
-        QuizController.getInstance().renderQuestion(9);
-        QuizController.getInstance().setQid(9);
+        GrammarController.getInstance().renderQuestion(9);
+        GrammarController.getInstance().setQid(9);
 
     }
 
@@ -341,7 +342,7 @@ public class TickBoxController implements Initializable {
             scaleOut.setOnFinished(event -> {
                 try {
                     Stage stage = (Stage) homeQ_button.getScene().getWindow();
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/MenuView.fxml")));
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXMLViews/GameGraphical.fxml")));
                     stage.getScene().setRoot(root);
                     stage.show();
 

@@ -4,99 +4,92 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
-import model.AnswerQ;
-import model.QuizQ;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static controller.GrammarController.questionsQ;
+
 
 public class QuizResultSingleController implements Initializable {
     @FXML
-    private Label question;
+    private Text question;
 
     @FXML
-    private Label option1;
+    private Label optionA;
 
     @FXML
-    private Label option2;
+    private Label optionB;
     @FXML
-    private Label option3;
+    private Label optionC;
     @FXML
-    private Label option4;
+    private Label optionD;
 
-    String[][] qQ;
-    String[][] aQ;
+    public void setTexts(int i) {
 
-    public void setTexts(int i){
-        qQ=new String[10][5];
-        aQ=new String[10][2];
+        this.question.setText("Question " + (i + 1) + ": " + questionsQ.get(i).getQuestion());
+        this.optionA.setText(questionsQ.get(i).getOptionA());
+        this.optionB.setText(questionsQ.get(i).getOptionB());
+        this.optionC.setText(questionsQ.get(i).getOptionC());
+        this.optionD.setText(questionsQ.get(i).getOptionD());
 
-        qQ = QuizQ.setQuizQ();
-        aQ = AnswerQ.getAnswerQ();
+        String[] listA = questionsQ.get(i).getAnswer().split(" ");
 
-        this.question.setText(qQ[i][0]);
-        this.option1.setText("A)  " + qQ[i][1]);
-        this.option2.setText("B)  " + qQ[i][2]);
-        this.option3.setText("C)  " + qQ[i][3]);
-        this.option4.setText("D)  " + qQ[i][4]);
-
-        if(option1.getText().substring(4).equalsIgnoreCase(aQ[i][1])) {
-            option1.setTextFill(Color.web("#26ae60"));
-            option1.setText("✔ "+option1.getText());
-        }
-        else if(option2.getText().substring(4).equalsIgnoreCase(aQ[i][1])) {
-            option2.setTextFill(Color.web("#26ae60"));
-            option2.setText("✔ "+option2.getText());
-        }
-        else if(option3.getText().substring(4).equalsIgnoreCase(aQ[i][1])) {
-            option3.setTextFill(Color.web("#26ae60"));
-            option3.setText("✔ "+option3.getText());
-        }
-        else if(option4.getText().substring(4).equalsIgnoreCase(aQ[i][1])) {
-            option4.setTextFill(Color.web("#26ae60"));
-            option4.setText("✔ "+option4.getText());
+        switch (listA[2]) {
+            case "A" -> {
+                optionA.setTextFill(Color.web("#26ae60"));
+                optionA.setText("✔ " + optionA.getText());
+            }
+            case "B" -> {
+                optionB.setTextFill(Color.web("#26ae60"));
+                optionB.setText("✔ " + optionB.getText());
+            }
+            case "C" -> {
+                optionC.setTextFill(Color.web("#26ae60"));
+                optionC.setText("✔ " + optionC.getText());
+            }
+            case "D" -> {
+                optionD.setTextFill(Color.web("#26ae60"));
+                optionD.setText("✔ " + optionD.getText());
+            }
         }
 
-        if(QuizController.getInstance().map.get(i) != null) {
-            if(!QuizController.getInstance().map.get(i).substring(4).equalsIgnoreCase(aQ[i][0])) {
-                if(option1.getText().substring(4).equalsIgnoreCase(QuizController.getInstance().map.get(i))) {
-                    option1.setTextFill(Color.web("#B83227"));
-                    option1.setText("✖ " + option1.getText());
+        if (GrammarController.getInstance().map.get(i) != null) {
+            if (String.valueOf(optionA.getText().charAt(0)).equals(GrammarController.getInstance().map.get(i))) {
+                optionA.setTextFill(Color.web("#B83227"));
+                optionA.setText("✖ " + optionA.getText());
+            } else if (String.valueOf(optionB.getText().charAt(0)).equals(GrammarController.getInstance().map.get(i))) {
+                optionB.setTextFill(Color.web("#B83227"));
+                optionB.setText("✖ " + optionB.getText());
+            } else if (String.valueOf(optionC.getText().charAt(0)).equals(GrammarController.getInstance().map.get(i))) {
+                optionC.setTextFill(Color.web("#B83227"));
+                optionC.setText("✖ " + optionC.getText());
+            } else if (String.valueOf(optionD.getText().charAt(0)).equals(GrammarController.getInstance().map.get(i))) {
+                optionD.setTextFill(Color.web("#B83227"));
+                optionD.setText("✖ " + optionD.getText());
+            }
+        } else {
+            switch (listA[2]) {
+                case "A" -> {
+                    optionA.setTextFill(Color.web("#26ae60"));
+                    optionA.setText("✔ " + optionA.getText());
                 }
-                else if(option2.getText().substring(4).equalsIgnoreCase(QuizController.getInstance().map.get(i))) {
-                    option2.setTextFill(Color.web("#B83227"));
-                    option2.setText("✖ " + option2.getText());
+                case "B" -> {
+                    optionB.setTextFill(Color.web("#26ae60"));
+                    optionB.setText("✔ " + optionB.getText());
                 }
-                else if(option3.getText().substring(4).equalsIgnoreCase(QuizController.getInstance().map.get(i))) {
-                    option3.setTextFill(Color.web("#B83227"));
-                    option3.setText("✖ " + option3.getText());
+                case "C" -> {
+                    optionC.setTextFill(Color.web("#26ae60"));
+                    optionC.setText("✔ " + optionC.getText());
                 }
-                else if(option4.getText().substring(4).equalsIgnoreCase(QuizController.getInstance().map.get(i))) {
-                    option4.setTextFill(Color.web("#B83227"));
-                    option4.setText("✖ " + option4.getText());
+                case "D" -> {
+                    optionD.setTextFill(Color.web("#26ae60"));
+                    optionD.setText("✔ " + optionD.getText());
                 }
             }
-        }
-        else {
-            if(option1.getText().substring(4).equalsIgnoreCase(aQ[i][1])) {
-                option1.setTextFill(Color.web("#26ae60"));
-                option1.setText("✔ "+option1.getText());
-            }
-            else if(option2.getText().substring(4).equalsIgnoreCase(aQ[i][1])) {
-                option2.setTextFill(Color.web("#26ae60"));
-                option2.setText("✔ "+option2.getText());
-            }
-            else if(option3.getText().substring(4).equalsIgnoreCase(aQ[i][1])) {
-                option3.setTextFill(Color.web("#26ae60"));
-                option3.setText("✔ "+option3.getText());
-            }
-            else if(option4.getText().substring(4).equalsIgnoreCase(aQ[i][1])) {
-                option4.setTextFill(Color.web("#26ae60"));
-                option4.setText("✔ "+option4.getText());
-            }
-        }
 
+        }
     }
 
 
