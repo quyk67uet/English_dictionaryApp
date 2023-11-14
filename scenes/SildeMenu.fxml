@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -42,6 +43,9 @@
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
          <VBox.margin>
@@ -61,6 +65,9 @@
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
          <VBox.margin>
@@ -69,7 +76,7 @@
       </StackPane>
       <StackPane prefHeight="49.0" prefWidth="130.0">
          <children>
-            <JFXButton fx:id="transButton" prefHeight="54.0" prefWidth="145.0" styleClass="custom-button" stylesheets="@../assets/style.css" text="Translate" textFill="#1a538f">
+            <JFXButton fx:id="googleTranslateButton" prefHeight="54.0" prefWidth="145.0" styleClass="custom-button" stylesheets="@../assets/style.css" text="Translate" textFill="#1a538f">
                <graphic>
                   <ImageView fitHeight="61.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -80,6 +87,9 @@
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
          <VBox.margin>
@@ -88,7 +98,7 @@
       </StackPane>
       <StackPane prefHeight="49.0" prefWidth="130.0">
          <children>
-            <JFXButton fx:id="addButton" prefHeight="53.0" prefWidth="127.0" styleClass="custom-button" stylesheets="@../assets/style.css" text="Add" textFill="#1a538f">
+            <JFXButton fx:id="addWordsButton" prefHeight="53.0" prefWidth="127.0" styleClass="custom-button" stylesheets="@../assets/style.css" text="Add" textFill="#1a538f">
                <graphic>
                   <ImageView fitHeight="76.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -99,6 +109,9 @@
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
          <VBox.margin>
@@ -107,7 +120,7 @@
       </StackPane>
       <StackPane prefHeight="49.0" prefWidth="130.0">
          <children>
-            <JFXButton fx:id="bookMButton" prefHeight="62.0" prefWidth="143.0" styleClass="custom-button" stylesheets="@../assets/style.css" text="BookMark" textFill="#1a538f">
+            <JFXButton fx:id="bookmarkButton" prefHeight="62.0" prefWidth="143.0" styleClass="custom-button" stylesheets="@../assets/style.css" text="Bookmark" textFill="#1a538f">
                <graphic>
                   <ImageView fitHeight="53.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -118,6 +131,9 @@
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
          <VBox.margin>
@@ -137,6 +153,9 @@
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
          <VBox.margin>

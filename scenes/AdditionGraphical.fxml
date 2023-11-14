@@ -47,7 +47,7 @@
                               </HTMLEditor>
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="431.0" prefWidth="145.0">
+                        <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="389.0" prefWidth="145.0">
                            <children>
                               <JFXButton fx:id="addWordsButton" contentDisplay="GRAPHIC_ONLY">
                                  <graphic>
@@ -102,7 +102,7 @@
                   </HBox>
                </center>
                <bottom>
-                  <Label fx:id="successNotification" prefHeight="27.0" prefWidth="211.0" text="Add words success" textFill="#11f4dd" BorderPane.alignment="CENTER">
+                  <Label fx:id="successNotification" prefHeight="36.0" prefWidth="254.0" text="Add words successfully" textFill="#11f4dd" BorderPane.alignment="CENTER">
                      <font>
                         <Font name="System Bold Italic" size="20.0" />
                      </font>

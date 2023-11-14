@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1026.0" styleClass="root" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.HomeController">
-    <left>
-        <fx:include prefHeight="60.0" source="SildeMenu.fxml" />
-    </left>
+   <left>
+      <fx:include prefHeight="60.0" source="SildeMenu.fxml" />
+   </left>
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
