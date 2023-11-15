@@ -3,7 +3,8 @@ package org.main;
 import java.io.*;
 import java.net.URL;
 
-import org.features.*;
+import javafx.scene.image.Image;
+
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,40 +14,21 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/scenes/DictionaryGraphical.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/scenes/HomeGraphical.fxml"));
             Scene scene = new Scene(root);
-            
-            primaryStage.setTitle("Dictionary Apps");
-            primaryStage.setScene(scene);
-            // primaryStage.setResizable(false);
-            primaryStage.show();
+            Image image = new Image("/assets/images/computer.png");
 
-            // DictionaryCommandline dcl = new DictionaryCommandline();
+            stage.getIcons().add(image);
+            stage.setTitle("Dictionary Apps");
+            stage.setScene(scene);
+            stage.setResizable(true);
+            stage.setMinWidth(1026);
+            stage.setMinHeight(625);
             
-            //Scanner sc = new Scanner(System.in);
-            // dcl.insertFromDefaultFile("english_dictionary/src/main/resources/dictionaries.txt");
-            // dcl.showAllWords();
-            // System.out.println("----------------");;
-            // System.out.println("Test");
-            // dcl.dictionaryLookup();
-            // dcl.addUserWordToList();
-            // dcl.insertFromCommandline();
-            // for (int i = 0; i < dcl.getListWord().size(); i++) {
-            //     System.out.print(dcl.getListWord().get(i).getWord_target() + " " + dcl.getListWord().get(i).getWord_explain());
-            //     System.out.println();
-            // }
-            // dcl.editWordFromUser();
-            // dcl.dictionarySearcher();
-            // dcl.dictionaryExportToFile();
-            // dcl.deleteWordFromUser();
-            // dcl.dictionaryLookup();
-            // dcl.editWordFromUser();                                  -- Không nhập được tiếng Việt
-            // dcl.dictionaryAdvanced();
-            // System.out.println(dcl.getList_word().size());
-            // dcl.dictionaryBasic();
-            // dcl.showAllWords();    
+            stage.show();
+
         } catch (FileNotFoundException e) {
             System.out.println("File not found, please re-check the file directory");
             e.printStackTrace();
@@ -59,7 +41,6 @@ public class App extends Application {
         }
     }
 
-    
     public static void main(String[] args) throws IOException {
         launch(args);
     }
