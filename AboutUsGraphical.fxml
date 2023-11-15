@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1026.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.dictionary.AboutUsController">
+   <left>
+      <fx:include prefHeight="60.0" source="SildeMenu.fxml" />
+   </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="root" stylesheets="@../assets/style.css" BorderPane.alignment="CENTER">
+         <top>
+            <HBox alignment="CENTER" prefHeight="158.0" prefWidth="843.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="158.0" prefWidth="846.0">
+                     <children>
+                        <Label layoutX="159.0" layoutY="46.0" text="COMPUTER SCIENCE" textFill="#7ce5ff">
+                           <font>
+                              <Font name="System Bold" size="54.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/computer2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="670.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/computer.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" stylesheets="@../assets/webView.css" BorderPane.alignment="CENTER" />
+         </center>
+         <left>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="133.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/a4.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="141.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/a6.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </right>
+         <bottom>
+            <VBox prefHeight="20.0" prefWidth="843.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </center>
+</BorderPane>

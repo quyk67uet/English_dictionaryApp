@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<BorderPane fx:id="containerA" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1026.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.dictionary.AdditionController">
+   <center>
+      <BorderPane prefHeight="625.0" prefWidth="746.0" styleClass="root" stylesheets="@../assets/style.css" BorderPane.alignment="CENTER">
+         <center>
+            <BorderPane prefHeight="591.0" prefWidth="776.0" BorderPane.alignment="CENTER">
+               <center>
+                  <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="81.0" prefWidth="843.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="348.0">
+                           <children>
+                              <Pane prefHeight="27.0" prefWidth="337.0" styleClass="title_son">
+                                 <children>
+                                    <Label layoutX="38.0" layoutY="-2.0" text="nglish Words" textFill="#1a2faa">
+                                       <font>
+                                          <Font name="System Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="59.0" fitWidth="65.0" layoutX="-5.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/E.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <HTMLEditor fx:id="englishEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="361.0" prefWidth="311.0" stylesheets="@../assets/editor.css">
+                                 <styleClass>
+                                    <String fx:value="web-view" />
+                                    <String fx:value="tool-bar" />
+                                 </styleClass>
+                              </HTMLEditor>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="389.0" prefWidth="145.0">
+                           <children>
+                              <JFXButton fx:id="addWordsButton" contentDisplay="GRAPHIC_ONLY">
+                                 <graphic>
+                                    <ImageView fitHeight="81.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/icons/addB.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <ImageView fitHeight="67.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/r4.png" />
+                                 </image>
+                                 <effect>
+                                    <Bloom />
+                                 </effect>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <ImageView fx:id="loadingImage" fitHeight="86.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons/Spinner-1s-200px.gif" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="420.0" prefWidth="341.0">
+                           <children>
+                              <Pane prefHeight="32.0" prefWidth="337.0" styleClass="title_son1">
+                                 <children>
+                                    <Label layoutX="40.0" layoutY="-1.0" text="ietnamese Meaning" textFill="#8013d9">
+                                       <font>
+                                          <Font name="System Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="67.0" fitWidth="94.0" layoutX="-13.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/V.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <HTMLEditor fx:id="vietnameseEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="356.0" prefWidth="311.0" stylesheets="@../assets/editor.css">
+                                 <styleClass>
+                                    <String fx:value="tool-bar" />
+                                    <String fx:value="web-view" />
+                                 </styleClass>
+                              </HTMLEditor>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </center>
+               <top>
+                  <HBox prefHeight="38.0" prefWidth="835.0" styleClass="title" stylesheets="@../assets/style.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="49.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/robot28.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Add Word" textFill="#11f4dd">
+                           <font>
+                              <Font name="System Bold" size="31.0" />
+                           </font>
+                        </Label>
+                     </children></HBox>
+               </top>
+               <bottom>
+                  <HBox alignment="CENTER" prefHeight="18.0" prefWidth="843.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="45.0" prefWidth="843.0">
+                           <children>
+                              <Label fx:id="successNotification" alignment="TOP_CENTER" layoutX="304.0" layoutY="-18.0" prefHeight="36.0" prefWidth="254.0" text="Add words successfully ✔" textFill="#047c4a">
+                                 <font>
+                                    <Font name="System Bold Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="failureNotification" layoutX="268.0" layoutY="-26.0" prefHeight="35.0" prefWidth="326.0" text="Require words in both columns ❌" textFill="#db1812">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </bottom>
+            </BorderPane>
+         </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="106.0" prefWidth="776.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="109.0" prefWidth="847.0">
+                     <children>
+                        <ImageView fitHeight="116.0" fitWidth="442.0" layoutX="228.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/addtion.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="110.0" fitWidth="123.0" layoutX="20.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/robot7.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="122.0" fitWidth="115.0" layoutX="714.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/robot12.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="92.0" fitWidth="81.0" layoutX="179.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/robot21.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="88.0" fitWidth="102.0" layoutX="594.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/robot23.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </center>
+   <left>
+      <fx:include prefHeight="60.0" source="SildeMenu.fxml" />
+   </left>
+</BorderPane>
