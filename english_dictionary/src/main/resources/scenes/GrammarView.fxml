@@ -13,11 +13,11 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="505.0" styleClass="rootQ2" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.game.GrammarController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="569.0" styleClass="rootQ2" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.game.GrammarController">
    <top>
       <HBox prefHeight="100.0" prefWidth="517.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="100.0" prefWidth="525.0">
+            <AnchorPane prefHeight="100.0" prefWidth="578.0">
                <children>
                   <ImageView fitHeight="92.0" fitWidth="353.0" layoutX="116.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -29,12 +29,12 @@
                         <Image url="@../assets/images/v8.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="433.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="83.0" fitWidth="87.0" layoutX="460.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/images/bot0.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="71.0" fitWidth="106.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="80.0" fitWidth="103.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/images/bot11.png" />
                      </image>
@@ -105,7 +105,7 @@
                               </ImageView>
                               <Text fx:id="question" fill="#675d20" strokeType="OUTSIDE" strokeWidth="0.0" text="Write Question" wrappingWidth="106.904296875">
                                  <font>
-                                    <Font name="System Bold" size="15.0" />
+                                    <Font name="System Bold" size="16.0" />
                                  </font>
                               </Text>
                            </children>

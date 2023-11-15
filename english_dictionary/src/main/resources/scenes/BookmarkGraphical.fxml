@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1026.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.dictionary.BookmarkController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1180.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.dictionary.BookmarkController">
    <left>
       <fx:include prefHeight="60.0" source="SildeMenu.fxml" />
    </left>
@@ -76,9 +76,9 @@
                                           </ImageView>
                                        </children>
                                     </Pane>
-                                    <ImageView fx:id="loadingImage" fitHeight="31.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="loadingImage" fitHeight="29.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/icons/Spinner-1s-200px.gif" />
+                                          <Image url="@../assets/images/Spinner-1s-200px.gif" />
                                        </image>
                                     </ImageView>
                                  </children>

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1026.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.game.GameController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1180.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.game.GameController">
    <left>
       <fx:include prefHeight="60.0" source="SildeMenu.fxml" />
    </left>
@@ -73,7 +73,7 @@
                <children>
                   <JFXButton fx:id="startButton" contentDisplay="GRAPHIC_ONLY">
                      <graphic>
-                        <ImageView fitHeight="85.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="109.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/start_button.png" />
                            </image>
@@ -84,13 +84,6 @@
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>
-                     <graphic>
-                        <ImageView fitHeight="88.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/stop_button.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                   </JFXButton>
                   <ImageView fitHeight="109.0" fitWidth="219.0" pickOnBounds="true" preserveRatio="true">
                      <image>

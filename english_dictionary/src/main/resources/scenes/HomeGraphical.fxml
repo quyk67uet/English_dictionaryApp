@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1026.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.dictionary.HomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1180.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.dictionary.HomeController">
     <left>
         <fx:include prefHeight="60.0" source="SildeMenu.fxml" />
     </left>
@@ -63,14 +63,14 @@
          <top>
             <HBox alignment="CENTER" prefHeight="275.0" prefWidth="843.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane prefHeight="275.0" prefWidth="850.0">
+                  <AnchorPane prefHeight="275.0" prefWidth="997.0">
                      <children>
-                        <ImageView fitHeight="169.0" fitWidth="811.0" layoutX="25.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="169.0" fitWidth="811.0" layoutX="114.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/WELCOME TO DICTIONARY APPLICATION.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="96.0" fitWidth="107.0" layoutX="558.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="126.0" fitWidth="152.0" layoutX="614.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/a1.png" />
                            </image>
@@ -78,25 +78,36 @@
                               <Bloom />
                            </effect>
                         </ImageView>
-                        <ImageView fitHeight="105.0" fitWidth="169.0" layoutX="108.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="115.0" fitWidth="178.0" layoutX="228.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/a2.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="116.0" fitWidth="107.0" layoutX="237.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/a3.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="142.0" fitWidth="146.0" layoutX="690.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="139.0" fitWidth="156.0" layoutX="91.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/a5.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="122.0" fitWidth="114.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="102.0" fitWidth="136.0" layoutX="860.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/robot23.png" />
                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="767.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/t4.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="28.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/t22.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
                         </ImageView>
                      </children>
                   </AnchorPane>
@@ -104,24 +115,45 @@
             </HBox>
          </top>
          <left>
-            <VBox alignment="CENTER" prefHeight="351.0" prefWidth="161.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="351.0" prefWidth="259.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="136.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/images/a4.png" />
-                     </image>
-                  </ImageView>
+                  <AnchorPane prefHeight="357.0" prefWidth="259.0">
+                     <children>
+                        <ImageView fitHeight="199.0" fitWidth="198.0" layoutX="8.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/a4.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="175.0" fitWidth="197.0" layoutX="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/Circle.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
                </children>
             </VBox>
          </left>
          <right>
-            <VBox alignment="CENTER" prefHeight="351.0" prefWidth="145.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="351.0" prefWidth="303.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="171.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/images/a6.png" />
-                     </image>
-                  </ImageView>
+                  <AnchorPane prefHeight="355.0" prefWidth="303.0">
+                     <children>
+                        <ImageView fitHeight="200.0" fitWidth="208.0" layoutX="94.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/a6.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="171.0" fitWidth="233.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/Circle1.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
                </children>
             </VBox>
          </right>

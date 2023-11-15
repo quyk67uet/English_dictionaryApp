@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<BorderPane fx:id="containerA" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1026.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.dictionary.AdditionController">
+<BorderPane fx:id="containerA" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1180.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.dictionary.AdditionController">
    <center>
       <BorderPane prefHeight="625.0" prefWidth="746.0" styleClass="root" stylesheets="@../assets/style.css" BorderPane.alignment="CENTER">
          <center>
@@ -76,9 +76,9 @@
                                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                  </VBox.margin>
                               </ImageView>
-                              <ImageView fx:id="loadingImage" fitHeight="86.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="loadingImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/icons/Spinner-1s-200px.gif" />
+                                    <Image url="@../assets/images/Spinner-1s-200px.gif" />
                                  </image>
                               </ImageView>
                            </children>

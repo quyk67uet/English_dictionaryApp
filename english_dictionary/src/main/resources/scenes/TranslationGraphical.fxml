@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1026.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.dictionary.TranslationController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1180.0" styleClass="rootMenu" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.dictionary.TranslationController">
    <left>
       <fx:include prefHeight="60.0" source="SildeMenu.fxml" />
    </left>
@@ -130,7 +130,7 @@
                      <center>
                         <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="321.0" BorderPane.alignment="CENTER">
                            <children>
-                              <StackPane maxWidth="-Infinity" prefHeight="298.0" prefWidth="401.0">
+                              <StackPane maxWidth="-Infinity" prefHeight="306.0" prefWidth="473.0">
                                  <children>
                                     <TextArea fx:id="firstLanguageTextArea" promptText="Nhập từ muốn dịch..." StackPane.alignment="CENTER">
                                        <StackPane.margin>
@@ -157,7 +157,7 @@
                                     <Insets top="10.0" />
                                  </padding>
                               </StackPane>
-                              <StackPane maxWidth="-Infinity" prefHeight="298.0" prefWidth="409.0">
+                              <StackPane maxWidth="-Infinity" prefHeight="306.0" prefWidth="473.0">
                                  <children>
                                     <TextArea fx:id="secondLanguageTextArea" prefHeight="328.0" prefWidth="377.0">
                                        <StackPane.margin>
@@ -213,9 +213,9 @@
                                           <Font name="System Bold" size="17.0" />
                                        </font>
                                     </Label>
-                                    <ImageView fx:id="loadingImage" fitHeight="38.0" fitWidth="52.0" layoutX="525.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="loadingImage" fitHeight="57.0" fitWidth="70.0" layoutX="495.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/icons/Spinner-1s-200px.gif" />
+                                          <Image url="@../assets/images/Spinner-1s-200px.gif" />
                                        </image>
                                     </ImageView>
                                  </children>
