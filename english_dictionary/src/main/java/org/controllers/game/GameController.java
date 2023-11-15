@@ -37,6 +37,8 @@ public class GameController implements Initializable {
     @FXML
     private JFXButton startButton;
 
+    private static MediaPlayer gameMediaPlayer = MainController.getMediaPlayer("english_dictionary/src/main/resources/assets/sounds/music.mp3");
+
     private static GameController instance;
 
     public GameController()
@@ -100,16 +102,15 @@ public class GameController implements Initializable {
     }
 
     public void playMusic() {
-        MainController.getMediaPlayer("/assets/sounds/music.mp3").play();
+        gameMediaPlayer.play();
     }
 
     public void pauseMusic() {
-
-        MainController.getMediaPlayer("/assets/sounds/music.mp3").pause();
+        gameMediaPlayer.pause();
     }
 
     public void resetMusic() {
 
-        MainController.getMediaPlayer("/assets/sounds/music.mp3").seek(Duration.seconds(0));
+        gameMediaPlayer.seek(Duration.seconds(0));
     }
 }
