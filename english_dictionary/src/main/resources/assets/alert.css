@@ -1,0 +1,27 @@
+
+.alert {
+    -fx-background-color: #e8cea0;
+}
+
+.alert .header-panel {
+    -fx-background-color: #e8cea0;
+    -fx-text-fill: 	#a7bfdf;
+     -fx-font-size: 15px;
+}
+
+.alert .content {
+    -fx-font-size: 15px;
+}
+
+.alert .button-bar {
+    -fx-background-color: #e8cea0 ;
+}
+
+.alert .button-bar .button {
+    -fx-background-color: #f5f7ba;
+    -fx-text-fill: #2deb9f;
+}
+
+.alert .button-bar .button:hover {
+    -fx-background-color: #c0c27e;
+}

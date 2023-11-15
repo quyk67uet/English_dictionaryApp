@@ -1,0 +1,23 @@
+/* CSS để bo tròn cạnh của button */
+.menu_button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #87CEEB;
+  border-radius: 25px; /* Điều này tạo ra các cạnh bo tròn */
+  text-decoration: none;
+  font-size: 16px;
+  color: #B0E0E6;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hiệu ứng hover khi di chuột vào button */
+.menu_button:hover {
+  background-color: #87CEFA;
+  color: #fff;
+}
+
+/* Hiệu ứng khi ấn vào button */
+.menu_button:active {
+  transform: scale(0.95);
+}

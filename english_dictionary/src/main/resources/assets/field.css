@@ -1,0 +1,64 @@
+.listV{
+    -fx-text-fill: #9f45b0;
+    -fx-font-size: 16;
+    -fx-font-weight: 700;
+    -fx-padding: 5;
+    -fx-background-color: -fx-box-border, -fx-control-inner-background;
+     -fx-background-radius: 5;
+     -fx-border-radius: 5;
+}
+.listV:even, .listV:odd{
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.listV:even{
+     -fx-background-color: #f5f6fa;
+}
+.listV:odd {
+    -fx-background-color: #eff0fb;
+}
+.listV:filled:hover,
+.listV:filled:selected{
+    -fx-background-color: linear-gradient(to bottom left, #44008b, #9f45b0);
+    -fx-text-fill: white;
+}
+.listV .scroll-bar:horizontal .track,
+.listV .scroll-bar:vertical .track ,
+.explanationE .scroll-bar:horizontal .track,
+.explanationE .scroll-bar:vertical .track{
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius:2em;
+}
+.listV .scroll-bar:vertical .increment-button ,
+.listV .scroll-bar:vertical .decrement-button ,
+.explanationE .scroll-bar:vertical .increment-button ,
+.explanationE .scroll-bar:vertical .decrement-button{
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-padding:0 10 0 0;
+}
+.listV .scroll-bar:horizontal .increment-button ,
+.listV .scroll-bar:horizontal .decrement-button ,
+.explanationE .scroll-bar:horizontal .increment-button ,
+.explanationE .scroll-bar:horizontal .decrement-button{
+    -fx-background-color:transparent;
+   	-fx-background-radius: 0em;
+   	-fx-padding:0 0 10 0;
+}
+.listV .scroll-bar .increment-arrow,
+.listV .scroll-bar .decrement-arrow,
+.explanationE .scroll-bar .increment-arrow,
+.explanationE .scroll-bar .decrement-arrow
+ {
+	-fx-padding:0;
+}
+.listV .scroll-bar:vertical .thumb,
+.listV .scroll-bar:horizontal .thumb,
+.explanationE .scroll-bar:vertical .thumb,
+.explanationE .scroll-bar:horizontal .thumb{
+    -fx-background-color: #BFB1CD;
+   	-fx-background-insets: 2, 0, 0;
+   	-fx-background-radius: 2em;
+}

@@ -1,5 +1,5 @@
 @font-face {
-    src: url("fonts/Poppins-Regular.ttf"),
+    src: url("fonts/MontserratAlternates-SemiBold.otf"),
 }
 
 .container{
@@ -8,10 +8,29 @@
     -fx-border-radius: 5;
 }
 
+.rootS{
+     -fx-background-color: linear-gradient(to top right,#ADD8E6, #87CEFA);
+     -fx-background-radius: 5;
+     -fx-border-radius: 5;
+}
+
+
 .root{
      -fx-background-color: linear-gradient(to top right,#4682B4, #87CEEB);
      -fx-background-radius: 5;
      -fx-border-radius: 5;
+}
+
+.rootMenu{
+    -fx-background-color: linear-gradient(to top right,	#48D1CC, #5F9EA0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.rootNew{
+      -fx-background-color: linear-gradient(to top right,#ADD8E6, 	#87CEEB);
+      -fx-background-radius: 5;
+      -fx-border-radius: 5;
 }
 
 .exit_button{
@@ -20,7 +39,7 @@
      -fx-background-insets: 0;
      -fx-text-fill: #fff;
      -fx-font-weight: bold;
-     -fx-font-family: "Poppins";
+     -fx-font-family: "MontserratAlternates";
 }
 .exit_button:hover{
      -fx-background-color: #1E90FF;
@@ -32,7 +51,7 @@
          -fx-background-insets: 0;
          -fx-text-fill: #fff;
          -fx-font-weight: bold;
-         -fx-font-family: "Poppins";
+         -fx-font-family: "MontserratAlternates";
 }
 .menu_button:hover{
     -fx-background-color: #87CEFA;
@@ -65,7 +84,7 @@
 .search_field{
   -fx-background-color: transparent;
   -fx-text-fill: #d1d8e0;
-  -fx-font-family: "Poppins";
+  -fx-font-family: "MontserratAlternates";
   -fx-font-weight: bold;
   -fx-font-size: 13;
   -fx-border: none ;
@@ -86,4 +105,168 @@
 .textV{
     -fx-background-radius: 0 0 7 0;
     -fx-border-radius: 0 0 7 0;
+}
+
+.custom-button {
+    -fx-background-color:  #AFEEEE;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+
+}
+
+.custom-button:hover {
+    -fx-background-color: #87CEEB;
+    -fx-effect: dropshadow(three-pass-box,#ADD8E6, 15, 0, 0, 2) ;
+}
+.search_boxBM{
+    -fx-background-color:  #4682B4;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-effect: dropshadow(three-pass-box, #87CEEB, 15, 0, 0, 2) ;
+}
+.search_fieldBM{
+  -fx-background-color: transparent;
+  -fx-text-fill: #d1d8e0;
+  -fx-font-family: "MontserratAlternates";
+  -fx-font-weight: bold;
+  -fx-font-size: 13;
+  -fx-border: none ;
+}
+.search-fieldBM:pressed > .search-boxBM{
+   -fx-background-color: white;
+}
+
+.text-area {
+    -fx-border-color: #87CEEB;
+    -fx-border-width: 3px;
+    -fx-border-radius: 2px;
+    -fx-effect: dropshadow(three-pass-box, #1E90FF, 15, 0, 0, 2) ;
+}
+
+.web-view {
+    -fx-border-color: #87CEEB;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3px;
+}
+
+.web-view .virtual-flow .scroll-bar:vertical,
+.web-view .virtual-flow .scroll-bar:vertical .track,
+.web-view .virtual-flow .scroll-bar:vertical .track-background,
+.web-view .virtual-flow .scroll-bar:horizontal,
+.web-view .virtual-flow .scroll-bar:horizontal .track,
+.web-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+.web-view .virtual-flow .scroll-bar .increment-button,
+.web-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+.web-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  linear-gradient(to bottom, #aa07f0, #aa07f0);
+}
+.web-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to right, #aa07f0, #aa07f0);
+}
+.web-view .scroll-bar .thumb:hover {
+    -fx-background-color: #aa07f0;
+}
+
+.rootQ{
+    -fx-background-color: linear-gradient(to top right,#AFEEEE, #E0FFFF);
+}
+.rootQ2{
+    -fx-background-color: linear-gradient(to top right,#F5F5DC, #FAEBD7);
+}
+.title{
+    -fx-background-color: #5F9EA0;
+    -fx-effect: dropshadow(three-pass-box, #1E90FF, 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.title_son{
+    -fx-background-color: #B0E0E6;
+    -fx-effect: dropshadow(three-pass-box, #1E90FF, 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.title_son1{
+    -fx-background-color: #87CEFA;
+    -fx-effect: dropshadow(three-pass-box, #1E90FF, 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.title_son2{
+    -fx-background-color: 	#F4A460;
+    -fx-effect: dropshadow(three-pass-box, #CD853F, 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.custom-button {
+   -fx-background-color:  #AFEEEE;
+   -fx-background-radius: 30;
+   -fx-border-radius: 30;
+
+}
+
+.custom-button:hover {
+   -fx-background-color: #87CEEB;
+   -fx-effect: dropshadow(three-pass-box,#ADD8E6, 15, 0, 0, 2) ;
+}
+
+.listV{
+    -fx-text-fill: #9f45b0;
+    -fx-font-size: 16;
+    -fx-font-weight: 700;
+    -fx-padding: 5;
+    -fx-background-color: -fx-box-border, -fx-control-inner-background;
+     -fx-background-radius: 5;
+     -fx-border-radius: 5;
+}
+.listV:even, .listV:odd{
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.listV:even{
+     -fx-background-color: #f5f6fa;
+}
+.listV:odd {
+    -fx-background-color: #eff0fb;
+}
+.listV:filled:hover,
+.listV:filled:selected{
+    -fx-background-color: linear-gradient(to bottom left, #44008b, #9f45b0);
+    -fx-text-fill: white;
+}
+.listV .scroll-bar:horizontal .track,
+.listV .scroll-bar:vertical .track {
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius:2em;
+}
+.listV .scroll-bar:vertical .increment-button ,
+.listV .scroll-bar:vertical .decrement-button
+{
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-padding:0 10 0 0;
+}
+.listV .scroll-bar:horizontal .increment-button ,
+.listV .scroll-bar:horizontal .decrement-button
+{
+    -fx-background-color:transparent;
+   	-fx-background-radius: 0em;
+   	-fx-padding:0 0 10 0;
+}
+.listV .scroll-bar .increment-arrow,
+.listV .scroll-bar .decrement-arrow
+ {
+	-fx-padding:0;
+}
+.listV .scroll-bar:vertical .thumb,
+.listV .scroll-bar:horizontal .thumb {
+    -fx-background-color: #87CEEB;
+   	-fx-background-insets: 2, 0, 0;
+   	-fx-background-radius: 2em;
 }
