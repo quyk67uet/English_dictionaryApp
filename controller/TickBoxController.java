@@ -95,17 +95,20 @@ public class TickBoxController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-
+        CountDown count = new CountDown();
         buttonV.setOnAction(event -> {
             this.createPage(homeV, "/FXMLViews/VocabularyView.fxml");
+            countDown.getChildren().clear();
+            countDown.getChildren().add(count.setCountdown());
         });
 
         buttonG.setOnAction(event -> {
             this.createPage(homeV, "/FXMLViews/GrammarView.fxml");
+            countDown.getChildren().clear();
+            countDown.getChildren().add(count.setCountdown());
         });
 
-        CountDown count = new CountDown();
-        countDown.getChildren().add(count.setCountdown());
+
 
         tooltipE.setShowDelay(Duration.seconds(0.5));
         homeQ_button.setOnAction(event -> {
@@ -153,10 +156,8 @@ public class TickBoxController implements Initializable {
     @FXML
     public void q1Action(ActionEvent event) {
 
-
         GrammarController.getInstance().renderQuestion(0);
         GrammarController.getInstance().setQid(0);
-
 
     }
 
@@ -188,10 +189,8 @@ public class TickBoxController implements Initializable {
 
     @FXML
     void q5Action(ActionEvent event) {
-
         GrammarController.getInstance().renderQuestion(4);
         GrammarController.getInstance().setQid(4);
-
     }
 
     @FXML
@@ -231,7 +230,6 @@ public class TickBoxController implements Initializable {
     void q10Action(ActionEvent event) {
         GrammarController.getInstance().renderQuestion(9);
         GrammarController.getInstance().setQid(9);
-
     }
 
     public void setColorGreen(int qQid , boolean value)

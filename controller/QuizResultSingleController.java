@@ -70,6 +70,9 @@ public class QuizResultSingleController implements Initializable {
                 optionD.setText("✖ " + optionD.getText());
             }
         }
+        else {
+            question.setFill(Color.web(	"#BDB76B"));
+        }
     }
 
 

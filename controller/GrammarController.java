@@ -151,18 +151,26 @@ public class GrammarController implements Initializable {
         if(optionA.isSelected())
         {
             choice = String.valueOf(optionA.getText().charAt(0));
+            map.put(qQid, getSelection());
+            TickBoxController.getInstance().setColorGreen(qQid, true);
         }
         else if(optionB.isSelected())
         {
             choice = String.valueOf(optionB.getText().charAt(0));
+            map.put(qQid, getSelection());
+            TickBoxController.getInstance().setColorGreen(qQid, true);
         }
         else if(optionC.isSelected())
         {
             choice = String.valueOf(optionC.getText().charAt(0));
+            map.put(qQid, getSelection());
+            TickBoxController.getInstance().setColorGreen(qQid, true);
         }
         else if(optionD.isSelected())
         {
             choice = String.valueOf(optionD.getText().charAt(0));
+            map.put(qQid, getSelection());
+            TickBoxController.getInstance().setColorGreen(qQid, true);
         }
 
     }
@@ -171,9 +179,7 @@ public class GrammarController implements Initializable {
     public void nextAction(ActionEvent e) throws IOException {
             map.put(qQid, getSelection());
 
-            if (Objects.equals(getSelection(), null)) {
-                TickBoxController.getInstance().setColorRed(qQid, true);
-            } else {
+            if (!Objects.equals(getSelection(), null)) {
                 TickBoxController.getInstance().setColorGreen(qQid, true);
             }
 
@@ -234,8 +240,10 @@ public class GrammarController implements Initializable {
             String[] listA = questionsQ.get(qid).getAnswer().split(" ");
             if (map.get(qid) != null) {
                 if (map.get(qid).equals(listA[2])) {
-                    count++;
+                    ++count;
                 }
+            } else {
+                System.out.println("null");
             }
         }
         return count;
@@ -341,6 +349,7 @@ public class GrammarController implements Initializable {
         questionList.clear();
         questionsQ.clear();
         qQid = 0;
+        choice = null;
     }
 
 }

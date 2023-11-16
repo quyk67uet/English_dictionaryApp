@@ -147,8 +147,6 @@ public abstract class QuestionController {
                 choice = null;
                 renderQuestion(qQid);
             }
-
-
         }
 
         else {
