@@ -53,7 +53,6 @@ public class GameController implements Initializable {
 
     public void startFeatures() {
         try {
-            QuestionController.qQid = 0;
             FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), APane);
             fadeOut.setFromValue(1.0);
             fadeOut.setToValue(0.0);

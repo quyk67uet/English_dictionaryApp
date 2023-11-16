@@ -37,6 +37,7 @@ public class GrammarController extends QuestionController implements Initializab
         resetStatus();
         getQuizData();
         renderQuestion(qQid);
+
     }
 
     @Override

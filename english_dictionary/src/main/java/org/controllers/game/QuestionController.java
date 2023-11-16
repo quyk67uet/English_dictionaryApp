@@ -8,6 +8,7 @@ import java.util.*;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
+import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -174,13 +175,12 @@ public abstract class QuestionController {
     @FXML
     public void previousAction(ActionEvent e) throws IOException {
         if (qQid > 0) {
-            map.put(qQid, getSelection()); // Save the selection for the current question
+            map.put(qQid, getSelection());
 
-            qQid--; // Decrement after saving the selection
+            qQid--;
 
-            renderQuestion(qQid); // Render the previous question
+            renderQuestion(qQid);
 
-            // Retrieve the selected answer for the previous question
             choice = map.get(qQid);
         }
     }
@@ -219,30 +219,11 @@ public abstract class QuestionController {
         this.setDialogBox();
     }
 
-    public void finishFeatures() {
-        try {
-            qQid = 0;
-            TranslateTransition slideOut = new TranslateTransition(Duration.seconds(0.2), GameController.getInstance().getAPane());
-            slideOut.setToX(-GameController.getInstance().getAPane().getWidth());
-            slideOut.setOnFinished(event -> {
-                try {
-                    Stage stage = (Stage) finish_button.getScene().getWindow();
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/PointView.fxml")));
-                    stage.getScene().setRoot(root);
-                    stage.show();
-
-                    TranslateTransition slideIn = new TranslateTransition(Duration.seconds(0.2), GameController.getInstance().getAPane());
-                    slideIn.setFromX(GameController.getInstance().getAPane().getWidth());
-                    slideIn.setToX(0);
-                    slideIn.play();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            });
-            slideOut.play();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void finishFeatures() throws IOException {
+        Stage stage = (Stage) finish_button.getScene().getWindow();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/PointView.fxml")));
+        stage.getScene().setRoot(root);
+        stage.show();
     }
     public abstract void getQuizData();
 

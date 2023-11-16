@@ -5,10 +5,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.ScaleTransition;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.ActionEvent;
@@ -267,27 +264,25 @@ public class TickBoxController implements Initializable {
 
     public void backQFeatures() {
         try {
-            ScaleTransition scaleOut = new ScaleTransition(Duration.seconds(0.2), containerQ);
-            scaleOut.setToX(0);
-            scaleOut.setToY(0);
-            scaleOut.setOnFinished(event -> {
+            FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), containerQ);
+            fadeOut.setFromValue(1.0);
+            fadeOut.setToValue(0.0);
+            fadeOut.setOnFinished(event -> {
                 try {
                     Stage stage = (Stage) homeQ_button.getScene().getWindow();
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/GameGraphical.fxml")));
                     stage.getScene().setRoot(root);
                     stage.show();
 
-                    ScaleTransition scaleIn = new ScaleTransition(Duration.seconds(0.2), containerQ);
-                    scaleIn.setFromX(0);
-                    scaleIn.setFromY(0);
-                    scaleIn.setToX(1);
-                    scaleIn.setToY(1);
-                    scaleIn.play();
+                    FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), containerQ);
+                    fadeIn.setFromValue(0.0);
+                    fadeIn.setToValue(1.0);
+                    fadeIn.play();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
-            scaleOut.play();
+            fadeOut.play();
         } catch (Exception e) {
             e.printStackTrace();
         }

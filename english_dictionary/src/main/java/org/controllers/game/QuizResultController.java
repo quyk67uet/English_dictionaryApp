@@ -1,6 +1,7 @@
 package org.controllers.game;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -63,27 +64,26 @@ public class QuizResultController implements Initializable {
 
     public void backRFeatures() {
         try {
-            ScaleTransition scaleOut = new ScaleTransition(Duration.seconds(0.2), containerO);
-            scaleOut.setToX(0);
-            scaleOut.setToY(0);
-            scaleOut.setOnFinished(event -> {
+            QuestionController.qQid = 0;
+            FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), containerO);
+            fadeOut.setFromValue(1.0);
+            fadeOut.setToValue(0.0);
+            fadeOut.setOnFinished(event -> {
                 try {
                     Stage stage = (Stage) homeR_button.getScene().getWindow();
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/GameGraphical.fxml")));
                     stage.getScene().setRoot(root);
                     stage.show();
 
-                    ScaleTransition scaleIn = new ScaleTransition(Duration.seconds(0.2), containerO);
-                    scaleIn.setFromX(0);
-                    scaleIn.setFromY(0);
-                    scaleIn.setToX(1);
-                    scaleIn.setToY(1);
-                    scaleIn.play();
+                    FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), containerO);
+                    fadeIn.setFromValue(0.0);
+                    fadeIn.setToValue(1.0);
+                    fadeIn.play();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
-            scaleOut.play();
+            fadeOut.play();
         } catch (Exception e) {
             e.printStackTrace();
         }

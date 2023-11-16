@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
@@ -41,27 +42,25 @@ public class ScoreController implements Initializable{
 
     public void backSFeatures() {
         try {
-            ScaleTransition scaleOut = new ScaleTransition(Duration.seconds(0.2), containerP);
-            scaleOut.setToX(0);
-            scaleOut.setToY(0);
-            scaleOut.setOnFinished(event -> {
+            FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), containerP);
+            fadeOut.setFromValue(1.0);
+            fadeOut.setToValue(0.0);
+            fadeOut.setOnFinished(event -> {
                 try {
                     Stage stage = (Stage) back_button.getScene().getWindow();
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/GameGraphical.fxml")));
                     stage.getScene().setRoot(root);
                     stage.show();
 
-                    ScaleTransition scaleIn = new ScaleTransition(Duration.seconds(0.2), containerP);
-                    scaleIn.setFromX(0);
-                    scaleIn.setFromY(0);
-                    scaleIn.setToX(1);
-                    scaleIn.setToY(1);
-                    scaleIn.play();
+                    FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), containerP);
+                    fadeIn.setFromValue(0.0);
+                    fadeIn.setToValue(1.0);
+                    fadeIn.play();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
-            scaleOut.play();
+            fadeOut.play();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -69,9 +68,10 @@ public class ScoreController implements Initializable{
 
     public void resultFeatures() {
         try {
-            TranslateTransition slideOut = new TranslateTransition(Duration.seconds(0.2), containerP);
-            slideOut.setToX(-containerP.getWidth());
-            slideOut.setOnFinished(event -> {
+            FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), containerP);
+            fadeOut.setFromValue(1.0);
+            fadeOut.setToValue(0.0);
+            fadeOut.setOnFinished(event -> {
                 try {
                     Stage stage = (Stage) result_button.getScene().getWindow();
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scenes/QuizResult.fxml")));
@@ -80,19 +80,18 @@ public class ScoreController implements Initializable{
 
                     QuizResultController.getInstance().renderQuestionsResult();
 
-                    TranslateTransition slideIn = new TranslateTransition(Duration.seconds(0.2), containerP);
-                    slideIn.setFromX(containerP.getWidth());
-                    slideIn.setToX(0);
-                    slideIn.play();
+                    FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), containerP);
+                    fadeIn.setFromValue(0.0);
+                    fadeIn.setToValue(1.0);
+                    fadeIn.play();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
-            slideOut.play();
+            fadeOut.play();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
 
