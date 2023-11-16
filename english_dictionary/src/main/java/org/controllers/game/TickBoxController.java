@@ -101,12 +101,14 @@ public class TickBoxController implements Initializable {
             this.createPage(homeV, "/scenes/VocabularyView.fxml");
             countDown.getChildren().clear();
             countDown.getChildren().add(count.setCountdown());
+            resetTickBox();
         });
 
         buttonG.setOnAction(event -> {
             this.createPage(homeV, "/scenes/GrammarView.fxml");
             countDown.getChildren().clear();
             countDown.getChildren().add(count.setCountdown());
+            resetTickBox();
         });
 
         tooltipE.setShowDelay(Duration.seconds(0.5));
@@ -202,8 +204,6 @@ public class TickBoxController implements Initializable {
 
     @FXML
     void q9Action(ActionEvent event) {
-
-
         QuestionController.getInstance().renderQuestion(8);
         QuestionController.getInstance().setQid(8);
 
@@ -291,6 +291,19 @@ public class TickBoxController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void resetTickBox() {
+        q1.setStyle("-fx-background-color: #F0F8FF;");
+        q2.setStyle("-fx-background-color: #F0F8FF; ");
+        q3.setStyle("-fx-background-color: #F0F8FF; ");
+        q4.setStyle("-fx-background-color: #F0F8FF; ");
+        q5.setStyle("-fx-background-color: #F0F8FF;");
+        q6.setStyle("-fx-background-color: #F0F8FF; ");
+        q7.setStyle("-fx-background-color: #F0F8FF; ");
+        q8.setStyle("-fx-background-color: #F0F8FF; ");
+        q9.setStyle("-fx-background-color: #F0F8FF; ");
+        q10.setStyle("-fx-background-color: #F0F8FF; ");
     }
 
 }
