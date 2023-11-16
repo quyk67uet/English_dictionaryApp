@@ -95,7 +95,7 @@
                <children>
                   <HBox prefHeight="27.0" prefWidth="569.0">
                      <children>
-                        <VBox prefHeight="36.0" prefWidth="43.0" />
+                        <VBox prefHeight="37.0" prefWidth="11.0" />
                         <TextFlow prefHeight="36.0" prefWidth="505.0">
                            <children>
                               <ImageView fitHeight="32.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
