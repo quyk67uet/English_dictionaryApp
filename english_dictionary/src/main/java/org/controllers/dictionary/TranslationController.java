@@ -174,6 +174,8 @@ public class TranslationController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         firstLanguageTextArea.setStyle("-fx-font-size: 18px;");
         secondLanguageTextArea.setStyle("-fx-font-size: 18px;");
+        firstLanguageTextArea.setWrapText(true);
+        secondLanguageTextArea.setWrapText(true);
         secondLanguageTextArea.setEditable(false);
         loadingImage.setVisible(false);
         noWordsLabel.setVisible(false);
