@@ -18,13 +18,13 @@ public class App extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/scenes/HomeGraphical.fxml"));
             Scene scene = new Scene(root);
-            Image image = new Image("/assets/images/computer.png");
+            Image image = new Image("/assets/images/book.png");
 
             stage.getIcons().add(image);
             stage.setTitle("Dictionary Apps");
             stage.setScene(scene);
             stage.setResizable(true);
-            stage.setMinWidth(1026);
+            stage.setMinWidth(1192);
             stage.setMinHeight(625);
             
             stage.show();
